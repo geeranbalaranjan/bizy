@@ -1,0 +1,227 @@
+// ─── Auth ────────────────────────────────────────────────────────────────────
+
+export interface Auth0User {
+  sub: string
+  name: string
+  email: string
+  picture: string
+  email_verified: boolean
+}
+
+// ─── Business Profile ────────────────────────────────────────────────────────
+
+export type BusinessType =
+  | 'food'
+  | 'retail'
+  | 'services'
+  | 'tech'
+  | 'construction'
+  | 'health'
+  | 'education'
+  | 'other'
+
+export type CanadianProvince =
+  | 'AB'
+  | 'BC'
+  | 'MB'
+  | 'NB'
+  | 'NL'
+  | 'NS'
+  | 'NT'
+  | 'NU'
+  | 'ON'
+  | 'PE'
+  | 'QC'
+  | 'SK'
+  | 'YT'
+
+export type BudgetRange = 'under_5k' | '5k_25k' | '25k_100k' | 'over_100k'
+
+export interface BusinessProfile {
+  uid: string
+  businessName: string
+  businessType: BusinessType
+  businessDescription: string
+  province: CanadianProvince
+  city: string
+  targetCustomers: string
+  stage: 'idea' | 'planning' | 'ready'
+  budget: BudgetRange
+  goals: string[]
+  background?: string
+  createdAt: string
+}
+
+// ─── Viability ───────────────────────────────────────────────────────────────
+
+export interface Risk {
+  title: string
+  description: string
+  mitigation: string
+  severity: 'high' | 'medium' | 'low'
+}
+
+export interface ViabilityResult {
+  score: number
+  marketCondition: 'low' | 'moderate' | 'high'
+  averageRevenue: {
+    year1: number
+    year3: number
+  }
+  survivalRate: {
+    year1: number
+    year3: number
+    year5: number
+  }
+  grantsAvailable: number
+  topRisks: Risk[]
+  topOpportunities: string[]
+  verdict: 'strong' | 'viable' | 'challenging' | 'risky'
+  verdictSummary: string
+}
+
+// ─── Roadmap ─────────────────────────────────────────────────────────────────
+
+export type RoadmapCategory =
+  | 'legal'
+  | 'financial'
+  | 'licensing'
+  | 'hr'
+  | 'operations'
+  | 'marketing'
+
+export interface RoadmapStep {
+  id: string
+  title: string
+  description: string
+  estimatedTime: string
+  estimatedCost: string
+  actionUrl: string
+  category: RoadmapCategory
+  province?: CanadianProvince
+  isComplete: boolean
+  isRequired: boolean
+  dependsOn?: string[]
+}
+
+// ─── Compliance ──────────────────────────────────────────────────────────────
+
+export interface CRAForm {
+  id: string
+  name: string
+  code: string
+  description: string
+  whenNeeded: string
+  url: string
+  categories: BusinessType[]
+  provinces?: CanadianProvince[]
+  aiExplanation?: string
+}
+
+export interface License {
+  id: string
+  name: string
+  issuingAuthority: string
+  province: CanadianProvince | 'federal'
+  businessTypes: BusinessType[]
+  description: string
+  applicationUrl: string
+  estimatedCost: string
+  estimatedTime: string
+  renewalPeriod?: string
+}
+
+// ─── HR ──────────────────────────────────────────────────────────────────────
+
+export interface OnboardingChecklist {
+  employeeName: string
+  startDate: string
+  role: string
+  steps: ChecklistItem[]
+}
+
+export interface ChecklistItem {
+  title: string
+  description: string
+  dueDate: string
+  templateUrl?: string
+  isComplete: boolean
+}
+
+// ─── Analytics ───────────────────────────────────────────────────────────────
+
+export interface IndustryBenchmark {
+  businessType: BusinessType
+  province: CanadianProvince | 'national'
+  avgRevenue: { year1: number; year3: number; year5: number }
+  avgEmployees: { year1: number; year3: number }
+  survivalRate: { year1: number; year3: number; year5: number }
+  avgStartupCost: number
+  source: string
+}
+
+// ─── Grants ──────────────────────────────────────────────────────────────────
+
+export interface Grant {
+  id: string
+  name: string
+  provider: string
+  amount: { min: number; max: number }
+  type: 'grant' | 'loan' | 'tax_credit' | 'subsidy'
+  eligibility: {
+    businessTypes: BusinessType[]
+    provinces: CanadianProvince[] | 'all'
+    minEmployees?: number
+    maxEmployees?: number
+    founderCriteria?: string[]
+    maxRevenue?: number
+  }
+  deadline?: string
+  url: string
+  description: string
+}
+
+// ─── Reactiv / Storefront ────────────────────────────────────────────────────
+
+export interface ReactivClipConfig {
+  businessName: string
+  tagline?: string
+  logoUrl?: string
+  primaryColor?: string
+  products: ReactivProduct[]
+  contactInfo: {
+    phone?: string
+    email?: string
+    address?: string
+  }
+  orderType: 'inquiry' | 'purchase' | 'booking'
+}
+
+export interface ReactivProduct {
+  name: string
+  description?: string
+  price: number
+  currency: 'CAD'
+  imageUrl?: string
+  available: boolean
+}
+
+// ─── Chat ────────────────────────────────────────────────────────────────────
+
+export interface ChatMessage {
+  id: string
+  role: 'user' | 'assistant'
+  content: string
+  timestamp: string
+}
+
+// ─── App State ───────────────────────────────────────────────────────────────
+
+export interface AppState {
+  user: Auth0User | null
+  businessProfile: BusinessProfile | null
+  viabilityResult: ViabilityResult | null
+  roadmapProgress: Record<string, boolean>
+  chatHistory: ChatMessage[]
+  isLoading: boolean
+}

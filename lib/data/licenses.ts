@@ -1,0 +1,106 @@
+import type { License } from '@/types'
+
+export const LICENSES: License[] = [
+  {
+    id: 'biz-license-on',
+    name: 'Municipal Business License',
+    issuingAuthority: 'Municipal Government',
+    province: 'ON',
+    businessTypes: ['food', 'retail', 'services', 'tech', 'construction', 'health', 'education', 'other'],
+    description:
+      'A general business license required to operate a business within most Ontario municipalities. Requirements vary by city.',
+    applicationUrl: 'https://www.ontario.ca/page/business-licences',
+    estimatedCost: '$50–$500',
+    estimatedTime: '1–2 weeks',
+    renewalPeriod: 'Annual',
+  },
+  {
+    id: 'food-premises-on',
+    name: 'Food Premises Permit',
+    issuingAuthority: 'Local Public Health Unit',
+    province: 'ON',
+    businessTypes: ['food'],
+    description:
+      'Required for any business that serves, processes, or sells food to the public. Inspection by local public health required before opening.',
+    applicationUrl: 'https://www.ontario.ca/page/food-safety',
+    estimatedCost: '$100–$400',
+    estimatedTime: '2–4 weeks',
+    renewalPeriod: 'Annual',
+  },
+  {
+    id: 'food-handler-on',
+    name: 'Food Handler Certification',
+    issuingAuthority: 'Local Public Health Unit',
+    province: 'ON',
+    businessTypes: ['food'],
+    description:
+      'At least one certified food handler is required on-site during food preparation. Training courses are available through local health units.',
+    applicationUrl: 'https://www.ontario.ca/page/food-safety',
+    estimatedCost: '$30–$80',
+    estimatedTime: '1–2 days (course)',
+    renewalPeriod: '5 years',
+  },
+  {
+    id: 'liquor-on',
+    name: 'Liquor License',
+    issuingAuthority: 'Alcohol and Gaming Commission of Ontario (AGCO)',
+    province: 'ON',
+    businessTypes: ['food'],
+    description:
+      'Required to serve alcohol at a licensed establishment. Application requires municipal approval, floor plans, and fire code compliance.',
+    applicationUrl: 'https://www.agco.ca/alcohol/liquor-sales-licence',
+    estimatedCost: '$500–$1,000',
+    estimatedTime: '6–12 weeks',
+    renewalPeriod: 'Annual',
+  },
+  {
+    id: 'wsib-on',
+    name: 'WSIB Registration',
+    issuingAuthority: 'Workplace Safety and Insurance Board',
+    province: 'ON',
+    businessTypes: ['food', 'retail', 'services', 'construction', 'health', 'other'],
+    description:
+      'Mandatory workplace insurance for businesses with employees in Ontario. Covers workplace injuries and occupational diseases.',
+    applicationUrl: 'https://www.wsib.ca/en/businesses/register',
+    estimatedCost: 'Premium-based (% of payroll)',
+    estimatedTime: '1–2 weeks',
+    renewalPeriod: 'Ongoing',
+  },
+  {
+    id: 'health-safety-on',
+    name: 'Health & Safety Certification',
+    issuingAuthority: 'Ontario Ministry of Labour',
+    province: 'ON',
+    businessTypes: ['construction', 'health'],
+    description:
+      'Employers must ensure supervisors and workers complete mandatory health and safety awareness training within first week of employment.',
+    applicationUrl: 'https://www.ontario.ca/page/workplace-health-and-safety',
+    estimatedCost: 'Free (online training)',
+    estimatedTime: '1 day',
+  },
+  {
+    id: 'biz-license-bc',
+    name: 'Municipal Business License',
+    issuingAuthority: 'Municipal Government',
+    province: 'BC',
+    businessTypes: ['food', 'retail', 'services', 'tech', 'construction', 'health', 'education', 'other'],
+    description:
+      'Required to operate a business within BC municipalities. Apply through your local city hall or online portal.',
+    applicationUrl: 'https://www2.gov.bc.ca/gov/content/employment-business/business/managing-a-business/permits-licences',
+    estimatedCost: '$50–$500',
+    estimatedTime: '1–2 weeks',
+    renewalPeriod: 'Annual',
+  },
+  {
+    id: 'import-export-fed',
+    name: 'Import/Export Permit',
+    issuingAuthority: 'Canada Border Services Agency / Global Affairs Canada',
+    province: 'federal',
+    businessTypes: ['retail', 'food', 'other'],
+    description:
+      'Federal permits required for businesses importing or exporting controlled goods. Specific requirements vary by product type.',
+    applicationUrl: 'https://www.cbsa-asfc.gc.ca/trade-commerce/tariff-tarif/menu-eng.html',
+    estimatedCost: 'Varies',
+    estimatedTime: '2–6 weeks',
+  },
+]
