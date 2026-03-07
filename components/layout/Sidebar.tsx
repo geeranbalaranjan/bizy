@@ -1,8 +1,10 @@
+// DASHBOARD ONLY - safe to merge
 'use client'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTranslation } from '@/components/translation'
+import { useUser } from '@auth0/nextjs-auth0/client'
 import {
   LayoutDashboard,
   Zap,
@@ -18,6 +20,7 @@ import {
   Sparkles,
   MapPin,
   Home,
+  LogOut,
 } from 'lucide-react'
 
 const navItems = [
@@ -39,40 +42,55 @@ const navItems = [
 export function Sidebar() {
   const pathname = usePathname()
   const { t } = useTranslation()
+  const { user } = useUser()
 
   return (
-    <aside className="w-64 min-h-screen bg-brand-primary border-r border-white/10 flex flex-col">
-      <div className="p-6 border-b border-white/10">
-        <Link href="/dashboard" className="text-xl font-heading font-bold text-white">
+    <aside className="w-[240px] shrink-0 min-h-screen bg-[#1E2A3B] flex flex-col font-['Inter',sans-serif]">
+      <div className="p-6">
+        <Link href="/dashboard" className="text-[22px] font-bold text-white flex items-center gap-2">
+          {/* Mock V Logo from template */}
+          <div className="w-6 h-6 bg-white text-[#2563EB] rounded-sm flex items-center justify-center font-black text-xs">B</div>
           Bizy
         </Link>
       </div>
-      <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
+      
+      <nav className="flex-1 px-4 pb-4 space-y-1 overflow-y-auto mt-2">
         {navItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+            className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
               pathname === item.href
-                ? 'bg-brand-accent/20 text-brand-accent'
-                : 'text-gray-400 hover:text-white hover:bg-white/5'
+                ? 'bg-[#2563EB] text-white'
+                : 'text-[#94A3B8] hover:text-white hover:bg-white/10'
             }`}
           >
-            <item.icon className="w-5 h-5 shrink-0" />
-            <span className="font-medium">{t(item.label)}</span>
+            <item.icon className="w-[18px] h-[18px] shrink-0" />
+            <span className="text-sm font-medium">{t(item.label)}</span>
           </Link>
         ))}
       </nav>
-      {/* Back to Home */}
-      <div className="p-4 border-t border-white/10">
+
+      {/* User / Back to Home Section */}
+      <div className="p-4 mt-auto space-y-2">
         <Link
           href="/"
-          className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
+          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#94A3B8] hover:text-white hover:bg-white/10 transition-colors"
         >
-          <Home className="w-5 h-5 shrink-0" />
-          <span className="font-medium">{t('Back to Home')}</span>
+          <Home className="w-[18px] h-[18px] shrink-0" />
+          <span className="text-sm font-medium">{t('Back to Home')}</span>
         </Link>
+        
+        {/* User Dark Card Logout Button */}
+        <a
+          href="/api/auth/logout"
+          className="flex items-center justify-center gap-2 w-full mt-4 px-4 py-2.5 bg-white/5 hover:bg-white/10 rounded-lg text-white transition-colors"
+        >
+          <LogOut className="w-4 h-4" />
+          <span className="text-sm font-medium">Logout</span>
+        </a>
       </div>
     </aside>
   )
 }
+
