@@ -16,13 +16,11 @@ import { ModernFooter } from '@/components/landing/ModernFooter'
 export default function LandingPage() {
   // temporarily mock isLoggedIn to true for the preview
   const isLoggedIn = false
-  
+
   return (
     <div className="min-h-screen bg-brand-primary text-white font-body selection:bg-brand-accent/30 selection:text-white">
-      {/* Absolute positioned Top Nav (Overlaying Hero) */}
-      <div className="absolute top-0 inset-x-0 z-50">
-         <LandingNav isLoggedIn={isLoggedIn} />
-      </div>
+      {/* Fixed Sticky Top Nav */}
+      <LandingNav isLoggedIn={isLoggedIn} />
 
       <main>
         <HeroSection isLoggedIn={isLoggedIn} />
