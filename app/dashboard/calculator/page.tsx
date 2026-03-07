@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import { useBusinessProfile } from '@/hooks/useBusinessProfile'
+import { useTranslation } from '@/components/translation'
 
 interface CalculatorInputs {
   startupCosts: number
@@ -12,6 +13,7 @@ interface CalculatorInputs {
 
 export default function BreakEvenCalculator() {
   const { businessProfile } = useBusinessProfile()
+  const { t } = useTranslation()
   
   const [inputs, setInputs] = useState<CalculatorInputs>({
     startupCosts: 10000,
@@ -89,23 +91,23 @@ export default function BreakEvenCalculator() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Break-Even Calculator</h1>
+        <h1 className="text-2xl font-bold text-gray-900">{t('Break-Even Calculator')}</h1>
         <p className="text-gray-600">
-          Find out exactly how many sales you need to cover your costs
+          {t('Find out exactly how many sales you need to cover your costs')}
         </p>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Input Panel */}
         <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-6">Your Numbers</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-6">{t('Your Numbers')}</h2>
           
           <div className="space-y-6">
             {/* Startup Costs */}
             <div>
               <label className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-gray-700">Initial Startup Costs</span>
-                <span className="text-xs text-gray-500">One-time investment</span>
+                <span className="text-sm font-medium text-gray-700">{t('Initial Startup Costs')}</span>
+                <span className="text-xs text-gray-500">{t('One-time investment')}</span>
               </label>
               <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
@@ -117,14 +119,14 @@ export default function BreakEvenCalculator() {
                   placeholder="10000"
                 />
               </div>
-              <p className="mt-1 text-xs text-gray-500">Equipment, inventory, setup, legal fees, etc.</p>
+              <p className="mt-1 text-xs text-gray-500">{t('Equipment, inventory, setup, legal fees, etc.')}</p>
             </div>
 
             {/* Monthly Fixed Costs */}
             <div>
               <label className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-gray-700">Monthly Fixed Costs</span>
-                <span className="text-xs text-gray-500">Recurring every month</span>
+                <span className="text-sm font-medium text-gray-700">{t('Monthly Fixed Costs')}</span>
+                <span className="text-xs text-gray-500">{t('Recurring every month')}</span>
               </label>
               <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
@@ -136,14 +138,14 @@ export default function BreakEvenCalculator() {
                   placeholder="3000"
                 />
               </div>
-              <p className="mt-1 text-xs text-gray-500">Rent, utilities, insurance, subscriptions, etc.</p>
+              <p className="mt-1 text-xs text-gray-500">{t('Rent, utilities, insurance, subscriptions, etc.')}</p>
             </div>
 
             {/* Variable Cost Per Unit */}
             <div>
               <label className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-gray-700">Cost Per Sale/Unit</span>
-                <span className="text-xs text-gray-500">Variable cost</span>
+                <span className="text-sm font-medium text-gray-700">{t('Cost Per Sale/Unit')}</span>
+                <span className="text-xs text-gray-500">{t('Variable cost')}</span>
               </label>
               <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
@@ -155,14 +157,14 @@ export default function BreakEvenCalculator() {
                   placeholder="15"
                 />
               </div>
-              <p className="mt-1 text-xs text-gray-500">Materials, packaging, payment processing per item</p>
+              <p className="mt-1 text-xs text-gray-500">{t('Materials, packaging, payment processing per item')}</p>
             </div>
 
             {/* Average Sale Price */}
             <div>
               <label className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-gray-700">Average Sale Price</span>
-                <span className="text-xs text-gray-500">What you charge</span>
+                <span className="text-sm font-medium text-gray-700">{t('Average Sale Price')}</span>
+                <span className="text-xs text-gray-500">{t('What you charge')}</span>
               </label>
               <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">$</span>
@@ -174,7 +176,7 @@ export default function BreakEvenCalculator() {
                   placeholder="50"
                 />
               </div>
-              <p className="mt-1 text-xs text-gray-500">Average revenue per transaction</p>
+              <p className="mt-1 text-xs text-gray-500">{t('Average revenue per transaction')}</p>
             </div>
           </div>
         </div>
@@ -183,23 +185,23 @@ export default function BreakEvenCalculator() {
         <div className="space-y-6">
           {/* Main Break-Even Card */}
           <div className={`rounded-xl p-6 ${calculations.isValid ? 'bg-gradient-to-br from-blue-600 to-indigo-700' : 'bg-gray-400'}`}>
-            <div className="text-white/80 text-sm mb-2">To break even each month, you need</div>
+            <div className="text-white/80 text-sm mb-2">{t('To break even each month, you need')}</div>
             <div className="text-5xl font-bold text-white mb-2">
               {calculations.isValid ? calculations.breakEvenUnitsMonthly.toLocaleString() : '—'}
             </div>
-            <div className="text-white/90 text-lg mb-4">sales per month</div>
+            <div className="text-white/90 text-lg mb-4">{t('sales per month')}</div>
             
             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/20">
               <div>
-                <div className="text-white/70 text-xs">Monthly Revenue Target</div>
+                <div className="text-white/70 text-xs">{t('Monthly Revenue Target')}</div>
                 <div className="text-white font-semibold text-lg">
                   {formatCurrency(calculations.breakEvenRevenueMonthly)}
                 </div>
               </div>
               <div>
-                <div className="text-white/70 text-xs">Daily Sales Needed</div>
+                <div className="text-white/70 text-xs">{t('Daily Sales Needed')}</div>
                 <div className="text-white font-semibold text-lg">
-                  {calculations.isValid ? calculations.breakEvenUnitsDaily : '—'} sales
+                  {calculations.isValid ? calculations.breakEvenUnitsDaily : '—'} {t('sales')}
                 </div>
               </div>
             </div>
@@ -207,18 +209,18 @@ export default function BreakEvenCalculator() {
 
           {/* Profit Margin */}
           <div className="bg-white rounded-xl border border-gray-200 p-6">
-            <h3 className="font-medium text-gray-900 mb-4">Profit Analysis</h3>
+            <h3 className="font-medium text-gray-900 mb-4">{t('Profit Analysis')}</h3>
             
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="text-gray-600">Profit per sale</span>
+                <span className="text-gray-600">{t('Profit per sale')}</span>
                 <span className={`font-semibold ${calculations.contributionMargin > 0 ? 'text-green-600' : 'text-red-600'}`}>
                   {formatCurrency(calculations.contributionMargin)}
                 </span>
               </div>
               
               <div className="flex justify-between items-center">
-                <span className="text-gray-600">Profit margin</span>
+                <span className="text-gray-600">{t('Profit margin')}</span>
                 <span className={`font-semibold ${parseFloat(calculations.profitMarginPercent) > 30 ? 'text-green-600' : parseFloat(calculations.profitMarginPercent) > 15 ? 'text-yellow-600' : 'text-red-600'}`}>
                   {calculations.profitMarginPercent}%
                 </span>

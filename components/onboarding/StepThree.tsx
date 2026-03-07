@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { useTranslation } from '@/components/translation'
 
 const STAGE_OPTIONS = [
   { value: 'idea', label: 'Idea' },
@@ -38,6 +39,7 @@ export function StepThree({ onBack, onSubmit }: StepThreeProps) {
   const [budget, setBudget] = useState('')
   const [goals, setGoals] = useState<string[]>([])
   const [background, setBackground] = useState('')
+  const { t } = useTranslation()
 
   const toggleGoal = (value: string) => {
     setGoals((prev) =>
@@ -54,7 +56,7 @@ export function StepThree({ onBack, onSubmit }: StepThreeProps) {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>
         <span className="mb-2 block font-heading text-sm font-medium text-brand-primary">
-          Stage
+          {t('Stage')}
         </span>
         <div className="space-y-2">
           {STAGE_OPTIONS.map(({ value, label }) => (
@@ -70,7 +72,7 @@ export function StepThree({ onBack, onSubmit }: StepThreeProps) {
                 onChange={(e) => setStage(e.target.value)}
                 className="h-4 w-4 text-brand-accent"
               />
-              <span className="text-sm">{label}</span>
+              <span className="text-sm">{t(label)}</span>
             </label>
           ))}
         </div>
@@ -81,7 +83,7 @@ export function StepThree({ onBack, onSubmit }: StepThreeProps) {
           htmlFor="budget"
           className="mb-2 block font-heading text-sm font-medium text-brand-primary"
         >
-          Budget
+          {t('Budget')}
         </label>
         <select
           id="budget"
@@ -90,7 +92,7 @@ export function StepThree({ onBack, onSubmit }: StepThreeProps) {
           className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
           required
         >
-          <option value="">Select budget range</option>
+          <option value="">{t('Select budget range')}</option>
           {BUDGET_OPTIONS.map(({ value, label }) => (
             <option key={value} value={value}>
               {label}
@@ -101,7 +103,7 @@ export function StepThree({ onBack, onSubmit }: StepThreeProps) {
 
       <div>
         <span className="mb-2 block font-heading text-sm font-medium text-brand-primary">
-          Goals
+          {t('Goals')}
         </span>
         <div className="space-y-2">
           {GOAL_OPTIONS.map(({ value, label }) => (
@@ -115,7 +117,7 @@ export function StepThree({ onBack, onSubmit }: StepThreeProps) {
                 onChange={() => toggleGoal(value)}
                 className="h-4 w-4 rounded text-brand-accent"
               />
-              <span className="text-sm">{label}</span>
+              <span className="text-sm">{t(label)}</span>
             </label>
           ))}
         </div>
@@ -126,7 +128,7 @@ export function StepThree({ onBack, onSubmit }: StepThreeProps) {
           htmlFor="background"
           className="mb-2 block font-heading text-sm font-medium text-brand-primary"
         >
-          Background (optional)
+          {t('Background (optional)')}
         </label>
         <textarea
           id="background"
@@ -134,16 +136,16 @@ export function StepThree({ onBack, onSubmit }: StepThreeProps) {
           onChange={(e) => setBackground(e.target.value)}
           rows={3}
           className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
-          placeholder="Tell us about your experience..."
+          placeholder={t('Tell us about your experience...')}
         />
       </div>
 
       <div className="flex gap-3">
         <Button type="button" variant="outline" onClick={onBack} className="flex-1">
-          Back
+          {t('Back')}
         </Button>
         <Button type="submit" className="flex-1">
-          Submit
+          {t('Submit')}
         </Button>
       </div>
     </form>

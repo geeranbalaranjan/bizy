@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { PROVINCES } from '@/lib/utils/province'
+import { useTranslation } from '@/components/translation'
 
 interface StepTwoProps {
   onNext: (data: {
@@ -17,6 +18,7 @@ export function StepTwo({ onNext, onBack }: StepTwoProps) {
   const [province, setProvince] = useState('')
   const [city, setCity] = useState('')
   const [targetCustomers, setTargetCustomers] = useState('')
+  const { t } = useTranslation()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -30,7 +32,7 @@ export function StepTwo({ onNext, onBack }: StepTwoProps) {
           htmlFor="province"
           className="mb-2 block font-heading text-sm font-medium text-brand-primary"
         >
-          Province / Territory
+          {t('Province / Territory')}
         </label>
         <select
           id="province"
@@ -39,7 +41,7 @@ export function StepTwo({ onNext, onBack }: StepTwoProps) {
           className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
           required
         >
-          <option value="">Select province</option>
+          <option value="">{t('Select province')}</option>
           {PROVINCES.map(({ code, name }) => (
             <option key={code} value={code}>
               {name}
@@ -53,7 +55,7 @@ export function StepTwo({ onNext, onBack }: StepTwoProps) {
           htmlFor="city"
           className="mb-2 block font-heading text-sm font-medium text-brand-primary"
         >
-          City
+          {t('City')}
         </label>
         <input
           id="city"
@@ -61,7 +63,7 @@ export function StepTwo({ onNext, onBack }: StepTwoProps) {
           value={city}
           onChange={(e) => setCity(e.target.value)}
           className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
-          placeholder="Enter your city"
+          placeholder={t('Enter your city')}
           required
         />
       </div>
@@ -71,7 +73,7 @@ export function StepTwo({ onNext, onBack }: StepTwoProps) {
           htmlFor="targetCustomers"
           className="mb-2 block font-heading text-sm font-medium text-brand-primary"
         >
-          Target Customers
+          {t('Target Customers')}
         </label>
         <input
           id="targetCustomers"
@@ -79,17 +81,17 @@ export function StepTwo({ onNext, onBack }: StepTwoProps) {
           value={targetCustomers}
           onChange={(e) => setTargetCustomers(e.target.value)}
           className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
-          placeholder="Who are your target customers?"
+          placeholder={t('Who are your target customers?')}
           required
         />
       </div>
 
       <div className="flex gap-3">
         <Button type="button" variant="outline" onClick={onBack} className="flex-1">
-          Back
+          {t('Back')}
         </Button>
         <Button type="submit" className="flex-1">
-          Continue
+          {t('Continue')}
         </Button>
       </div>
     </form>

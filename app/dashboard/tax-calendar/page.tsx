@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import { useBusinessProfile } from '@/hooks/useBusinessProfile'
+import { useTranslation } from '@/components/translation'
 import { BusinessType } from '@/types'
 
 interface TaxDeadline {
@@ -332,6 +333,7 @@ const MONTHS = [
 
 export default function TaxCalendarPage() {
   const { businessProfile } = useBusinessProfile()
+  const { t } = useTranslation()
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth())
   const [hasPayroll, setHasPayroll] = useState(false)
   const [hasGST, setHasGST] = useState(true)
@@ -403,16 +405,16 @@ export default function TaxCalendarPage() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Tax Deadline Calendar</h1>
+        <h1 className="text-2xl font-bold text-gray-900">{t('Tax Deadline Calendar')}</h1>
         <p className="text-gray-600">
-          Never miss a CRA deadline — stay compliant and avoid penalties
+          {t('Never miss a CRA deadline — stay compliant and avoid penalties')}
         </p>
       </div>
 
       {/* Filters */}
       <div className="bg-white rounded-xl border border-gray-200 p-4">
         <div className="flex flex-wrap items-center gap-4">
-          <span className="text-sm font-medium text-gray-700">Show deadlines for:</span>
+          <span className="text-sm font-medium text-gray-700">{t('Show deadlines for')}:</span>
           
           <label className="flex items-center gap-2 cursor-pointer">
             <input
@@ -421,7 +423,7 @@ export default function TaxCalendarPage() {
               onChange={(e) => setHasGST(e.target.checked)}
               className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
             />
-            <span className="text-sm text-gray-700">GST/HST Registered</span>
+            <span className="text-sm text-gray-700">{t('GST/HST Registered')}</span>
           </label>
 
           <label className="flex items-center gap-2 cursor-pointer">
@@ -431,11 +433,11 @@ export default function TaxCalendarPage() {
               onChange={(e) => setHasPayroll(e.target.checked)}
               className="w-4 h-4 text-blue-600 rounded focus:ring-blue-500"
             />
-            <span className="text-sm text-gray-700">Has Employees</span>
+            <span className="text-sm text-gray-700">{t('Has Employees')}</span>
           </label>
 
           <div className="ml-auto text-sm text-gray-500">
-            Showing {filteredDeadlines.length} deadlines
+            {t('Showing')} {filteredDeadlines.length} {t('deadlines')}
           </div>
         </div>
       </div>
@@ -445,7 +447,7 @@ export default function TaxCalendarPage() {
         <div className="lg:col-span-1">
           <div className="bg-white rounded-xl border border-gray-200 p-6 sticky top-6">
             <h2 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-              <span className="text-xl">⏰</span> Coming Up
+              <span className="text-xl">⏰</span> {t('Coming Up')}
             </h2>
             
             <div className="space-y-3">
@@ -462,7 +464,7 @@ export default function TaxCalendarPage() {
                         <div className="text-xs mt-1 opacity-80">{formatDate(deadline.date)}</div>
                       </div>
                       <div className="text-xs font-semibold whitespace-nowrap">
-                        {daysUntil === 0 ? 'TODAY' : daysUntil === 1 ? '1 day' : `${daysUntil} days`}
+                        {daysUntil === 0 ? t('TODAY') : daysUntil === 1 ? `1 ${t('day')}` : `${daysUntil} ${t('days')}`}
                       </div>
                     </div>
                   </div>
@@ -471,26 +473,26 @@ export default function TaxCalendarPage() {
 
               {upcomingDeadlines.length === 0 && (
                 <p className="text-sm text-gray-500 text-center py-4">
-                  No upcoming deadlines with current filters
+                  {t('No upcoming deadlines with current filters')}
                 </p>
               )}
             </div>
 
             {/* Legend */}
             <div className="mt-6 pt-4 border-t border-gray-200">
-              <div className="text-xs font-medium text-gray-500 mb-2">Legend</div>
+              <div className="text-xs font-medium text-gray-500 mb-2">{t('Legend')}</div>
               <div className="space-y-1.5 text-xs">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded bg-red-200 border border-red-400" />
-                  <span className="text-gray-600">Due within 7 days</span>
+                  <span className="text-gray-600">{t('Due within 7 days')}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded bg-amber-200 border border-amber-400" />
-                  <span className="text-gray-600">Due within 30 days</span>
+                  <span className="text-gray-600">{t('Due within 30 days')}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded bg-green-200 border border-green-400" />
-                  <span className="text-gray-600">30+ days away</span>
+                  <span className="text-gray-600">{t('30+ days away')}</span>
                 </div>
               </div>
             </div>
@@ -568,7 +570,7 @@ export default function TaxCalendarPage() {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700"
                           >
-                            File Now →
+                            {t('File Now')} →
                           </a>
                         </div>
                       </div>
@@ -580,7 +582,7 @@ export default function TaxCalendarPage() {
               {!deadlinesByMonth[selectedMonth] && (
                 <div className="p-12 text-center">
                   <div className="text-4xl mb-3">🎉</div>
-                  <p className="text-gray-600">No deadlines this month!</p>
+                  <p className="text-gray-600">{t('No deadlines this month!')}</p>
                 </div>
               )}
             </div>
@@ -590,16 +592,16 @@ export default function TaxCalendarPage() {
 
       {/* Tips */}
       <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-6">
-        <h3 className="font-semibold text-gray-900 mb-3">⚠️ Common Mistakes That Cost New Business Owners</h3>
+        <h3 className="font-semibold text-gray-900 mb-3">⚠️ {t('Common Mistakes That Cost New Business Owners')}</h3>
         <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-700">
           <div>
-            <strong>Missing payroll remittances</strong> — The CRA is ruthless about payroll. Late = automatic penalties every single time.
+            <strong>{t('Missing payroll remittances')}</strong> — {t('The CRA is ruthless about payroll. Late = automatic penalties every single time.')}
           </div>
           <div>
-            <strong>Forgetting GST/HST</strong> — That money isn&apos;t yours. Set it aside monthly or quarterly payments become a shock.
+            <strong>{t('Forgetting GST/HST')}</strong> — {t("That money isn't yours. Set it aside monthly or quarterly payments become a shock.")}
           </div>
           <div>
-            <strong>No instalments</strong> — If you owe $3K+ in taxes, CRA expects quarterly instalments. Interest adds up fast.
+            <strong>{t('No instalments')}</strong> — {t('If you owe $3K+ in taxes, CRA expects quarterly instalments. Interest adds up fast.')}
           </div>
         </div>
       </div>

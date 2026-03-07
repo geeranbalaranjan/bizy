@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useBusinessProfile } from '@/hooks/useBusinessProfile'
+import { useTranslation } from '@/components/translation'
 import { BusinessType } from '@/types'
 
 interface Competitor {
@@ -41,20 +42,47 @@ const RADIUS_OPTIONS = [
   { value: 10000, label: '10 km' },
 ]
 
-// Canadian city coordinates for quick selection
+// Canadian city coordinates for quick selection and auto-lookup
 const CANADIAN_CITIES = [
-  { name: 'Toronto, ON', lat: 43.6532, lng: -79.3832 },
-  { name: 'Vancouver, BC', lat: 49.2827, lng: -123.1207 },
-  { name: 'Calgary, AB', lat: 51.0447, lng: -114.0719 },
-  { name: 'Montreal, QC', lat: 45.5017, lng: -73.5673 },
-  { name: 'Ottawa, ON', lat: 45.4215, lng: -75.6972 },
-  { name: 'Edmonton, AB', lat: 53.5461, lng: -113.4937 },
-  { name: 'Winnipeg, MB', lat: 49.8951, lng: -97.1384 },
-  { name: 'Halifax, NS', lat: 44.6488, lng: -63.5752 },
+  { name: 'Toronto, ON', lat: 43.6532, lng: -79.3832, aliases: ['toronto'] },
+  { name: 'Vancouver, BC', lat: 49.2827, lng: -123.1207, aliases: ['vancouver'] },
+  { name: 'Calgary, AB', lat: 51.0447, lng: -114.0719, aliases: ['calgary'] },
+  { name: 'Montreal, QC', lat: 45.5017, lng: -73.5673, aliases: ['montreal', 'montréal'] },
+  { name: 'Ottawa, ON', lat: 45.4215, lng: -75.6972, aliases: ['ottawa'] },
+  { name: 'Edmonton, AB', lat: 53.5461, lng: -113.4937, aliases: ['edmonton'] },
+  { name: 'Winnipeg, MB', lat: 49.8951, lng: -97.1384, aliases: ['winnipeg'] },
+  { name: 'Halifax, NS', lat: 44.6488, lng: -63.5752, aliases: ['halifax'] },
+  { name: 'Victoria, BC', lat: 48.4284, lng: -123.3656, aliases: ['victoria'] },
+  { name: 'Quebec City, QC', lat: 46.8139, lng: -71.2080, aliases: ['quebec', 'québec', 'quebec city'] },
+  { name: 'Saskatoon, SK', lat: 52.1579, lng: -106.6702, aliases: ['saskatoon'] },
+  { name: 'Regina, SK', lat: 50.4452, lng: -104.6189, aliases: ['regina'] },
+  { name: 'Kitchener, ON', lat: 43.4516, lng: -80.4925, aliases: ['kitchener', 'waterloo', 'kitchener-waterloo'] },
+  { name: 'London, ON', lat: 42.9849, lng: -81.2453, aliases: ['london'] },
+  { name: 'Hamilton, ON', lat: 43.2557, lng: -79.8711, aliases: ['hamilton'] },
+  { name: 'Mississauga, ON', lat: 43.5890, lng: -79.6441, aliases: ['mississauga'] },
+  { name: 'Brampton, ON', lat: 43.7315, lng: -79.7624, aliases: ['brampton'] },
+  { name: 'Surrey, BC', lat: 49.1913, lng: -122.8490, aliases: ['surrey'] },
+  { name: 'Markham, ON', lat: 43.8561, lng: -79.3370, aliases: ['markham'] },
+  { name: 'St. John\'s, NL', lat: 47.5615, lng: -52.7126, aliases: ['st. john\'s', 'st johns', 'saint johns'] },
+  { name: 'Moncton, NB', lat: 46.0878, lng: -64.7782, aliases: ['moncton'] },
+  { name: 'Charlottetown, PE', lat: 46.2382, lng: -63.1311, aliases: ['charlottetown'] },
+  { name: 'Whitehorse, YT', lat: 60.7212, lng: -135.0568, aliases: ['whitehorse'] },
+  { name: 'Yellowknife, NT', lat: 62.4540, lng: -114.3718, aliases: ['yellowknife'] },
+  { name: 'Iqaluit, NU', lat: 63.7467, lng: -68.5170, aliases: ['iqaluit'] },
 ]
+
+// Helper to find city coordinates by name
+const findCityByName = (cityName: string): typeof CANADIAN_CITIES[0] | null => {
+  const searchName = cityName.toLowerCase().trim()
+  return CANADIAN_CITIES.find(city => 
+    city.name.toLowerCase().includes(searchName) ||
+    city.aliases.some(alias => alias.toLowerCase() === searchName || searchName.includes(alias))
+  ) || null
+}
 
 export default function CompetitorMapPage() {
   const { businessProfile } = useBusinessProfile()
+  const { t } = useTranslation()
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstanceRef = useRef<any>(null)
   const markersRef = useRef<any[]>([])
@@ -67,10 +95,12 @@ export default function CompetitorMapPage() {
   
   const [competitors, setCompetitors] = useState<Competitor[]>([])
   const [isLoading, setIsLoading] = useState(false)
+  const [isGettingLocation, setIsGettingLocation] = useState(false)
   const [isDemo, setIsDemo] = useState(false)
   const [error, setError] = useState('')
   const [mapLoaded, setMapLoaded] = useState(false)
   const [selectedCompetitor, setSelectedCompetitor] = useState<Competitor | null>(null)
+  const [profileLoaded, setProfileLoaded] = useState(false)
 
   // Load Leaflet CSS and JS
   useEffect(() => {
@@ -192,13 +222,36 @@ export default function CompetitorMapPage() {
     }
   }, [competitors, location])
 
+  // Auto-populate from business profile on mount
+  useEffect(() => {
+    if (profileLoaded || !businessProfile) return
+    
+    // Set business type from profile
+    if (businessProfile.businessType) {
+      setBusinessType(businessProfile.businessType)
+    }
+    
+    // Try to find and set location from profile city
+    if (businessProfile.city) {
+      const cityMatch = findCityByName(businessProfile.city)
+      if (cityMatch) {
+        setLocation({ lat: cityMatch.lat, lng: cityMatch.lng })
+        setLocationName(`${businessProfile.city}, ${businessProfile.province}`)
+      }
+    }
+    
+    setProfileLoaded(true)
+  }, [businessProfile, profileLoaded])
+
   const getCurrentLocation = () => {
     if (!navigator.geolocation) {
-      setError('Geolocation is not supported by your browser')
+      setError('Geolocation is not supported by your browser. Please select a city from the list.')
       return
     }
 
-    setIsLoading(true)
+    setIsGettingLocation(true)
+    setError('')
+    
     navigator.geolocation.getCurrentPosition(
       (position) => {
         setLocation({
@@ -206,11 +259,30 @@ export default function CompetitorMapPage() {
           lng: position.coords.longitude
         })
         setLocationName('Current Location')
-        setIsLoading(false)
+        setIsGettingLocation(false)
+        setError('')
       },
       (err) => {
-        setError('Unable to get your location. Please select a city.')
-        setIsLoading(false)
+        setIsGettingLocation(false)
+        // Provide specific error messages based on error code
+        switch (err.code) {
+          case err.PERMISSION_DENIED:
+            setError('Location access denied. Please enable location in your browser settings, or select a city below.')
+            break
+          case err.POSITION_UNAVAILABLE:
+            setError('Location unavailable. Please select a city from the list.')
+            break
+          case err.TIMEOUT:
+            setError('Location request timed out. Please try again or select a city.')
+            break
+          default:
+            setError('Unable to get your location. Please select a city below.')
+        }
+      },
+      {
+        enableHighAccuracy: false,
+        timeout: 10000,
+        maximumAge: 300000 // Cache for 5 minutes
       }
     )
   }
@@ -273,10 +345,17 @@ export default function CompetitorMapPage() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Competitor Map</h1>
+        <h1 className="text-2xl font-bold text-gray-900">{t('Competitor Map')}</h1>
         <p className="text-gray-600">
-          See how saturated your area is with similar businesses
+          {t('See how saturated your area is with similar businesses')}
         </p>
+        {businessProfile && (
+          <div className="mt-3 inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-50 text-indigo-700 rounded-lg text-sm">
+            <span>🏢</span>
+            <span>{t('Showing competitors for')} <strong>{businessProfile.businessName}</strong></span>
+            {businessProfile.city && <span className="text-indigo-500">{t('in')} {businessProfile.city}, {businessProfile.province}</span>}
+          </div>
+        )}
       </div>
 
       <div className="grid lg:grid-cols-3 gap-6">
@@ -284,21 +363,35 @@ export default function CompetitorMapPage() {
         <div className="lg:col-span-1 space-y-6">
           {/* Location Selection */}
           <div className="bg-white rounded-xl border border-gray-200 p-6">
-            <h2 className="font-semibold text-gray-900 mb-4">📍 Set Your Location</h2>
+            <h2 className="font-semibold text-gray-900 mb-4">📍 {t('Set Your Location')}</h2>
             
             <button
               onClick={getCurrentLocation}
-              className="w-full mb-4 py-3 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+              disabled={isGettingLocation}
+              className="w-full mb-4 py-3 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-70 transition-colors flex items-center justify-center gap-2"
             >
-              <span>📍</span> Use My Location
+              {isGettingLocation ? (
+                <>
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  {t('Getting Location...')}
+                </>
+              ) : (
+                <><span>📍</span> {t('Use My Location')}</>
+              )}
             </button>
+            
+            {error && (
+              <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-800">
+                ⚠️ {error}
+              </div>
+            )}
 
             <div className="relative mb-4">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-gray-200" />
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-white px-2 text-gray-500">or select a city</span>
+                <span className="bg-white px-2 text-gray-500">{t('or select a city')}</span>
               </div>
             </div>
 
@@ -320,19 +413,19 @@ export default function CompetitorMapPage() {
 
             {location && (
               <div className="mt-4 p-3 bg-green-50 rounded-lg text-sm text-green-800">
-                ✓ Location set: {locationName || `${location.lat.toFixed(4)}, ${location.lng.toFixed(4)}`}
+                ✓ {t('Location set')}: {locationName || `${location.lat.toFixed(4)}, ${location.lng.toFixed(4)}`}
               </div>
             )}
           </div>
 
           {/* Search Options */}
           <div className="bg-white rounded-xl border border-gray-200 p-6">
-            <h2 className="font-semibold text-gray-900 mb-4">🔍 Search Options</h2>
+            <h2 className="font-semibold text-gray-900 mb-4">🔍 {t('Search Options')}</h2>
 
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Business Type
+                  {t('Business Type')}
                 </label>
                 <select
                   value={businessType}
@@ -340,14 +433,14 @@ export default function CompetitorMapPage() {
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                 >
                   {BUSINESS_TYPES.map(type => (
-                    <option key={type.value} value={type.value}>{type.label}</option>
+                    <option key={type.value} value={type.value}>{t(type.label)}</option>
                   ))}
                 </select>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Search Radius
+                  {t('Search Radius')}
                 </label>
                 <div className="grid grid-cols-4 gap-2">
                   {RADIUS_OPTIONS.map(opt => (
@@ -368,13 +461,13 @@ export default function CompetitorMapPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Keyword (optional)
+                  {t('Keyword (optional)')}
                 </label>
                 <input
                   type="text"
                   value={keyword}
                   onChange={(e) => setKeyword(e.target.value)}
-                  placeholder="e.g., pizza, salon, lawyer"
+                  placeholder={t('e.g., pizza, salon, lawyer')}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -387,10 +480,10 @@ export default function CompetitorMapPage() {
                 {isLoading ? (
                   <>
                     <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Searching...
+                    {t('Searching...')}
                   </>
                 ) : (
-                  <>🔍 Find Competitors</>
+                  <>🔍 {t('Find Competitors')}</>
                 )}
               </button>
             </div>
@@ -399,21 +492,21 @@ export default function CompetitorMapPage() {
           {/* Results Stats */}
           {competitors.length > 0 && (
             <div className="bg-white rounded-xl border border-gray-200 p-6">
-              <h2 className="font-semibold text-gray-900 mb-4">📊 Analysis</h2>
+              <h2 className="font-semibold text-gray-900 mb-4">📊 {t('Analysis')}</h2>
 
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Competitors Found</span>
+                  <span className="text-gray-600">{t('Competitors Found')}</span>
                   <span className="text-2xl font-bold text-gray-900">{competitors.length}</span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Search Area</span>
+                  <span className="text-gray-600">{t('Search Area')}</span>
                   <span className="font-medium">{(Math.PI * Math.pow(radius / 1000, 2)).toFixed(1)} km²</span>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Avg Rating</span>
+                  <span className="text-gray-600">{t('Avg Rating')}</span>
                   <span className="font-medium">
                     ⭐ {competitors.filter(c => c.rating).length > 0
                       ? (competitors.reduce((sum, c) => sum + (c.rating || 0), 0) / competitors.filter(c => c.rating).length).toFixed(1)
@@ -532,12 +625,6 @@ export default function CompetitorMapPage() {
           )}
         </div>
       </div>
-
-      {error && (
-        <div className="bg-red-50 border border-red-200 rounded-xl p-4 text-red-700">
-          {error}
-        </div>
-      )}
 
       {/* Tips */}
       <div className="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl p-6">

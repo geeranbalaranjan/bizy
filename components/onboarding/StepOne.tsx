@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { useTranslation } from '@/components/translation'
 
 const BUSINESS_TYPES = [
   { value: 'food', label: 'Food & Beverage' },
@@ -26,6 +27,7 @@ export function StepOne({ onNext }: StepOneProps) {
   const [businessName, setBusinessName] = useState('')
   const [businessType, setBusinessType] = useState('')
   const [businessDescription, setBusinessDescription] = useState('')
+  const { t } = useTranslation()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -39,7 +41,7 @@ export function StepOne({ onNext }: StepOneProps) {
           htmlFor="businessName"
           className="mb-2 block font-heading text-sm font-medium text-brand-primary"
         >
-          Business Name
+          {t('Business Name')}
         </label>
         <input
           id="businessName"
@@ -47,7 +49,7 @@ export function StepOne({ onNext }: StepOneProps) {
           value={businessName}
           onChange={(e) => setBusinessName(e.target.value)}
           className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
-          placeholder="Enter your business name"
+          placeholder={t('Enter your business name')}
           required
         />
       </div>
@@ -57,7 +59,7 @@ export function StepOne({ onNext }: StepOneProps) {
           htmlFor="businessType"
           className="mb-2 block font-heading text-sm font-medium text-brand-primary"
         >
-          Business Type
+          {t('Business Type')}
         </label>
         <select
           id="businessType"
@@ -66,10 +68,10 @@ export function StepOne({ onNext }: StepOneProps) {
           className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
           required
         >
-          <option value="">Select business type</option>
+          <option value="">{t('Select business type')}</option>
           {BUSINESS_TYPES.map(({ value, label }) => (
             <option key={value} value={value}>
-              {label}
+              {t(label)}
             </option>
           ))}
         </select>
@@ -80,7 +82,7 @@ export function StepOne({ onNext }: StepOneProps) {
           htmlFor="businessDescription"
           className="mb-2 block font-heading text-sm font-medium text-brand-primary"
         >
-          Business Description
+          {t('Business Description')}
         </label>
         <textarea
           id="businessDescription"
@@ -88,12 +90,12 @@ export function StepOne({ onNext }: StepOneProps) {
           onChange={(e) => setBusinessDescription(e.target.value)}
           rows={4}
           className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
-          placeholder="Describe your business..."
+          placeholder={t('Describe your business...')}
         />
       </div>
 
       <Button type="submit" className="w-full">
-        Continue
+        {t('Continue')}
       </Button>
     </form>
   )

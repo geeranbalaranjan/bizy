@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import { Menu } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { LanguageSelector } from '@/components/translation'
+import { LanguageSelector, useTranslation } from '@/components/translation'
 
 interface TopNavProps {
   onMenuClick?: () => void
@@ -14,6 +14,7 @@ interface TopNavProps {
 
 export function TopNav({ onMenuClick, className }: TopNavProps) {
   const { user, isLoading } = useUser()
+  const { t } = useTranslation()
 
   return (
     <header
@@ -53,7 +54,7 @@ export function TopNav({ onMenuClick, className }: TopNavProps) {
               href="/api/auth/logout"
               className="rounded-lg bg-white/10 px-3 py-2 text-sm font-medium text-white hover:bg-white/20"
             >
-              Logout
+              {t('Logout')}
             </Link>
           </>
         ) : (
@@ -61,7 +62,7 @@ export function TopNav({ onMenuClick, className }: TopNavProps) {
             href="/api/auth/login"
             className="rounded-lg bg-brand-accent px-3 py-2 text-sm font-medium text-white hover:opacity-90"
           >
-            Login
+            {t('Login')}
           </Link>
         )}
       </div>

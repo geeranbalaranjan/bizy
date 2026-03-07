@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useTranslation } from '@/components/translation'
 import {
   LayoutDashboard,
   Zap,
@@ -17,6 +18,7 @@ import {
   CalendarClock,
   Sparkles,
   MapPin,
+  Home,
 } from 'lucide-react'
 
 const navItems = [
@@ -44,6 +46,7 @@ const navItems = [
 
 export function Sidebar() {
   const pathname = usePathname()
+  const { t } = useTranslation()
 
   return (
     <aside className="w-64 min-h-screen bg-brand-primary border-r border-white/10 flex flex-col">
@@ -64,7 +67,7 @@ export function Sidebar() {
               }`}
             >
               <item.icon className="w-5 h-5 shrink-0" />
-              <span className="font-medium">{item.label}</span>
+              <span className="font-medium">{t(item.label)}</span>
             </Link>
             {'children' in item &&
               item.children?.map((child) => (
@@ -78,12 +81,22 @@ export function Sidebar() {
                   }`}
                 >
                   <child.icon className="w-4 h-4 shrink-0" />
-                  <span className="text-sm">{child.label}</span>
+                  <span className="text-sm">{t(child.label)}</span>
                 </Link>
               ))}
           </div>
         ))}
       </nav>
+      {/* Back to Home */}
+      <div className="p-4 border-t border-white/10">
+        <Link
+          href="/"
+          className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors"
+        >
+          <Home className="w-5 h-5 shrink-0" />
+          <span className="font-medium">{t('Back to Home')}</span>
+        </Link>
+      </div>
     </aside>
   )
 }

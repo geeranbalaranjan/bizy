@@ -6,11 +6,13 @@ import Link from 'next/link'
 import { Zap, Map, Shield, Store, User } from 'lucide-react'
 import { useUser } from '@auth0/nextjs-auth0/client'
 import { useBusinessProfile } from '@/hooks/useBusinessProfile'
+import { useTranslation } from '@/components/translation'
 
 export default function DashboardPage() {
   const router = useRouter()
   const { user } = useUser()
   const { businessProfile, loading, needsOnboarding } = useBusinessProfile()
+  const { t } = useTranslation()
 
   // Redirect to onboarding if no profile
   useEffect(() => {
@@ -21,29 +23,29 @@ export default function DashboardPage() {
 
   const cards = [
     {
-      title: 'Viability',
-      description: 'Validate your business idea',
+      title: t('Viability'),
+      description: t('Validate your business idea'),
       href: '/dashboard/viability',
       icon: Zap,
       color: 'text-brand-accent',
     },
     {
-      title: 'Roadmap',
-      description: 'Your launch checklist',
+      title: t('Roadmap'),
+      description: t('Your launch checklist'),
       href: '/dashboard/roadmap',
       icon: Map,
       color: 'text-brand-highlight',
     },
     {
-      title: 'Compliance',
-      description: 'CRA, licenses, HR',
+      title: t('Compliance'),
+      description: t('CRA, licenses, HR'),
       href: '/dashboard/compliance',
       icon: Shield,
       color: 'text-success',
     },
     {
-      title: 'Storefront',
-      description: 'Build your online presence',
+      title: t('Storefront'),
+      description: t('Build your online presence'),
       href: '/dashboard/storefront',
       icon: Store,
       color: 'text-brand-accent',
@@ -53,7 +55,7 @@ export default function DashboardPage() {
   if (loading) {
     return (
       <div className="p-6 flex items-center justify-center min-h-[50vh]">
-        <div className="animate-pulse text-gray-500">Loading...</div>
+        <div className="animate-pulse text-gray-500">{t('Loading...')}</div>
       </div>
     )
   }
@@ -76,7 +78,7 @@ export default function DashboardPage() {
           )}
           <div>
             <h1 className="text-3xl font-heading font-bold text-brand-primary">
-              Welcome back{businessProfile?.businessName ? `, ${businessProfile.businessName}` : ''}
+              {t('Welcome back')}{businessProfile?.businessName ? `, ${businessProfile.businessName}` : ''}
             </h1>
             {user?.email && (
               <p className="text-gray-500 text-sm">{user.email}</p>
@@ -89,19 +91,19 @@ export default function DashboardPage() {
           <div className="mt-4 p-4 rounded-lg bg-gray-50 border border-gray-200">
             <div className="flex flex-wrap gap-4 text-sm">
               <div>
-                <span className="text-gray-500">Business Type:</span>{' '}
+                <span className="text-gray-500">{t('Business Type')}:</span>{' '}
                 <span className="font-medium text-brand-primary capitalize">
                   {businessProfile.businessType}
                 </span>
               </div>
               <div>
-                <span className="text-gray-500">Location:</span>{' '}
+                <span className="text-gray-500">{t('Location')}:</span>{' '}
                 <span className="font-medium text-brand-primary">
                   {businessProfile.city}, {businessProfile.province}
                 </span>
               </div>
               <div>
-                <span className="text-gray-500">Stage:</span>{' '}
+                <span className="text-gray-500">{t('Stage')}:</span>{' '}
                 <span className="font-medium text-brand-primary capitalize">
                   {businessProfile.stage}
                 </span>
@@ -113,7 +115,7 @@ export default function DashboardPage() {
 
       {/* Feature Cards */}
       <h2 className="text-xl font-heading font-semibold text-brand-primary mb-4">
-        What would you like to do?
+        {t('What would you like to do?')}
       </h2>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {cards.map(({ title, description, href, icon: Icon, color }) => (

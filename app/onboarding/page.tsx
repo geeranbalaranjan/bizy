@@ -9,6 +9,7 @@ import { StepOne } from '@/components/onboarding/StepOne'
 import { StepTwo } from '@/components/onboarding/StepTwo'
 import { StepThree } from '@/components/onboarding/StepThree'
 import { useBusinessProfile } from '@/hooks/useBusinessProfile'
+import { useTranslation } from '@/components/translation'
 import type { BusinessProfile, BusinessType, CanadianProvince, BudgetRange } from '@/types'
 
 type StepOneData = {
@@ -34,6 +35,7 @@ export default function OnboardingPage() {
   const router = useRouter()
   const { user, isLoading } = useUser()
   const { setBusinessProfile, businessProfile, loading: profileLoading } = useBusinessProfile()
+  const { t } = useTranslation()
   
   const [currentStep, setCurrentStep] = useState(1)
   const [formData, setFormData] = useState<Partial<BusinessProfile>>({})
@@ -99,7 +101,7 @@ export default function OnboardingPage() {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="animate-pulse text-gray-500">Loading...</div>
+        <div className="animate-pulse text-gray-500">{t('Loading...')}</div>
       </div>
     )
   }
@@ -116,7 +118,7 @@ export default function OnboardingPage() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            Back to Home
+            {t('Back to Home')}
           </Link>
           <span className="text-xl font-heading font-bold text-brand-primary">Bizy</span>
           <div className="w-20" /> {/* Spacer for centering */}
@@ -127,14 +129,14 @@ export default function OnboardingPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-heading font-bold text-brand-primary mb-2">
-            {currentStep === 1 && 'Tell us about your business'}
-            {currentStep === 2 && 'Where are you located?'}
-            {currentStep === 3 && 'Final details'}
+            {currentStep === 1 && t('Tell us about your business')}
+            {currentStep === 2 && t('Where are you located?')}
+            {currentStep === 3 && t('Final details')}
           </h1>
           <p className="text-gray-500">
-            {currentStep === 1 && 'This helps us personalize your experience'}
-            {currentStep === 2 && "We'll show you relevant regulations and grants"}
-            {currentStep === 3 && 'Almost done! Just a few more questions'}
+            {currentStep === 1 && t('This helps us personalize your experience')}
+            {currentStep === 2 && t("We'll show you relevant regulations and grants")}
+            {currentStep === 3 && t('Almost done! Just a few more questions')}
           </p>
         </div>
 
@@ -155,7 +157,7 @@ export default function OnboardingPage() {
         {/* User info */}
         {user && (
           <p className="text-center text-sm text-gray-400 mt-6">
-            Signed in as {user.email}
+            {t('Signed in as')} {user.email}
           </p>
         )}
       </div>

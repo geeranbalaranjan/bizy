@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY || ''
+// Support both server-side and public env variable names
+const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY || process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''
 
 // Map business types to Google Places types
 const BUSINESS_TYPE_TO_PLACES: Record<string, string[]> = {

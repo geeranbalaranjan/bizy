@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useBusinessProfile } from '@/hooks/useBusinessProfile'
+import { useTranslation } from '@/components/translation'
 import { BusinessType, CanadianProvince } from '@/types'
 
 const BUSINESS_TYPES: { value: BusinessType; label: string }[] = [
@@ -49,6 +50,7 @@ interface GeneratedName {
 
 export default function BusinessNameGeneratorPage() {
   const { businessProfile } = useBusinessProfile()
+  const { t } = useTranslation()
   
   const [industry, setIndustry] = useState<BusinessType>(businessProfile?.businessType || 'services')
   const [vibe, setVibe] = useState('professional')
@@ -120,7 +122,7 @@ Return ONLY the JSON array, no other text.`,
       setGeneratedNames(names)
     } catch (err) {
       console.error('Generation error:', err)
-      setError('Failed to generate names. Please try again.')
+      setError(t('Failed to generate names. Please try again.'))
       
       // Fallback mock data for demo
       setGeneratedNames([
@@ -198,9 +200,9 @@ Return ONLY the JSON array, no other text.`,
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Business Name Generator</h1>
+        <h1 className="text-2xl font-bold text-gray-900">{t('Business Name Generator')}</h1>
         <p className="text-gray-600">
-          AI-powered name ideas tailored for Canadian businesses
+          {t('AI-powered name ideas tailored for Canadian businesses')}
         </p>
       </div>
 
@@ -208,12 +210,12 @@ Return ONLY the JSON array, no other text.`,
         {/* Input Panel */}
         <div className="lg:col-span-1">
           <div className="bg-white rounded-xl border border-gray-200 p-6 sticky top-6">
-            <h2 className="font-semibold text-gray-900 mb-6">Tell us about your business</h2>
+            <h2 className="font-semibold text-gray-900 mb-6">{t('Tell us about your business')}</h2>
 
             {/* Industry */}
             <div className="mb-5">
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Industry
+                {t('Industry')}
               </label>
               <select
                 value={industry}
@@ -229,7 +231,7 @@ Return ONLY the JSON array, no other text.`,
             {/* Vibe */}
             <div className="mb-5">
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Brand Vibe
+                {t('Brand Vibe')}
               </label>
               <div className="grid grid-cols-2 gap-2">
                 {VIBES.map(v => (
@@ -252,7 +254,7 @@ Return ONLY the JSON array, no other text.`,
             {/* Province */}
             <div className="mb-5">
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Province
+                {t('Province')}
               </label>
               <select
                 value={province}
@@ -268,16 +270,16 @@ Return ONLY the JSON array, no other text.`,
             {/* Keywords */}
             <div className="mb-6">
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Keywords (optional)
+                {t('Keywords (optional)')}
               </label>
               <input
                 type="text"
                 value={keywords}
                 onChange={(e) => setKeywords(e.target.value)}
-                placeholder="e.g., sustainable, family, innovation"
+                placeholder={t('e.g., sustainable, family, innovation')}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
-              <p className="text-xs text-gray-500 mt-1">Add concepts you want reflected in the name</p>
+              <p className="text-xs text-gray-500 mt-1">{t('Add concepts you want reflected in the name')}</p>
             </div>
 
             {/* Generate Button */}
@@ -289,11 +291,11 @@ Return ONLY the JSON array, no other text.`,
               {isGenerating ? (
                 <>
                   <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  Generating...
+                  {t('Generating...')}
                 </>
               ) : (
                 <>
-                  ✨ Generate Names
+                  ✨ {t('Generate Names')}
                 </>
               )}
             </button>
@@ -310,15 +312,15 @@ Return ONLY the JSON array, no other text.`,
             <div className="bg-white rounded-xl border border-gray-200 p-12 text-center">
               <div className="text-5xl mb-4">💡</div>
               <h3 className="text-lg font-medium text-gray-900 mb-2">
-                Ready to find your perfect business name?
+                {t('Ready to find your perfect business name?')}
               </h3>
               <p className="text-gray-600 mb-6">
-                Fill in the details and click Generate to get AI-powered suggestions tailored for Canadian businesses.
+                {t('Fill in the details and click Generate to get AI-powered suggestions tailored for Canadian businesses.')}
               </p>
               <div className="flex justify-center gap-2 text-sm text-gray-500">
-                <span className="px-3 py-1 bg-gray-100 rounded-full">Memorable</span>
-                <span className="px-3 py-1 bg-gray-100 rounded-full">Domain-ready</span>
-                <span className="px-3 py-1 bg-gray-100 rounded-full">Canadian-focused</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full">{t('Memorable')}</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full">{t('Domain-ready')}</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full">{t('Canadian-focused')}</span>
               </div>
             </div>
           ) : (
@@ -328,7 +330,7 @@ Return ONLY the JSON array, no other text.`,
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
                   <div className="flex items-center gap-2 text-sm">
                     <span className="text-amber-600">⭐</span>
-                    <span className="font-medium text-amber-900">Favorites:</span>
+                    <span className="font-medium text-amber-900">{t('Favorites')}:</span>
                     {Array.from(favorites).map(name => (
                       <span key={name} className="px-2 py-1 bg-amber-100 text-amber-800 rounded-full text-xs">
                         {name}
@@ -376,7 +378,7 @@ Return ONLY the JSON array, no other text.`,
                           rel="noopener noreferrer"
                           className="text-xs text-blue-600 hover:underline"
                         >
-                          Check availability
+                          {t('Check availability')}
                         </a>
                       </div>
                     </div>
@@ -388,7 +390,7 @@ Return ONLY the JSON array, no other text.`,
                         onClick={() => copyName(item.name)}
                         className="flex-1 px-3 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
                       >
-                        📋 Copy Name
+                        📋 {t('Copy Name')}
                       </button>
                       <button
                         onClick={() => {
@@ -397,7 +399,7 @@ Return ONLY the JSON array, no other text.`,
                         }}
                         className="px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors"
                       >
-                        Copy All
+                        {t('Copy All')}
                       </button>
                     </div>
                   </div>
@@ -411,7 +413,7 @@ Return ONLY the JSON array, no other text.`,
                   disabled={isGenerating}
                   className="px-6 py-2 text-blue-600 hover:text-blue-700 font-medium disabled:opacity-50"
                 >
-                  🔄 Generate More Names
+                  🔄 {t('Generate More Names')}
                 </button>
               </div>
             </div>
@@ -421,19 +423,19 @@ Return ONLY the JSON array, no other text.`,
 
       {/* Tips */}
       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6">
-        <h3 className="font-semibold text-gray-900 mb-3">💡 Tips for Choosing Your Business Name</h3>
+        <h3 className="font-semibold text-gray-900 mb-3">💡 {t('Tips for Choosing Your Business Name')}</h3>
         <div className="grid md:grid-cols-4 gap-4 text-sm text-gray-700">
           <div>
-            <strong>Check the registry</strong> — Verify your name isn&apos;t already registered in your province&apos;s business registry.
+            <strong>{t('Check the registry')}</strong> — {t("Verify your name isn't already registered in your province's business registry.")}
           </div>
           <div>
-            <strong>Secure the domain</strong> — Lock down the .ca and .com before announcing anything.
+            <strong>{t('Secure the domain')}</strong> — {t('Lock down the .ca and .com before announcing anything.')}
           </div>
           <div>
-            <strong>Say it out loud</strong> — Your name will be said thousands of times. Make sure it&apos;s easy to pronounce.
+            <strong>{t('Say it out loud')}</strong> — {t("Your name will be said thousands of times. Make sure it's easy to pronounce.")}
           </div>
           <div>
-            <strong>Check social handles</strong> — Ensure @yourname is available on Instagram, LinkedIn, and X.
+            <strong>{t('Check social handles')}</strong> — {t('Ensure @yourname is available on Instagram, LinkedIn, and X.')}
           </div>
         </div>
       </div>
