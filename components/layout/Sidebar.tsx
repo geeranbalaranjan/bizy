@@ -13,6 +13,10 @@ import {
   FileText,
   Award,
   Users,
+  Calculator,
+  CalendarClock,
+  Sparkles,
+  MapPin,
 } from 'lucide-react'
 
 const navItems = [
@@ -29,6 +33,10 @@ const navItems = [
       { href: '/dashboard/compliance/hr', label: 'HR Onboarding', icon: Users },
     ],
   },
+  { href: '/dashboard/calculator', label: 'Break-Even Calculator', icon: Calculator },
+  { href: '/dashboard/tax-calendar', label: 'Tax Calendar', icon: CalendarClock },
+  { href: '/dashboard/name-generator', label: 'Name Generator', icon: Sparkles },
+  { href: '/dashboard/competitor-map', label: 'Competitor Map', icon: MapPin },
   { href: '/dashboard/analytics', label: 'Analytics', icon: BarChart3 },
   { href: '/dashboard/grants', label: 'Grants & Funding', icon: DollarSign },
   { href: '/dashboard/storefront', label: 'Storefront', icon: Store },
