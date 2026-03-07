@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import { ArrowRight, CheckCircle2, FileCheck, Map, Store, Zap } from 'lucide-react'
+import { getSession } from '@/lib/auth0'
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  const session = await getSession()
+  const isLoggedIn = !!session?.user
+  
   return (
     <div className="min-h-screen bg-[var(--brand-primary)] text-white">
       {/* Hero Section */}
@@ -13,10 +17,10 @@ export default function LandingPage() {
             Bizy
           </span>
           <Link
-            href="/api/auth/login"
+            href={isLoggedIn ? "/onboarding" : "/api/auth/login?returnTo=/onboarding"}
             className="px-5 py-2.5 rounded-lg bg-[var(--brand-accent)] hover:opacity-90 transition-opacity font-medium"
           >
-            Get Started
+            {isLoggedIn ? "Go to App" : "Get Started"}
           </Link>
         </nav>
         <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-32 text-center">
@@ -30,10 +34,10 @@ export default function LandingPage() {
             viability, compliance, and launch—every step of the way.
           </p>
           <Link
-            href="/api/auth/login"
+            href={isLoggedIn ? "/onboarding" : "/api/auth/login?returnTo=/onboarding"}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[var(--brand-accent)] hover:opacity-90 transition-opacity font-semibold text-lg"
           >
-            Start your journey
+            {isLoggedIn ? "Continue setup" : "Start your journey"}
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
@@ -109,10 +113,10 @@ export default function LandingPage() {
             Join entrepreneurs who are launching with Bizy.
           </p>
           <Link
-            href="/api/auth/login"
+            href={isLoggedIn ? "/onboarding" : "/api/auth/login?returnTo=/onboarding"}
             className="inline-flex items-center gap-2 px-10 py-4 rounded-xl bg-[var(--brand-accent)] hover:opacity-90 transition-opacity font-semibold text-lg"
           >
-            Create your account
+            {isLoggedIn ? "Go to App" : "Create your account"}
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
