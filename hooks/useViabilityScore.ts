@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import type { BusinessProfile, ViabilityResult } from '@/types';
 
-export function useViabilityScore() {
-  const [result, setResult] = useState<ViabilityResult | null>(null);
+export function useViabilityScore(cachedResult?: ViabilityResult | null) {
+  const [result, setResult] = useState<ViabilityResult | null>(cachedResult ?? null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 

@@ -79,6 +79,8 @@ export interface ViabilityResult {
   topOpportunities: string[]
   verdict: 'strong' | 'viable' | 'challenging' | 'risky'
   verdictSummary: string
+  marketInsights?: string
+  recommendedNextSteps?: string[]
 }
 
 // ─── Roadmap ─────────────────────────────────────────────────────────────────

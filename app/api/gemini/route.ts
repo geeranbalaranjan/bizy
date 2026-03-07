@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { geminiFlash } from '@/lib/gemini'
+import { getGenerativeModel } from '@/lib/gemini'
 
 interface ChatMessage {
   role: 'user' | 'assistant'
@@ -9,12 +9,13 @@ interface ChatMessage {
 interface GeminiRequestBody {
   messages: ChatMessage[]
   systemPrompt?: string
+  model?: string
 }
 
 export async function POST(req: NextRequest) {
   try {
     const body = (await req.json()) as GeminiRequestBody
-    const { messages, systemPrompt } = body
+    const { messages, systemPrompt, model } = body
 
     if (!messages || !Array.isArray(messages)) {
       return NextResponse.json(
@@ -36,7 +37,8 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    const chat = geminiFlash.startChat({
+    const genModel = getGenerativeModel(model || 'gemini-2.5-flash')
+    const chat = genModel.startChat({
       history,
       ...(systemPrompt && { systemInstruction: systemPrompt }),
     })
