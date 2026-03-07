@@ -79,19 +79,19 @@ export function RoadmapTimeline({
 
   return (
     <div className="relative">
-      {/* Desktop: vertical line; mobile: hidden */}
+      {/* Desktop: vertical line; mobile: hidden. Line sits left of all content. */}
       <div className="absolute left-[19px] top-0 bottom-0 w-0.5 bg-gray-200 hidden sm:block" />
-      <div className="relative space-y-8">
+      <div className="relative space-y-8 pl-0 sm:pl-12">
         {categoriesWithSteps.map(([category, categorySteps]) => (
           <div key={category}>
             <h3 className="mb-4 flex items-center gap-2 font-heading text-sm font-semibold uppercase tracking-wide text-brand-primary">
               <span
                 className={cn(
-                  'h-2 w-2 rounded-full',
+                  'h-2 w-2 shrink-0 rounded-full',
                   CATEGORY_LINE_COLORS[category] ?? 'bg-gray-400'
                 )}
               />
-              {CATEGORY_LABELS[category] ?? category}
+              <span>{CATEGORY_LABELS[category] ?? category}</span>
             </h3>
             <div className="space-y-4">
               {categorySteps.map((step) => {
