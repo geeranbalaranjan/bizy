@@ -37,6 +37,33 @@ export type CanadianProvince =
 
 export type BudgetRange = 'under_5k' | '5k_25k' | '25k_100k' | 'over_100k'
 
+export type BusinessStage = 'idea' | 'startup' | 'growing' | 'established'
+
+export type RevenueRange = 'pre_revenue' | 'under_50k' | '50k_250k' | '250k_1m' | '1m_5m' | 'over_5m'
+
+export type EmployeeCount = '0' | '1_5' | '6_25' | '26_100' | '100_plus'
+
+// Founder Demographics (voluntary self-identification)
+export interface FounderDemographics {
+  genderIdentity?: 'woman' | 'man' | 'non_binary' | 'prefer_not_to_say' | 'other'
+  ethnicIdentity?: string[]
+  indigenousIdentity?: 'first_nations' | 'metis' | 'inuit' | 'none' | 'prefer_not_to_say'
+  disabilityStatus?: 'yes' | 'no' | 'prefer_not_to_say'
+  veteranStatus?: 'yes' | 'no' | 'prefer_not_to_say'
+  immigrantStatus?: 'newcomer_under_5_years' | 'immigrant' | 'citizen_born' | 'prefer_not_to_say'
+  youthEntrepreneur?: boolean // under 30
+}
+
+// Business Characteristics for grant matching
+export interface BusinessCharacteristics {
+  womanOwned?: boolean
+  minorityOwned?: boolean
+  indigenousOwned?: boolean
+  ruralLocation?: boolean
+  techStartup?: boolean
+  sustainabilityFocus?: boolean
+}
+
 export interface BusinessProfile {
   uid: string
   email?: string
@@ -51,6 +78,12 @@ export interface BusinessProfile {
   goals: string[]
   background?: string
   createdAt: string
+  // New grant eligibility fields
+  businessStage?: BusinessStage
+  employeeCount?: EmployeeCount
+  revenueRange?: RevenueRange
+  founderDemographics?: FounderDemographics
+  businessCharacteristics?: BusinessCharacteristics
 }
 
 // ─── Viability ───────────────────────────────────────────────────────────────
@@ -224,6 +257,20 @@ export interface IndustryBenchmark {
 
 // ─── Grants ──────────────────────────────────────────────────────────────────
 
+export type GrantTag =
+  | 'women_owned'
+  | 'indigenous'
+  | 'minority_owned'
+  | 'youth'
+  | 'immigrant'
+  | 'veteran'
+  | 'rural'
+  | 'tech_startup'
+  | 'sustainability'
+  | 'innovation'
+  | 'disability'
+  | 'general'
+
 export interface Grant {
   id: string
   name: string
@@ -232,15 +279,28 @@ export interface Grant {
   type: 'grant' | 'loan' | 'tax_credit' | 'subsidy'
   eligibility: {
     businessTypes: BusinessType[]
-    provinces: CanadianProvince[] | 'all'
+    provinces: (CanadianProvince | 'all')[]
+    industries: (string | 'all')[]
     minEmployees?: number
     maxEmployees?: number
     founderCriteria?: string[]
     maxRevenue?: number
+    businessStages?: BusinessStage[]
+    requiresWomanOwned?: boolean
+    requiresIndigenousOwned?: boolean
+    requiresMinorityOwned?: boolean
+    requiresRuralLocation?: boolean
+    requiresTechStartup?: boolean
+    requiresSustainabilityFocus?: boolean
+    requiresVeteran?: boolean
+    requiresNewcomer?: boolean
+    requiresYouth?: boolean
+    requiresDisability?: boolean
   }
   deadline?: string
   url: string
   description: string
+  tags: GrantTag[]
 }
 
 // ─── Website Builder / Storefront ────────────────────────────────────────────

@@ -6,11 +6,13 @@ import {
   LayoutDashboard,
   BarChart3,
   Route,
-  Shield,
   TrendingUp,
   DollarSign,
   Store,
   X,
+  FileText,
+  Award,
+  Users,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -18,7 +20,9 @@ const navItems = [
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
   { href: '/dashboard/viability', label: 'Viability', icon: BarChart3 },
   { href: '/dashboard/roadmap', label: 'Roadmap', icon: Route },
-  { href: '/dashboard/compliance', label: 'Compliance', icon: Shield },
+  { href: '/dashboard/compliance/cra', label: 'CRA Documents', icon: FileText },
+  { href: '/dashboard/compliance/licenses', label: 'Licenses', icon: Award },
+  { href: '/dashboard/compliance/hr', label: 'HR Onboarding', icon: Users },
   { href: '/dashboard/analytics', label: 'Analytics', icon: TrendingUp },
   { href: '/dashboard/grants', label: 'Grants', icon: DollarSign },
   { href: '/dashboard/storefront', label: 'Storefront', icon: Store },

@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
 
     const filtered = GRANTS.filter((grant) => {
       const provinceMatch =
-        grant.eligibility.provinces === 'all' ||
+        grant.eligibility.provinces.includes('all') ||
         grant.eligibility.provinces.includes(province)
       const businessMatch = grant.eligibility.businessTypes.includes(businessType)
       return provinceMatch && businessMatch

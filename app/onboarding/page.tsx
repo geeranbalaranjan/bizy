@@ -8,9 +8,10 @@ import { OnboardingProgress } from '@/components/onboarding/OnboardingProgress'
 import { StepOne } from '@/components/onboarding/StepOne'
 import { StepTwo } from '@/components/onboarding/StepTwo'
 import { StepThree } from '@/components/onboarding/StepThree'
+import { StepFour } from '@/components/onboarding/StepFour'
 import { useBusinessProfile } from '@/hooks/useBusinessProfile'
 import { useTranslation } from '@/components/translation'
-import type { BusinessProfile, BusinessType, CanadianProvince, BudgetRange } from '@/types'
+import type { BusinessProfile, BusinessType, CanadianProvince, BudgetRange, EmployeeCount, RevenueRange, FounderDemographics, BusinessCharacteristics } from '@/types'
 
 type StepOneData = {
   businessName: string
@@ -29,6 +30,13 @@ type StepThreeData = {
   budget: string
   goals: string[]
   background?: string
+}
+
+type StepFourData = {
+  employeeCount?: EmployeeCount
+  revenueRange?: RevenueRange
+  founderDemographics?: FounderDemographics
+  businessCharacteristics?: BusinessCharacteristics
 }
 
 export default function OnboardingPage() {
@@ -68,7 +76,18 @@ export default function OnboardingPage() {
     setCurrentStep(3)
   }
 
-  const handleStepThree = async (data: StepThreeData) => {
+  const handleStepThree = (data: StepThreeData) => {
+    setFormData((prev) => ({
+      ...prev,
+      stage: data.stage as 'idea' | 'planning' | 'ready',
+      budget: data.budget as BudgetRange,
+      goals: data.goals,
+      background: data.background,
+    }))
+    setCurrentStep(4)
+  }
+
+  const handleStepFour = async (data: StepFourData) => {
     setIsSubmitting(true)
     
     const completeProfile: BusinessProfile = {
@@ -80,10 +99,14 @@ export default function OnboardingPage() {
       province: formData.province as CanadianProvince,
       city: formData.city ?? '',
       targetCustomers: formData.targetCustomers ?? '',
-      stage: data.stage as 'idea' | 'planning' | 'ready',
-      budget: data.budget as BudgetRange,
-      goals: data.goals,
-      background: data.background,
+      stage: formData.stage as 'idea' | 'planning' | 'ready',
+      budget: formData.budget as BudgetRange,
+      goals: formData.goals ?? [],
+      background: formData.background,
+      employeeCount: data.employeeCount,
+      revenueRange: data.revenueRange,
+      founderDemographics: data.founderDemographics,
+      businessCharacteristics: data.businessCharacteristics,
       createdAt: new Date().toISOString(),
     }
 
@@ -92,6 +115,10 @@ export default function OnboardingPage() {
     
     // Redirect to dashboard
     router.push('/dashboard')
+  }
+
+  const handleSkipStepFour = async () => {
+    await handleStepFour({})
   }
 
   const handleBack = () => {
@@ -131,18 +158,20 @@ export default function OnboardingPage() {
           <h1 className="text-3xl font-heading font-bold text-brand-primary mb-2">
             {currentStep === 1 && t('Tell us about your business')}
             {currentStep === 2 && t('Where are you located?')}
-            {currentStep === 3 && t('Final details')}
+            {currentStep === 3 && t('Goals & stage')}
+            {currentStep === 4 && t('Grant matching (optional)')}
           </h1>
           <p className="text-gray-500">
             {currentStep === 1 && t('This helps us personalize your experience')}
             {currentStep === 2 && t("We'll show you relevant regulations and grants")}
-            {currentStep === 3 && t('Almost done! Just a few more questions')}
+            {currentStep === 3 && t('Tell us about your business stage and goals')}
+            {currentStep === 4 && t('Help us match you with relevant grants and funding')}
           </p>
         </div>
 
         {/* Progress */}
         <div className="mb-8">
-          <OnboardingProgress currentStep={currentStep} totalSteps={3} />
+          <OnboardingProgress currentStep={currentStep} totalSteps={4} />
         </div>
 
         {/* Form Card */}
@@ -151,6 +180,9 @@ export default function OnboardingPage() {
           {currentStep === 2 && <StepTwo onNext={handleStepTwo} onBack={handleBack} />}
           {currentStep === 3 && (
             <StepThree onBack={handleBack} onSubmit={handleStepThree} />
+          )}
+          {currentStep === 4 && (
+            <StepFour onBack={handleBack} onSubmit={handleStepFour} onSkip={handleSkipStepFour} />
           )}
         </div>
 

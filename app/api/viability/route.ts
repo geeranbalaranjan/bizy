@@ -62,7 +62,7 @@ Return structured JSON: topRisks, topOpportunities, verdictSummary, recommendedN
 
     const matchingGrants = GRANTS.filter((g) => {
       const provinceMatch =
-        g.eligibility.provinces === 'all' ||
+        g.eligibility.provinces.includes('all') ||
         g.eligibility.provinces.includes(profile.province)
       const businessMatch = g.eligibility.businessTypes.includes(profile.businessType)
       return provinceMatch && businessMatch
