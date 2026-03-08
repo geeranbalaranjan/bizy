@@ -22,7 +22,7 @@ export function AIFeatures() {
             </h2>
             
             <p className="text-xl text-gray-400 mb-10 leading-relaxed">
-              Bizy isn't a wrapper around generic chat. It's an intelligent engine connected to StatsCan, CRA data, and provincial licensing registries.
+              Bizy isn&apos;t a wrapper around generic chat. It&apos;s an intelligent engine connected to StatsCan, CRA data, and provincial licensing registries.
             </p>
 
             <div className="space-y-6">
@@ -60,13 +60,13 @@ export function AIFeatures() {
 
               <div className="space-y-4">
                 <div className="bg-white/5 rounded-2xl rounded-tl-sm p-4 text-sm text-gray-300 w-[85%] border border-white/5">
-                  I noticed you want to open a cafe in Toronto. Did you know 65% of cafes there fail in year one? Let's check the competition density first.
+                  I noticed you want to open a cafe in Toronto. Did you know 65% of cafes there fail in year one? Let&apos;s check the competition density first.
                 </div>
                 <div className="bg-brand-accent rounded-2xl rounded-tr-sm p-4 text-sm text-white w-[85%] ml-auto shadow-md">
-                  Yes, show me the map and let's calculate the startup costs.
+                  Yes, show me the map and let&apos;s calculate the startup costs.
                 </div>
                 <div className="bg-white/5 rounded-2xl rounded-tl-sm p-4 text-sm text-gray-300 w-[85%] border border-white/5">
-                  Loading viability scan... Your calculated risk score is <strong>Moderate (42)</strong>. I've found 3 grants you can apply for to offset the initial rent.
+                  Loading viability scan... Your calculated risk score is <strong>Moderate (42)</strong>. I&apos;ve found 3 grants you can apply for to offset the initial rent.
                 </div>
               </div>
 

@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { UserProvider } from '@auth0/nextjs-auth0/client'
 import { AppProvider } from '@/context/AppContext'
 import { TranslationProvider } from '@/context/TranslationContext'
+import { RTLWrapper } from '@/components/layout/RTLWrapper'
 import '@/app/globals.css'
 
 
@@ -27,7 +28,9 @@ export default function RootLayout({
       <body className="font-sans antialiased text-gray-900 dark:text-gray-100">
         <UserProvider>
           <TranslationProvider>
-            <AppProvider>{children}</AppProvider>
+            <RTLWrapper>
+              <AppProvider>{children}</AppProvider>
+            </RTLWrapper>
           </TranslationProvider>
         </UserProvider>
       </body>

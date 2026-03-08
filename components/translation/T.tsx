@@ -18,7 +18,7 @@ interface TProps {
  * <T as="h1" className="text-xl">Page Title</T>
  */
 export function T({ children, as: Component = 'span', className }: TProps) {
-  const { currentLanguage, translate, t } = useTranslation()
+  const { currentLanguage, translate, getCachedTranslation } = useTranslation()
   const [translatedText, setTranslatedText] = useState(children)
 
   useEffect(() => {
@@ -29,8 +29,8 @@ export function T({ children, as: Component = 'span', className }: TProps) {
     }
 
     // Check if already cached (synchronous)
-    const cached = t(children)
-    if (cached !== children) {
+    const cached = getCachedTranslation(children)
+    if (cached) {
       setTranslatedText(cached)
       return
     }
@@ -46,7 +46,7 @@ export function T({ children, as: Component = 'span', className }: TProps) {
     return () => {
       isMounted = false
     }
-  }, [children, currentLanguage, translate, t])
+  }, [children, currentLanguage, translate, getCachedTranslation])
 
   return <Component className={className}>{translatedText}</Component>
 }
@@ -59,7 +59,7 @@ export function T({ children, as: Component = 'span', className }: TProps) {
  * const { text, isLoading } = useText('Hello World')
  */
 export function useText(originalText: string) {
-  const { currentLanguage, translate, t } = useTranslation()
+  const { currentLanguage, translate, getCachedTranslation } = useTranslation()
   const [text, setText] = useState(originalText)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -70,8 +70,8 @@ export function useText(originalText: string) {
     }
 
     // Check cache first
-    const cached = t(originalText)
-    if (cached !== originalText) {
+    const cached = getCachedTranslation(originalText)
+    if (cached) {
       setText(cached)
       return
     }
@@ -95,7 +95,7 @@ export function useText(originalText: string) {
     return () => {
       isMounted = false
     }
-  }, [originalText, currentLanguage, translate, t])
+  }, [originalText, currentLanguage, translate, getCachedTranslation])
 
   return { text, isLoading }
 }
@@ -108,7 +108,7 @@ export function useText(originalText: string) {
  * const { texts, isLoading } = useTexts(['Hello', 'World', 'Goodbye'])
  */
 export function useTexts(originalTexts: string[]) {
-  const { currentLanguage, translateBatch, t } = useTranslation()
+  const { currentLanguage, translateBatch, getCachedTranslation } = useTranslation()
   const [texts, setTexts] = useState(originalTexts)
   const [isLoading, setIsLoading] = useState(false)
 
@@ -119,11 +119,11 @@ export function useTexts(originalTexts: string[]) {
     }
 
     // Check if all are cached
-    const cachedTexts = originalTexts.map((text) => t(text))
-    const allCached = cachedTexts.every((cached, i) => cached !== originalTexts[i])
+    const cachedTexts = originalTexts.map((text) => getCachedTranslation(text))
+    const allCached = cachedTexts.every((cached) => cached !== null)
     
     if (allCached) {
-      setTexts(cachedTexts)
+      setTexts(cachedTexts as string[])
       return
     }
 
@@ -146,7 +146,7 @@ export function useTexts(originalTexts: string[]) {
     return () => {
       isMounted = false
     }
-  }, [originalTexts.join('|'), currentLanguage, translateBatch, t])
+  }, [originalTexts.join('|'), currentLanguage, translateBatch, getCachedTranslation])
 
   return { texts, isLoading }
 }

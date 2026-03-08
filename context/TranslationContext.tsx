@@ -8,31 +8,19 @@ import {
   useEffect,
   type ReactNode,
 } from 'react'
-import { getStaticTranslation } from '@/lib/data/translations'
+import {
+  SUPPORTED_LANGUAGES,
+  translations,
+  isRTL,
+  DEFAULT_LANGUAGE,
+  LANGUAGE_STORAGE_KEY,
+  type TranslationKey,
+  type LanguageInfo,
+} from '@/lib/i18n'
 
-// Supported languages with their native names and flags
-export const SUPPORTED_LANGUAGES = [
-  { code: 'en', name: 'English', nativeName: 'English', flag: '🇬🇧' },
-  { code: 'fr', name: 'French', nativeName: 'Français', flag: '🇫🇷' },
-  { code: 'es', name: 'Spanish', nativeName: 'Español', flag: '🇪🇸' },
-  { code: 'zh', name: 'Chinese (Simplified)', nativeName: '简体中文', flag: '🇨🇳' },
-  { code: 'zh-TW', name: 'Chinese (Traditional)', nativeName: '繁體中文', flag: '🇹🇼' },
-  { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', flag: '🇮🇳' },
-  { code: 'ar', name: 'Arabic', nativeName: 'العربية', flag: '🇸🇦' },
-  { code: 'pt', name: 'Portuguese', nativeName: 'Português', flag: '🇧🇷' },
-  { code: 'de', name: 'German', nativeName: 'Deutsch', flag: '🇩🇪' },
-  { code: 'it', name: 'Italian', nativeName: 'Italiano', flag: '🇮🇹' },
-  { code: 'ja', name: 'Japanese', nativeName: '日本語', flag: '🇯🇵' },
-  { code: 'ko', name: 'Korean', nativeName: '한국어', flag: '🇰🇷' },
-  { code: 'ru', name: 'Russian', nativeName: 'Русский', flag: '🇷🇺' },
-  { code: 'pa', name: 'Punjabi', nativeName: 'ਪੰਜਾਬੀ', flag: '🇮🇳' },
-  { code: 'tl', name: 'Tagalog', nativeName: 'Tagalog', flag: '🇵🇭' },
-  { code: 'vi', name: 'Vietnamese', nativeName: 'Tiếng Việt', flag: '🇻🇳' },
-  { code: 'uk', name: 'Ukrainian', nativeName: 'Українська', flag: '🇺🇦' },
-  { code: 'pl', name: 'Polish', nativeName: 'Polski', flag: '🇵🇱' },
-] as const
-
-export type LanguageCode = (typeof SUPPORTED_LANGUAGES)[number]['code']
+// Re-export for backwards compatibility
+export { SUPPORTED_LANGUAGES, isRTL }
+export type LanguageCode = string
 
 interface TranslationCache {
   [key: string]: string // key format: "text::targetLang"
@@ -44,17 +32,18 @@ interface TranslationContextValue {
   translate: (text: string) => Promise<string>
   translateBatch: (texts: string[]) => Promise<string[]>
   isTranslating: boolean
-  t: (text: string) => string // Synchronous, returns cached or original
+  t: (key: string, params?: Record<string, string | number>) => string // Translation function (supports typed keys and raw text fallback)
+  isRTL: boolean // Whether current language is RTL
   getCachedTranslation: (text: string) => string | null
 }
 
 const TranslationContext = createContext<TranslationContextValue | undefined>(undefined)
 
-const STORAGE_KEY = 'bizy_language'
+const STORAGE_KEY = LANGUAGE_STORAGE_KEY
 const CACHE_STORAGE_KEY = 'bizy_translation_cache'
 
 export function TranslationProvider({ children }: { children: ReactNode }) {
-  const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>('en')
+  const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>(DEFAULT_LANGUAGE)
   const [cache, setCache] = useState<TranslationCache>({})
   const [isTranslating, setIsTranslating] = useState(false)
 
@@ -101,29 +90,38 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
     [currentLanguage]
   )
 
-  // Get cached translation
+  // Get cached translation (for dynamic text that was previously translated via API)
   const getCachedTranslation = useCallback(
     (text: string): string | null => {
       if (currentLanguage === 'en') return text
       const key = getCacheKey(text)
-      // Check cache first, then static translations
-      return cache[key] || getStaticTranslation(text, currentLanguage) || null
+      return cache[key] || null
     },
     [cache, currentLanguage, getCacheKey]
   )
 
-  // Synchronous translation (returns cached, static, or original)
+  // Typed translation function using static translation files
+  // Also supports raw text fallback for backward compatibility
   const t = useCallback(
-    (text: string): string => {
-      if (currentLanguage === 'en') return text
-      // Try cache first, then static translations, then return original
-      const cached = getCachedTranslation(text)
-      if (cached) return cached
-      const staticTrans = getStaticTranslation(text, currentLanguage)
-      if (staticTrans) return staticTrans
+    (key: string, params?: Record<string, string | number>): string => {
+      // Get translation from typed translation files
+      const langTranslations = translations[currentLanguage] || translations[DEFAULT_LANGUAGE]
+      
+      // Try to find the key in translations, otherwise return the key as-is (for raw text)
+      let text = (langTranslations as unknown as Record<string, string>)[key] 
+        || (translations[DEFAULT_LANGUAGE] as unknown as Record<string, string>)[key] 
+        || key
+      
+      // Replace parameters like {year} with actual values
+      if (params) {
+        Object.entries(params).forEach(([paramKey, value]) => {
+          text = text.replace(new RegExp(`\\{${paramKey}\\}`, 'g'), String(value))
+        })
+      }
+      
       return text
     },
-    [currentLanguage, getCachedTranslation]
+    [currentLanguage]
   )
 
   // Async translation with API call
@@ -231,6 +229,9 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
     [currentLanguage, getCachedTranslation, getCacheKey]
   )
 
+  // Calculate if current language is RTL
+  const currentIsRTL = isRTL(currentLanguage)
+
   return (
     <TranslationContext.Provider
       value={{
@@ -240,6 +241,7 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
         translateBatch,
         isTranslating,
         t,
+        isRTL: currentIsRTL,
         getCachedTranslation,
       }}
     >

@@ -73,7 +73,7 @@ export function ComparisonTable() {
             Built for how founders actually<br/>want to build
           </h2>
           <p className="text-gray-400 text-lg max-w-xl">
-            Bizy isn't a static business plan template. It's a dynamic, guided intelligence platform designed for modern builders.
+            Bizy isn&apos;t a static business plan template. It&apos;s a dynamic, guided intelligence platform designed for modern builders.
           </p>
         </div>
 

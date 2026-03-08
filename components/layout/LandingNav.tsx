@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { LanguageSelector, useTranslation } from '@/components/translation'
+import { LanguageSelector } from '@/components/translation'
+import { useTranslation } from '@/context/TranslationContext'
 
 interface LandingNavProps {
   isLoggedIn: boolean
@@ -16,16 +17,16 @@ export function LandingNav({ isLoggedIn }: LandingNavProps) {
         {/* Left: Links */}
         <div className="hidden lg:flex items-center gap-8 justify-start">
           <Link href="#features" className="text-[15px] font-medium text-white/80 hover:text-white transition-colors tracking-wide">
-            {t('Features')}
+            {t('nav.features')}
           </Link>
           <Link href="#how-it-works" className="text-[15px] font-medium text-white/80 hover:text-white transition-colors tracking-wide">
-            {t('How It Works')}
+            {t('nav.howItWorks')}
           </Link>
           <Link href="#use-cases" className="text-[15px] font-medium text-white/80 hover:text-white transition-colors tracking-wide">
-            {t('Use Cases')}
+            {t('nav.useCases')}
           </Link>
           <Link href="#pricing" className="text-[15px] font-medium text-white/80 hover:text-white transition-colors tracking-wide">
-            {t('Pricing')}
+            {t('nav.pricing')}
           </Link>
         </div>
 
@@ -49,19 +50,19 @@ export function LandingNav({ isLoggedIn }: LandingNavProps) {
           {isLoggedIn ? (
             <>
               <Link href="/api/auth/logout" className="hidden sm:block text-[15px] font-medium text-white/80 hover:text-white transition-colors">
-                {t('Logout')}
+                {t('nav.logout')}
               </Link>
               <Link href="/dashboard" className="px-6 py-2.5 rounded-full bg-white text-brand-primary hover:bg-gray-100 transition-colors font-medium text-[15px]">
-                {t('Dashboard')}
+                {t('nav.dashboard')}
               </Link>
             </>
           ) : (
             <>
               <Link href="/api/auth/login?returnTo=/onboarding" className="hidden sm:block text-[15px] font-medium text-white/80 hover:text-white transition-colors">
-                {t('Login')}
+                {t('nav.login')}
               </Link>
               <Link href="/api/auth/login?returnTo=/onboarding" className="px-6 py-2.5 rounded-full bg-white text-brand-primary hover:bg-gray-100 transition-colors font-medium text-[15px]">
-                {t('Sign Up')}
+                {t('nav.signup')}
               </Link>
             </>
           )}

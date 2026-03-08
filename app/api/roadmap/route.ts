@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { promptGeminiJSON } from '@/lib/gemini'
+import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from '@/lib/i18n'
 import type {
   BusinessProfile,
   RoadmapStep,
@@ -29,6 +30,7 @@ interface GeminiRoadmapResponse {
 interface RoadmapRequestBody {
   profile: BusinessProfile
   viabilityResult?: ViabilityResult | null
+  language?: string
 }
 
 function mapCategory(c: GeminiStep['category']): RoadmapCategory {
@@ -42,10 +44,17 @@ function mapCategory(c: GeminiStep['category']): RoadmapCategory {
   return map[c] ?? 'operations'
 }
 
+// Helper to get language name for prompts
+function getLanguageName(code: string): string {
+  const lang = SUPPORTED_LANGUAGES.find(l => l.code === code)
+  return lang?.name || 'English'
+}
+
 export async function POST(req: NextRequest) {
   try {
     const body = (await req.json()) as RoadmapRequestBody
-    const { profile, viabilityResult } = body
+    const { profile, viabilityResult, language = DEFAULT_LANGUAGE } = body
+    const languageName = getLanguageName(language)
 
     if (!profile?.businessType || !profile?.province || !profile?.city) {
       return NextResponse.json(
@@ -56,6 +65,7 @@ export async function POST(req: NextRequest) {
 
     const systemPrompt = `You are a startup advisor helping founders launch businesses in Canada.
 Generate a detailed launch roadmap. Return ONLY valid JSON with a "steps" array.
+IMPORTANT: Respond in ${languageName} language.
 Each step must have: title, description, category ("legal"|"financial"|"product"|"marketing"|"operations"), estimatedTime (e.g. "1-2 weeks"), priority ("high"|"medium"|"low"), difficulty ("easy"|"medium"|"hard"), dependencies (array of step titles that must be done first - use empty array for first steps), recommendedTools (array of 0-3 tool or resource names, e.g. "Stripe", "QuickBooks").
 Generate 8-12 logical steps in execution order. Dependencies should reference the title of a previous step.`
 

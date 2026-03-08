@@ -4,51 +4,57 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useTranslation } from '@/components/translation'
 import type { FounderDemographics, BusinessCharacteristics, EmployeeCount, RevenueRange } from '@/types'
+import type { TranslationKey } from '@/lib/i18n'
 
-const EMPLOYEE_COUNT_OPTIONS: { value: EmployeeCount; label: string }[] = [
-  { value: '0', label: 'Just me (0 employees)' },
-  { value: '1_5', label: '1-5 employees' },
-  { value: '6_25', label: '6-25 employees' },
-  { value: '26_100', label: '26-100 employees' },
-  { value: '100_plus', label: '100+ employees' },
+interface OptionWithKey {
+  value: string
+  labelKey: TranslationKey
+}
+
+const EMPLOYEE_COUNT_OPTIONS: { value: EmployeeCount; labelKey: TranslationKey }[] = [
+  { value: '0', labelKey: 'employees.justMe' },
+  { value: '1_5', labelKey: 'employees.1to5' },
+  { value: '6_25', labelKey: 'employees.6to25' },
+  { value: '26_100', labelKey: 'employees.26to100' },
+  { value: '100_plus', labelKey: 'employees.100plus' },
 ]
 
-const REVENUE_RANGE_OPTIONS: { value: RevenueRange; label: string }[] = [
-  { value: 'pre_revenue', label: 'Pre-revenue' },
-  { value: 'under_50k', label: 'Under $50K' },
-  { value: '50k_250k', label: '$50K - $250K' },
-  { value: '250k_1m', label: '$250K - $1M' },
-  { value: '1m_5m', label: '$1M - $5M' },
-  { value: 'over_5m', label: 'Over $5M' },
+const REVENUE_RANGE_OPTIONS: { value: RevenueRange; labelKey: TranslationKey }[] = [
+  { value: 'pre_revenue', labelKey: 'revenue.preRevenue' },
+  { value: 'under_50k', labelKey: 'revenue.under50k' },
+  { value: '50k_250k', labelKey: 'revenue.50kTo250k' },
+  { value: '250k_1m', labelKey: 'revenue.250kTo1m' },
+  { value: '1m_5m', labelKey: 'revenue.1mTo5m' },
+  { value: 'over_5m', labelKey: 'revenue.over5m' },
 ]
 
-const GENDER_OPTIONS = [
-  { value: 'woman', label: 'Woman' },
-  { value: 'man', label: 'Man' },
-  { value: 'non_binary', label: 'Non-binary' },
-  { value: 'other', label: 'Other' },
-  { value: 'prefer_not_to_say', label: 'Prefer not to say' },
+const GENDER_OPTIONS: OptionWithKey[] = [
+  { value: 'woman', labelKey: 'gender.woman' },
+  { value: 'man', labelKey: 'gender.man' },
+  { value: 'non_binary', labelKey: 'gender.nonBinary' },
+  { value: 'other', labelKey: 'gender.other' },
+  { value: 'prefer_not_to_say', labelKey: 'gender.preferNotToSay' },
 ]
 
-const INDIGENOUS_OPTIONS = [
-  { value: 'first_nations', label: 'First Nations' },
-  { value: 'metis', label: 'Métis' },
-  { value: 'inuit', label: 'Inuit' },
-  { value: 'none', label: 'None' },
-  { value: 'prefer_not_to_say', label: 'Prefer not to say' },
+const INDIGENOUS_OPTIONS: OptionWithKey[] = [
+  { value: 'first_nations', labelKey: 'indigenous.firstNations' },
+  { value: 'metis', labelKey: 'indigenous.metis' },
+  { value: 'inuit', labelKey: 'indigenous.inuit' },
+  { value: 'none', labelKey: 'indigenous.none' },
+  { value: 'prefer_not_to_say', labelKey: 'indigenous.preferNotToSay' },
 ]
 
-const YES_NO_OPTIONS = [
-  { value: 'yes', label: 'Yes' },
-  { value: 'no', label: 'No' },
-  { value: 'prefer_not_to_say', label: 'Prefer not to say' },
+const YES_NO_OPTIONS: OptionWithKey[] = [
+  { value: 'yes', labelKey: 'common.yes' },
+  { value: 'no', labelKey: 'common.no' },
+  { value: 'prefer_not_to_say', labelKey: 'common.preferNotToSay' },
 ]
 
-const IMMIGRANT_OPTIONS = [
-  { value: 'newcomer_under_5_years', label: 'Newcomer (arrived within 5 years)' },
-  { value: 'immigrant', label: 'Immigrant (arrived over 5 years ago)' },
-  { value: 'citizen_born', label: 'Canadian-born citizen' },
-  { value: 'prefer_not_to_say', label: 'Prefer not to say' },
+const IMMIGRANT_OPTIONS: OptionWithKey[] = [
+  { value: 'newcomer_under_5_years', labelKey: 'immigrant.newcomer' },
+  { value: 'immigrant', labelKey: 'immigrant.immigrant' },
+  { value: 'citizen_born', labelKey: 'immigrant.citizenBorn' },
+  { value: 'prefer_not_to_say', labelKey: 'immigrant.preferNotToSay' },
 ]
 
 interface StepFourProps {
@@ -115,14 +121,14 @@ export function StepFour({ onBack, onSubmit, onSkip }: StepFourProps) {
   const BooleanSelect = ({ 
     value, 
     onChange, 
-    label 
+    labelKey 
   }: { 
     value: boolean | null
     onChange: (val: boolean | null) => void
-    label: string 
+    labelKey: TranslationKey 
   }) => (
     <div className="flex items-center justify-between p-3 border border-gray-200 rounded-lg">
-      <span className="text-sm text-gray-700">{t(label)}</span>
+      <span className="text-sm text-gray-700">{t(labelKey)}</span>
       <div className="flex gap-2">
         <button
           type="button"
@@ -133,7 +139,7 @@ export function StepFour({ onBack, onSubmit, onSkip }: StepFourProps) {
               : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           }`}
         >
-          {t('Yes')}
+          {t('common.yes')}
         </button>
         <button
           type="button"
@@ -144,7 +150,7 @@ export function StepFour({ onBack, onSubmit, onSkip }: StepFourProps) {
               : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           }`}
         >
-          {t('No')}
+          {t('common.no')}
         </button>
       </div>
     </div>
@@ -157,9 +163,9 @@ export function StepFour({ onBack, onSubmit, onSkip }: StepFourProps) {
         <div className="flex items-start gap-3">
           <span className="text-blue-600 text-xl">ℹ️</span>
           <div>
-            <p className="text-sm font-medium text-blue-900">{t('This step is completely optional')}</p>
+            <p className="text-sm font-medium text-blue-900">{t('onboarding.stepFour.optionalNotice')}</p>
             <p className="text-sm text-blue-700 mt-1">
-              {t('Voluntary self-identification helps us match you with relevant grants and funding opportunities. All information is kept confidential.')}
+              {t('onboarding.stepFour.optionalDescription')}
             </p>
           </div>
         </div>
@@ -167,37 +173,37 @@ export function StepFour({ onBack, onSubmit, onSkip }: StepFourProps) {
 
       {/* Business Information */}
       <div>
-        <h3 className="font-heading font-semibold text-brand-primary mb-4">{t('Business Information')}</h3>
+        <h3 className="font-heading font-semibold text-brand-primary mb-4">{t('onboarding.stepFour.businessInfo')}</h3>
         
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('Number of Employees')}
+              {t('onboarding.stepFour.numberOfEmployees')}
             </label>
             <select
               value={employeeCount}
               onChange={(e) => setEmployeeCount(e.target.value as EmployeeCount)}
               className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
             >
-              <option value="">{t('Select...')}</option>
-              {EMPLOYEE_COUNT_OPTIONS.map(({ value, label }) => (
-                <option key={value} value={value}>{t(label)}</option>
+              <option value="">{t('common.select')}</option>
+              {EMPLOYEE_COUNT_OPTIONS.map(({ value, labelKey }) => (
+                <option key={value} value={value}>{t(labelKey)}</option>
               ))}
             </select>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('Annual Revenue Range')}
+              {t('onboarding.stepFour.annualRevenue')}
             </label>
             <select
               value={revenueRange}
               onChange={(e) => setRevenueRange(e.target.value as RevenueRange)}
               className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
             >
-              <option value="">{t('Select...')}</option>
-              {REVENUE_RANGE_OPTIONS.map(({ value, label }) => (
-                <option key={value} value={value}>{t(label)}</option>
+              <option value="">{t('common.select')}</option>
+              {REVENUE_RANGE_OPTIONS.map(({ value, labelKey }) => (
+                <option key={value} value={value}>{t(labelKey)}</option>
               ))}
             </select>
           </div>
@@ -206,54 +212,54 @@ export function StepFour({ onBack, onSubmit, onSkip }: StepFourProps) {
 
       {/* Founder Demographics */}
       <div>
-        <h3 className="font-heading font-semibold text-brand-primary mb-2">{t('Founder Demographics')}</h3>
-        <p className="text-xs text-gray-500 mb-4">{t('Voluntary self-identification for grant eligibility')}</p>
+        <h3 className="font-heading font-semibold text-brand-primary mb-2">{t('onboarding.founderDemographics')}</h3>
+        <p className="text-xs text-gray-500 mb-4">{t('onboarding.founderDemographicsDesc')}</p>
         
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('Gender Identity')}
+              {t('onboarding.genderIdentity')}
             </label>
             <select
               value={genderIdentity}
               onChange={(e) => setGenderIdentity(e.target.value)}
               className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
             >
-              <option value="">{t('Select...')}</option>
-              {GENDER_OPTIONS.map(({ value, label }) => (
-                <option key={value} value={value}>{t(label)}</option>
+              <option value="">{t('common.select')}</option>
+              {GENDER_OPTIONS.map(({ value, labelKey }) => (
+                <option key={value} value={value}>{t(labelKey)}</option>
               ))}
             </select>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('Indigenous Identity')}
+              {t('onboarding.indigenousIdentity')}
             </label>
             <select
               value={indigenousIdentity}
               onChange={(e) => setIndigenousIdentity(e.target.value)}
               className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
             >
-              <option value="">{t('Select...')}</option>
-              {INDIGENOUS_OPTIONS.map(({ value, label }) => (
-                <option key={value} value={value}>{t(label)}</option>
+              <option value="">{t('common.select')}</option>
+              {INDIGENOUS_OPTIONS.map(({ value, labelKey }) => (
+                <option key={value} value={value}>{t(labelKey)}</option>
               ))}
             </select>
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('Immigrant / Newcomer Status')}
+              {t('onboarding.immigrantStatus')}
             </label>
             <select
               value={immigrantStatus}
               onChange={(e) => setImmigrantStatus(e.target.value)}
               className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
             >
-              <option value="">{t('Select...')}</option>
-              {IMMIGRANT_OPTIONS.map(({ value, label }) => (
-                <option key={value} value={value}>{t(label)}</option>
+              <option value="">{t('common.select')}</option>
+              {IMMIGRANT_OPTIONS.map(({ value, labelKey }) => (
+                <option key={value} value={value}>{t(labelKey)}</option>
               ))}
             </select>
           </div>
@@ -261,32 +267,32 @@ export function StepFour({ onBack, onSubmit, onSkip }: StepFourProps) {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t('Disability Status')}
+                {t('onboarding.disabilityStatus')}
               </label>
               <select
                 value={disabilityStatus}
                 onChange={(e) => setDisabilityStatus(e.target.value)}
                 className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
               >
-                <option value="">{t('Select...')}</option>
-                {YES_NO_OPTIONS.map(({ value, label }) => (
-                  <option key={value} value={value}>{t(label)}</option>
+                <option value="">{t('common.select')}</option>
+                {YES_NO_OPTIONS.map(({ value, labelKey }) => (
+                  <option key={value} value={value}>{t(labelKey)}</option>
                 ))}
               </select>
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t('Veteran Status')}
+                {t('onboarding.veteranStatus')}
               </label>
               <select
                 value={veteranStatus}
                 onChange={(e) => setVeteranStatus(e.target.value)}
                 className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-brand-accent focus:outline-none focus:ring-1 focus:ring-brand-accent"
               >
-                <option value="">{t('Select...')}</option>
-                {YES_NO_OPTIONS.map(({ value, label }) => (
-                  <option key={value} value={value}>{t(label)}</option>
+                <option value="">{t('common.select')}</option>
+                {YES_NO_OPTIONS.map(({ value, labelKey }) => (
+                  <option key={value} value={value}>{t(labelKey)}</option>
                 ))}
               </select>
             </div>
@@ -295,46 +301,46 @@ export function StepFour({ onBack, onSubmit, onSkip }: StepFourProps) {
           <BooleanSelect
             value={isYouthEntrepreneur}
             onChange={setIsYouthEntrepreneur}
-            label="Youth Entrepreneur (under 30)"
+            labelKey="onboarding.youthEntrepreneur"
           />
         </div>
       </div>
 
       {/* Business Characteristics */}
       <div>
-        <h3 className="font-heading font-semibold text-brand-primary mb-2">{t('Business Characteristics')}</h3>
-        <p className="text-xs text-gray-500 mb-4">{t('These help us find relevant funding programs')}</p>
+        <h3 className="font-heading font-semibold text-brand-primary mb-2">{t('onboarding.businessCharacteristics')}</h3>
+        <p className="text-xs text-gray-500 mb-4">{t('onboarding.businessCharacteristicsDesc')}</p>
         
         <div className="space-y-3">
           <BooleanSelect
             value={womanOwned}
             onChange={setWomanOwned}
-            label="Is the business woman-owned? (51%+ ownership)"
+            labelKey="onboarding.womanOwned"
           />
           <BooleanSelect
             value={minorityOwned}
             onChange={setMinorityOwned}
-            label="Is the business minority-owned?"
+            labelKey="onboarding.minorityOwned"
           />
           <BooleanSelect
             value={indigenousOwned}
             onChange={setIndigenousOwned}
-            label="Is the business Indigenous-owned?"
+            labelKey="onboarding.indigenousOwned"
           />
           <BooleanSelect
             value={ruralLocation}
             onChange={setRuralLocation}
-            label="Is the business located in a rural area?"
+            labelKey="onboarding.ruralLocation"
           />
           <BooleanSelect
             value={techStartup}
             onChange={setTechStartup}
-            label="Is the business a technology startup?"
+            labelKey="onboarding.techStartup"
           />
           <BooleanSelect
             value={sustainabilityFocus}
             onChange={setSustainabilityFocus}
-            label="Is the business focused on sustainability or green innovation?"
+            labelKey="onboarding.sustainabilityFocus"
           />
         </div>
       </div>
@@ -342,13 +348,13 @@ export function StepFour({ onBack, onSubmit, onSkip }: StepFourProps) {
       {/* Buttons */}
       <div className="flex gap-3 pt-4">
         <Button type="button" variant="outline" onClick={onBack} className="flex-1">
-          {t('Back')}
+          {t('common.back')}
         </Button>
         <Button type="button" variant="outline" onClick={onSkip} className="flex-1">
-          {t('Skip')}
+          {t('common.skip')}
         </Button>
         <Button type="submit" className="flex-1">
-          {t('Submit')}
+          {t('common.submit')}
         </Button>
       </div>
     </form>

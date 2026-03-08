@@ -3,6 +3,7 @@ import { promptGeminiJSON } from '@/lib/gemini'
 import { calculateViabilityScore } from '@/lib/utils/viability'
 import type { BusinessProfile, ViabilityResult, Risk } from '@/types'
 import { GRANTS } from '@/lib/data/grants'
+import { SUPPORTED_LANGUAGES, DEFAULT_LANGUAGE } from '@/lib/i18n'
 
 const GEMINI_VIABILITY_MODEL = 'gemini-2.5-flash'
 
@@ -14,9 +15,18 @@ interface GeminiViabilityResponse {
   marketInsights?: string
 }
 
+// Helper to get language name for prompts
+function getLanguageName(code: string): string {
+  const lang = SUPPORTED_LANGUAGES.find(l => l.code === code)
+  return lang?.name || 'English'
+}
+
 export async function POST(req: NextRequest) {
   try {
-    const profile = (await req.json()) as BusinessProfile
+    const body = await req.json()
+    const profile = body as BusinessProfile & { language?: string }
+    const language = profile.language || DEFAULT_LANGUAGE
+    const languageName = getLanguageName(language)
 
     if (!profile?.businessType || !profile?.province) {
       return NextResponse.json(
@@ -37,6 +47,7 @@ export async function POST(req: NextRequest) {
     const systemPrompt = `You are an expert Canadian startup advisor.
 Analyze this business idea and evaluate its viability.
 Return ONLY valid JSON with no markdown or explanation.
+IMPORTANT: Respond in ${languageName} language.
 
 Required fields:
 - topRisks: array of 3 risks, each with { title, description, mitigation, severity: "high"|"medium"|"low" }
@@ -52,7 +63,7 @@ Budget: ${profile.budget}
 Target Customers: ${profile.targetCustomers}
 Description: ${profile.businessDescription}
 
-Return structured JSON: topRisks, topOpportunities, verdictSummary, recommendedNextSteps, marketInsights.`
+Return structured JSON in ${languageName}: topRisks, topOpportunities, verdictSummary, recommendedNextSteps, marketInsights.`
 
     const aiResponse = await promptGeminiJSON<GeminiViabilityResponse>(
       prompt,

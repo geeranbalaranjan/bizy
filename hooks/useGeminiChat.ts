@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import type { ChatMessage } from '@/types';
 
-export function useGeminiChat() {
+interface UseGeminiChatOptions {
+  language?: string;
+}
+
+export function useGeminiChat(options: UseGeminiChatOptions = {}) {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function sendMessage(content: string, systemPrompt?: string) {
+  async function sendMessage(content: string, systemPrompt?: string, language?: string) {
     const userMessage: ChatMessage = {
       id: crypto.randomUUID(),
       role: 'user',
@@ -21,7 +25,11 @@ export function useGeminiChat() {
       const res = await fetch('/api/gemini', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content, systemPrompt }),
+        body: JSON.stringify({ 
+          content, 
+          systemPrompt, 
+          language: language || options.language 
+        }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
