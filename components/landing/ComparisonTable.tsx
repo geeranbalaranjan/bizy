@@ -2,47 +2,50 @@
 
 import { Check, AlertTriangle, Minus } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useTranslation } from '@/context/TranslationContext'
 
 export function ComparisonTable() {
+  const { t } = useTranslation()
+
   const rows = [
     {
-      feature: "Has real, adaptive conversations",
+      featureKey: 'comparison.feature1',
       bizy: "check",
       consultant: "check",
       traditional: "minus"
     },
     {
-      feature: "Automated viability & survival analysis",
+      featureKey: 'comparison.feature2',
       bizy: "check",
       consultant: "warning",
       traditional: "warning"
     },
     {
-      feature: "Available instantly, 24/7",
+      featureKey: 'comparison.feature3',
       bizy: "check",
       consultant: "warning",
       traditional: "check"
     },
     {
-      feature: "Generates custom launch roadmap",
+      featureKey: 'comparison.feature4',
       bizy: "check",
       consultant: "check",
       traditional: "minus"
     },
     {
-      feature: "Sales without headcount",
+      featureKey: 'comparison.feature5',
       bizy: "check",
       consultant: "warning",
       traditional: "warning"
     },
     {
-      feature: "No prohibitive startup costs",
+      featureKey: 'comparison.feature6',
       bizy: "check",
       consultant: "minus",
       traditional: "check"
     },
     {
-      feature: "Live web storefront creation",
+      featureKey: 'comparison.feature7',
       bizy: "check",
       consultant: "warning",
       traditional: "minus"
@@ -67,13 +70,13 @@ export function ComparisonTable() {
         <div className="mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium mb-6">
             <span className="w-2 h-2 rounded-full bg-green-500" />
-            Comparison
+            {t('comparison.badge')}
           </div>
           <h2 className="text-4xl md:text-5xl font-heading font-medium tracking-tight mb-4">
-            Built for how founders actually<br/>want to build
+            {t('comparison.headline')}
           </h2>
           <p className="text-gray-400 text-lg max-w-xl">
-            Bizy isn&apos;t a static business plan template. It&apos;s a dynamic, guided intelligence platform designed for modern builders.
+            {t('comparison.subheadline')}
           </p>
         </div>
 
@@ -81,15 +84,15 @@ export function ComparisonTable() {
           <table className="w-full min-w-[800px] border-collapse">
             <thead>
               <tr className="border-b border-white/10">
-                <th className="py-6 px-4 text-left font-medium text-gray-400 w-[40%]">Key Features</th>
+                <th className="py-6 px-4 text-left font-medium text-gray-400 w-[40%]">{t('comparison.keyFeatures')}</th>
                 <th className="py-6 px-4 text-center font-bold text-xl w-[20%]">
                   <div className="bg-brand-primary border border-white/10 rounded-lg py-3 px-6 shadow-lg inline-flex items-center gap-2">
                     <span className="w-4 h-4 rounded-full bg-brand-accent"></span>
-                    Bizy
+                    {t('comparison.bizy')}
                   </div>
                 </th>
-                <th className="py-6 px-4 text-center font-medium text-gray-400 w-[20%]">Consultants</th>
-                <th className="py-6 px-4 text-center font-medium text-gray-400 w-[20%]">Manual Planning</th>
+                <th className="py-6 px-4 text-center font-medium text-gray-400 w-[20%]">{t('comparison.consultants')}</th>
+                <th className="py-6 px-4 text-center font-medium text-gray-400 w-[20%]">{t('comparison.manualPlanning')}</th>
               </tr>
             </thead>
             <tbody>
@@ -99,7 +102,7 @@ export function ComparisonTable() {
                   idx === rows.length - 1 && "border-b-0"
                 )}>
                   <td className="py-5 px-4 text-sm font-medium text-gray-200">
-                    {row.feature}
+                    {t(row.featureKey)}
                   </td>
                   <td className="py-5 px-4 text-center bg-white/[0.02]">
                     {getIcon(row.bizy)}

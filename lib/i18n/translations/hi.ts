@@ -69,6 +69,96 @@ export const hi: TranslationKeys = {
   'cta.button.tryFree': 'Bizy मुफ्त आज़माएं',
 
   // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - STORY SCROLL (Animated Text)
+  // ═══════════════════════════════════════════════════════════════
+  'storyScroll.line1': 'क्या होगा अगर व्यवसाय शुरू करना उतना ही आसान हो जितना किसी को अपना विचार बताना?',
+  'storyScroll.line2': 'क्या होगा अगर AI आपको बता सके कि यह काम करेगा या नहीं?',
+  'storyScroll.line3': 'क्या होगा अगर आपके पास अनुसरण करने के लिए एक चरण-दर-चरण रोडमैप हो?',
+  'storyScroll.line4': 'Bizy से मिलें।',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - AI FEATURES
+  // ═══════════════════════════════════════════════════════════════
+  'aiFeatures.badge': 'Gemini 2.5 Flash द्वारा संचालित',
+  'aiFeatures.headline1': 'आपका AI-संचालित',
+  'aiFeatures.headline2': 'कनाडाई व्यवसाय के लिए सह-पायलट।',
+  'aiFeatures.description': 'Bizy आम चैट के चारों ओर का आवरण नहीं है। यह StatsCan, CRA डेटा और प्रांतीय लाइसेंसिंग रजिस्ट्रियों से जुड़ा एक बुद्धिमान इंजन है।',
+  'aiFeatures.contextAware.title': 'संदर्भ-जागरूक सलाह',
+  'aiFeatures.contextAware.desc': 'आपके विशिष्ट प्रांत, उद्योग और बजट सीमाओं को समझता है।',
+  'aiFeatures.realTimeData.title': 'रीयल-टाइम बाज़ार डेटा',
+  'aiFeatures.realTimeData.desc': 'आपके सटीक पोस्टल कोड क्षेत्र के लिए जीवित रहने की दरें और राजस्व बेंचमार्क प्राप्त करता है।',
+  'aiFeatures.automatedCompliance.title': 'स्वचालित अनुपालन',
+  'aiFeatures.automatedCompliance.desc': 'आपको जिन सटीक CRA फॉर्म और टैक्स डेडलाइन का पालन करना है उन्हें जेनरेट करता है।',
+  'aiFeatures.chat.bizyAI': 'Bizy AI',
+  'aiFeatures.chat.online': 'ऑनलाइन',
+  'aiFeatures.chat.message1': 'मैंने देखा कि आप टोरंटो में कैफे खोलना चाहते हैं। क्या आप जानते हैं कि वहां 65% कैफे पहले साल असफल हो जाते हैं? पहले प्रतिस्पर्धा घनत्व जांच लें।',
+  'aiFeatures.chat.message2': 'हां, मुझे नक्शा दिखाएं और शुरुआती लागत की गणना करें।',
+  'aiFeatures.chat.message3': 'व्यवहार्यता स्कैन लोड हो रहा है... आपका गणना किया जोखिम स्कोर मध्यम (42) है। मैंने 3 अनुदान खोजे हैं जिनके लिए आप आरंभिक किराए की भरपाई के लिए आवेदन कर सकते हैं।',
+  'aiFeatures.chat.placeholder': 'कुछ भी पूछें...',
+
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - COMPARISON TABLE
+  // ═══════════════════════════════════════════════════════════════
+  'comparison.badge': 'हम कैसे तुलना करते हैं',
+  'comparison.headline': 'आपको जो चाहिए वह सब कुछ।',
+  'comparison.subheadline': 'Bizy की तुलना किसी सलाहकार को काम पर रखने या मैन्युअल रूप से करने से करें।',
+  'comparison.keyFeatures': 'मुख्य विशेषताएं',
+  'comparison.bizy': 'Bizy',
+  'comparison.consultants': 'सलाहकार',
+  'comparison.consultant': 'सलाहकार',
+  'comparison.manualPlanning': 'मैन्युअल योजना',
+  'comparison.manual': 'DIY मैन्युअल',
+  'comparison.feature1': 'AI-संचालित बाज़ार विश्लेषण',
+  'comparison.feature2': 'चरण-दर-चरण लॉन्च रोडमैप',
+  'comparison.feature3': 'तुरंत अनुदान मिलान',
+  'comparison.feature4': 'रीयल-टाइम टैक्स कैलेंडर',
+  'comparison.feature5': 'अनुपालन ट्रैकिंग',
+  'comparison.feature6': 'शुरू करने की लागत',
+  'comparison.feature7': 'लॉन्च का समय',
+  'comparison.bizyF6': '$29/महीना',
+  'comparison.consultantF6': '$3,000+',
+  'comparison.manualF6': 'मुफ्त + समय',
+  'comparison.bizyF7': 'घंटे',
+  'comparison.consultantF7': 'सप्ताह',
+  'comparison.manualF7': 'महीने',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FOUR STEPS / TIMELINE
+  // ═══════════════════════════════════════════════════════════════
+  'timeline.headline': 'लॉन्च के चार चरण।',
+  'timeline.step1.title': 'अपने व्यवसाय का वर्णन करें',
+  'timeline.step1.description': 'Bizy को बताएं कि आप क्या और कहां बनाना चाहते हैं।',
+  'timeline.step2.title': 'Bizy व्यवहार्यता का विश्लेषण करता है',
+  'timeline.step2.description': 'AI बाज़ार डेटा खींचता है जीवित रहने की भविष्यवाणी के लिए।',
+  'timeline.step3.title': 'लॉन्च रोडमैप बनाएं',
+  'timeline.step3.description': 'चरण-दर-चरण अनुपालन कार्य योजना प्राप्त करें।',
+  'timeline.step4.title': 'अपना स्टोरफ्रंट लॉन्च करें',
+  'timeline.step4.description': 'एक सुंदर वेबसाइट बनाएं और बिक्री शुरू करें।',
+  'timeline.stepLabel': 'चरण',
+  'timeline.previewLabel': 'एनिमेटेड UI पूर्वावलोकन:',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FEATURE DEEP DIVE
+  // ═══════════════════════════════════════════════════════════════
+  'featureSpotlight.badge': 'फ़ीचर स्पॉटलाइट',
+  'featureSpotlight.uiPreview': 'UI पूर्वावलोकन',
+  'featureSpotlight.viability.title': 'AI व्यवहार्यता विश्लेषण',
+  'featureSpotlight.viability.subtitle': 'एक पैसा खर्च करने से पहले अपनी संभावनाओं को जानें।',
+  'featureSpotlight.viability.description': 'हम कनाडा भर में विशाल डेटासेट का विश्लेषण करते हैं बाज़ार की मांग, प्रतिस्पर्धा घनत्व और आपकी जीवित रहने की संभावना की भविष्यवाणी के लिए।',
+  'featureSpotlight.viability.bullet1': 'रीयल-टाइम बाज़ार घनत्व स्कैनिंग',
+  'featureSpotlight.viability.bullet2': 'जीवित रहने की संभावना पूर्वानुमान',
+  'featureSpotlight.viability.bullet3': 'लागत बनाम राजस्व बेंचमार्किंग',
+  'featureSpotlight.viability.image': 'viability',
+  'featureSpotlight.roadmap.title': 'लॉन्च रोडमैप',
+  'featureSpotlight.roadmap.subtitle': 'आपकी चरण-दर-चरण मास्टर प्लान।',
+  'featureSpotlight.roadmap.description': 'Gemini AI आपके व्यवसाय प्रकार और प्रांत का विश्लेषण करता है एक अत्यधिक विशिष्ट, क्रमबद्ध रोडमैप बनाने के लिए विचार से उद्घाटन दिवस तक।',
+  'featureSpotlight.roadmap.bullet1': 'समय अनुमान के साथ क्रमबद्ध कार्य',
+  'featureSpotlight.roadmap.bullet2': 'प्राथमिकता तर्क',
+  'featureSpotlight.roadmap.bullet3': 'प्रगति ट्रैकिंग',
+  'featureSpotlight.roadmap.image': 'roadmap',
+
+  // ═══════════════════════════════════════════════════════════════
   // LANDING PAGE - FOOTER
   // ═══════════════════════════════════════════════════════════════
   'footer.description': 'कनाडा में व्यवसाय शुरू करने के लिए आपका AI सह-संस्थापक। विचारों को मान्य करना, अनुपालन नेविगेट करना और स्टोरफ्रंट बनाना।',
@@ -240,7 +330,20 @@ export const hi: TranslationKeys = {
   'viability.title': 'व्यवहार्यता स्कैन',
   'viability.subtitle': 'कनाडाई बाजार में अपने व्यवसाय के विचार की क्षमता का विश्लेषण करें',
   'viability.runScan': 'व्यवहार्यता स्कैन चलाएं',
+  'viability.runScanButton': 'स्कैन चलाएं',
+  'viability.runScanDescription': 'अपनी प्रोफ़ाइल, बाजार की स्थितियों और उद्योग बेंचमार्क के आधार पर अपने व्यवसाय के विचार का AI-संचालित मूल्यांकन प्राप्त करें।',
+  'viability.runAgain': 'फिर से स्कैन चलाएं',
   'viability.scanning': 'आपके व्यवसाय का विश्लेषण हो रहा है...',
+  'viability.loading.message1': 'कनाडाई बाजार के रुझानों का विश्लेषण हो रहा है...',
+  'viability.loading.message2': 'उद्योग प्रतिस्पर्धा का मूल्यांकन हो रहा है...',
+  'viability.loading.message3': 'जीवित रहने की संभावनाओं की गणना हो रही है...',
+  'viability.loading.message4': 'AI स्टार्टअप रणनीति बनाई जा रही है...',
+  'viability.loading.wait': 'इसमें कुछ समय लग सकता है',
+  'viability.results': 'व्यवहार्यता परिणाम',
+  'viability.explainScore': 'मेरा स्कोर समझाएं',
+  'viability.aiExplanation': 'AI स्पष्टीकरण',
+  'viability.revenueBenchmarks': 'राजस्व बेंचमार्क',
+  'viability.revenueBenchmarksDesc': 'आपके क्षेत्र में समान व्यवसायों के लिए अनुमानित औसत राजस्व (CAD)',
   'viability.score': 'व्यवहार्यता स्कोर',
   'viability.verdict': 'निर्णय',
   'viability.risks': 'शीर्ष जोखिम',
@@ -251,6 +354,14 @@ export const hi: TranslationKeys = {
   'viability.riskSeverity.high': 'उच्च',
   'viability.riskSeverity.medium': 'मध्यम',
   'viability.riskSeverity.low': 'कम',
+  'viability.profileRequired': 'प्रोफ़ाइल आवश्यक',
+  'viability.completeOnboarding': 'व्यवहार्यता स्कैन चलाने के लिए ऑनबोर्डिंग पूरी करें।',
+  'viability.loadingProfile': 'आपकी प्रोफ़ाइल लोड हो रही है...',
+  'viability.scanFailed': 'स्कैन विफल',
+  'viability.retryScan': 'स्कैन पुनः प्रयास करें',
+  'viability.addBusinessInfo': 'स्कैन चलाने के लिए ऑनबोर्डिंग में अपना व्यवसाय प्रकार, प्रांत और व्यवसाय विवरण जोड़ें।',
+  'viability.editProfile': 'प्रोफ़ाइल संपादित करें',
+  'viability.completeOnboardingButton': 'ऑनबोर्डिंग पूरी करें',
 
   // ═══════════════════════════════════════════════════════════════
   // LAUNCH ROADMAP

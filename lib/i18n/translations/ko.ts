@@ -69,6 +69,95 @@ export const ko: TranslationKeys = {
   'cta.button.tryFree': 'Bizy 무료 체험',
 
   // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - STORY SCROLL (Animated Text)
+  // ═══════════════════════════════════════════════════════════════
+  'storyScroll.line1': '사업을 시작하는 것이 아이디어를 공유하는 것처럼 간단하다면 어떨까요?',
+  'storyScroll.line2': 'AI가 성공 여부를 알려줄 수 있다면 어떨까요?',
+  'storyScroll.line3': '단계별 로드맵이 있다면 어떨까요?',
+  'storyScroll.line4': 'Bizy를 만나보세요.',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - AI FEATURES
+  // ═══════════════════════════════════════════════════════════════
+  'aiFeatures.badge': 'Gemini 2.5 Flash 기반',
+  'aiFeatures.headline1': '캐나다 비즈니스 현실에 맞게',
+  'aiFeatures.headline2': '훈련된 AI.',
+  'aiFeatures.description': 'Bizy는 일반 챗의 래퍼가 아닙니다. StatsCan, CRA 데이터 및 주별 라이선스 레지스트리에 연결된 지능형 엔진입니다.',
+  'aiFeatures.contextAware.title': '맥락 인식 조언',
+  'aiFeatures.contextAware.desc': '귀하의 특정 주, 산업 및 예산 제약을 이해합니다.',
+  'aiFeatures.realTimeData.title': '실시간 시장 데이터',
+  'aiFeatures.realTimeData.desc': '귀하의 정확한 우편번호 지역에 대한 생존율 및 수익 벤치마크를 가져옵니다.',
+  'aiFeatures.automatedCompliance.title': '자동화된 규정 준수',
+  'aiFeatures.automatedCompliance.desc': '필요한 정확한 CRA 양식과 세금 마감일을 생성합니다.',
+  'aiFeatures.chat.bizyAI': 'Bizy AI',
+  'aiFeatures.chat.online': '온라인',
+  'aiFeatures.chat.message1': '토론토에서 카페를 열고 싶다는 것을 알았습니다. 그곳에서 카페의 65%가 첫 해에 실패한다는 것을 아셨나요? 먼저 경쟁 밀도를 확인해 보겠습니다.',
+  'aiFeatures.chat.message2': '네, 지도를 보여주시고 시작 비용을 계산해 보겠습니다.',
+  'aiFeatures.chat.message3': '실행 가능성 스캔 로딩 중... 계산된 위험 점수는 보통(42)입니다. 초기 임대료를 상쇄할 수 있는 3개의 보조금을 찾았습니다.',
+  'aiFeatures.chat.placeholder': '무엇이든 물어보세요...',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - COMPARISON TABLE
+  // ═══════════════════════════════════════════════════════════════
+  'comparison.badge': '비교',
+  'comparison.headline': '창업자가 실제로 구축하고 싶어하는 방식을 위해 설계됨',
+  'comparison.subheadline': 'Bizy는 정적인 사업 계획 템플릿이 아닙니다. 현대 구축자를 위해 설계된 동적이고 안내된 지능 플랫폼입니다.',
+  'comparison.keyFeatures': '주요 기능',
+  'comparison.bizy': 'Bizy',
+  'comparison.consultants': '컨설턴트',
+  'comparison.consultant': '컨설턴트',
+  'comparison.manualPlanning': '수동 계획',
+  'comparison.manual': 'DIY 수동',
+  'comparison.feature1': 'AI 기반 시장 분석',
+  'comparison.feature2': '단계별 런칭 로드맵',
+  'comparison.feature3': '즉시 보조금 매칭',
+  'comparison.feature4': '실시간 세금 캘린더',
+  'comparison.feature5': '규정 준수 추적',
+  'comparison.feature6': '시작 비용',
+  'comparison.feature7': '런칭 시간',
+  'comparison.bizyF6': '월 $29',
+  'comparison.consultantF6': '$3,000+',
+  'comparison.manualF6': '무료 + 시간',
+  'comparison.bizyF7': '시간',
+  'comparison.consultantF7': '주',
+  'comparison.manualF7': '개월',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FOUR STEPS / TIMELINE
+  // ═══════════════════════════════════════════════════════════════
+  'timeline.headline': '런칭까지 4단계.',
+  'timeline.step1.title': '사업을 설명하세요',
+  'timeline.step1.description': 'Bizy에게 무엇을 어디에 구축하고 싶은지 알려주세요.',
+  'timeline.step2.title': 'Bizy가 실행 가능성을 분석합니다',
+  'timeline.step2.description': 'AI가 시장 데이터를 가져와 생존을 예측합니다.',
+  'timeline.step3.title': '런칭 로드맵 생성',
+  'timeline.step3.description': '단계별 규정 준수 행동 계획을 받으세요.',
+  'timeline.step4.title': '스토어프론트 런칭',
+  'timeline.step4.description': '아름다운 웹사이트를 생성하고 판매를 시작하세요.',
+  'timeline.stepLabel': '단계',
+  'timeline.previewLabel': '애니메이션 UI 미리보기:',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FEATURE DEEP DIVE
+  // ═══════════════════════════════════════════════════════════════
+  'featureSpotlight.badge': '기능 스포트라이트',
+  'featureSpotlight.uiPreview': 'UI 미리보기',
+  'featureSpotlight.viability.title': 'AI 실행 가능성 분석',
+  'featureSpotlight.viability.subtitle': '돈을 쓰기 전에 기회를 파악하세요.',
+  'featureSpotlight.viability.description': '시장 수요, 경쟁 밀도 및 생존 확률을 예측하기 위해 캐나다 전역의 방대한 데이터셋을 분석합니다.',
+  'featureSpotlight.viability.bullet1': '실시간 시장 밀도 스캔',
+  'featureSpotlight.viability.bullet2': '생존 확률 예측',
+  'featureSpotlight.viability.bullet3': '비용 대 수익 벤치마킹',
+  'featureSpotlight.viability.image': 'viability',
+  'featureSpotlight.roadmap.title': '런칭 로드맵',
+  'featureSpotlight.roadmap.subtitle': '단계별 마스터 플랜.',
+  'featureSpotlight.roadmap.description': 'Gemini AI가 사업 유형과 주를 분석하여 아이디어부터 오픈일까지 매우 구체적이고 순서화된 로드맵을 생성합니다.',
+  'featureSpotlight.roadmap.bullet1': '시간 추정이 포함된 순서화된 작업',
+  'featureSpotlight.roadmap.bullet2': '우선순위 논리',
+  'featureSpotlight.roadmap.bullet3': '진행 상황 추적',
+  'featureSpotlight.roadmap.image': 'roadmap',
+
+  // ═══════════════════════════════════════════════════════════════
   // LANDING PAGE - FOOTER
   // ═══════════════════════════════════════════════════════════════
   'footer.description': '캐나다에서 사업을 시작하기 위한 AI 공동 창업자. 아이디어 검증, 규정 준수 탐색, 스토어프론트 구축.',
@@ -251,6 +340,27 @@ export const ko: TranslationKeys = {
   'viability.riskSeverity.high': '높음',
   'viability.riskSeverity.medium': '중간',
   'viability.riskSeverity.low': '낮음',
+  'viability.runScanButton': '스캔 실행',
+  'viability.runScanDescription': '프로필, 시장 상황 및 업계 벤치마크를 기반으로 사업 아이디어에 대한 AI 기반 평가를 받으세요.',
+  'viability.runAgain': '다시 스캔 실행',
+  'viability.loading.message1': '캐나다 시장 동향 분석 중...',
+  'viability.loading.message2': '업계 경쟁 평가 중...',
+  'viability.loading.message3': '생존 확률 계산 중...',
+  'viability.loading.message4': 'AI 스타트업 전략 생성 중...',
+  'viability.loading.wait': '잠시 기다려 주세요',
+  'viability.results': '실행 가능성 결과',
+  'viability.explainScore': '내 점수 설명하기',
+  'viability.aiExplanation': 'AI 설명',
+  'viability.revenueBenchmarks': '수익 벤치마크',
+  'viability.revenueBenchmarksDesc': '해당 지역의 유사 업종 평균 예상 수익(CAD)',
+  'viability.profileRequired': '프로필 필요',
+  'viability.completeOnboarding': '실행 가능성 스캔을 실행하려면 온보딩을 완료하세요.',
+  'viability.loadingProfile': '프로필 로딩 중...',
+  'viability.scanFailed': '스캔 실패',
+  'viability.retryScan': '스캔 재시도',
+  'viability.addBusinessInfo': '스캔을 실행하려면 온보딩에서 사업 유형, 주, 사업 설명을 추가하세요.',
+  'viability.editProfile': '프로필 수정',
+  'viability.completeOnboardingButton': '온보딩 완료',
 
   // ═══════════════════════════════════════════════════════════════
   // LAUNCH ROADMAP

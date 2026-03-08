@@ -69,6 +69,96 @@ export const tl: TranslationKeys = {
   'cta.button.tryFree': 'Subukan ang Bizy nang Libre',
 
   // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - STORY SCROLL (Animated Text)
+  // ═══════════════════════════════════════════════════════════════
+  'storyScroll.line1': 'Paano kung ang pagsisimula ng negosyo ay kasing dali ng pagsasabi ng iyong ideya sa iba?',
+  'storyScroll.line2': 'Paano kung masasabi sa iyo ng AI kung gagana ito?',
+  'storyScroll.line3': 'Paano kung may step-by-step na roadmap kang susundin?',
+  'storyScroll.line4': 'Kilalanin ang Bizy.',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - AI FEATURES
+  // ═══════════════════════════════════════════════════════════════
+  'aiFeatures.badge': 'Powered by Gemini 2.5 Flash',
+  'aiFeatures.headline1': 'Ang iyong AI-powered',
+  'aiFeatures.headline2': 'co-pilot para sa Canadian business.',
+  'aiFeatures.description': 'Ang Bizy ay hindi wrapper sa generic na chat. Ito ay isang intelligent engine na konektado sa StatsCan, CRA data, at provincial licensing registries.',
+  'aiFeatures.contextAware.title': 'Context-Aware na Payo',
+  'aiFeatures.contextAware.desc': 'Nauunawaan ang iyong partikular na probinsya, industriya, at budget constraints.',
+  'aiFeatures.realTimeData.title': 'Real-Time Market Data',
+  'aiFeatures.realTimeData.desc': 'Kinukuha ang survival rates at revenue benchmarks para sa iyong eksaktong postal code area.',
+  'aiFeatures.automatedCompliance.title': 'Automated Compliance',
+  'aiFeatures.automatedCompliance.desc': 'Nagge-generate ng eksaktong CRA forms at tax deadlines na kailangan mong sundin.',
+  'aiFeatures.chat.bizyAI': 'Bizy AI',
+  'aiFeatures.chat.online': 'Online',
+  'aiFeatures.chat.message1': 'Napansin kong gusto mong magbukas ng cafe sa Toronto. Alam mo bang 65% ng mga cafe doon ay nabigo sa unang taon? Suriin muna natin ang competition density.',
+  'aiFeatures.chat.message2': 'Oo, ipakita mo sa akin ang mapa at kalkulahin natin ang startup costs.',
+  'aiFeatures.chat.message3': 'Naglo-load ng viability scan... Ang iyong calculated risk score ay Moderate (42). Nakakita ako ng 3 grants na pwede mong i-apply para mabayaran ang initial rent.',
+  'aiFeatures.chat.placeholder': 'Magtanong ng kahit ano...',
+
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - COMPARISON TABLE
+  // ═══════════════════════════════════════════════════════════════
+  'comparison.badge': 'Paano kami nagkukumpara',
+  'comparison.headline': 'Lahat ng kailangan mo.',
+  'comparison.subheadline': 'Ikumpara ang Bizy sa pag-hire ng consultant o manual na paggawa.',
+  'comparison.keyFeatures': 'Mga Pangunahing Feature',
+  'comparison.bizy': 'Bizy',
+  'comparison.consultants': 'Mga Consultant',
+  'comparison.consultant': 'Consultant',
+  'comparison.manualPlanning': 'Manual na Pagpaplano',
+  'comparison.manual': 'DIY Manual',
+  'comparison.feature1': 'AI-Powered Market Analysis',
+  'comparison.feature2': 'Step-by-step Launch Roadmap',
+  'comparison.feature3': 'Instant Grant Matching',
+  'comparison.feature4': 'Real-time Tax Calendar',
+  'comparison.feature5': 'Compliance Tracking',
+  'comparison.feature6': 'Cost para Magsimula',
+  'comparison.feature7': 'Oras para Mag-launch',
+  'comparison.bizyF6': '$29/buwan',
+  'comparison.consultantF6': '$3,000+',
+  'comparison.manualF6': 'Libre + oras',
+  'comparison.bizyF7': 'Mga Oras',
+  'comparison.consultantF7': 'Mga Linggo',
+  'comparison.manualF7': 'Mga Buwan',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FOUR STEPS / TIMELINE
+  // ═══════════════════════════════════════════════════════════════
+  'timeline.headline': 'Apat na hakbang para ma-launch.',
+  'timeline.step1.title': 'Ilarawan ang iyong negosyo',
+  'timeline.step1.description': 'Sabihin kay Bizy kung ano ang gusto mong buuin at saan.',
+  'timeline.step2.title': 'Sinusuri ng Bizy ang viability',
+  'timeline.step2.description': 'Kinukuha ng AI ang market data para hulaan ang survival.',
+  'timeline.step3.title': 'Gumawa ng launch roadmap',
+  'timeline.step3.description': 'Kumuha ng step-by-step compliant action plan.',
+  'timeline.step4.title': 'I-launch ang iyong storefront',
+  'timeline.step4.description': 'Gumawa ng magandang website at magsimulang magbenta.',
+  'timeline.stepLabel': 'Hakbang',
+  'timeline.previewLabel': 'Animated UI Preview para sa:',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FEATURE DEEP DIVE
+  // ═══════════════════════════════════════════════════════════════
+  'featureSpotlight.badge': 'Feature Spotlight',
+  'featureSpotlight.uiPreview': 'UI Preview',
+  'featureSpotlight.viability.title': 'AI Viability Analysis',
+  'featureSpotlight.viability.subtitle': 'Alamin ang iyong tsansa bago gumastos ng kahit isang piso.',
+  'featureSpotlight.viability.description': 'Sinusuri namin ang napakalaking datasets sa buong Canada para hulaan ang market demand, competition density, at ang iyong probability ng survival.',
+  'featureSpotlight.viability.bullet1': 'Real-time market density scanning',
+  'featureSpotlight.viability.bullet2': 'Survival probability forecasting',
+  'featureSpotlight.viability.bullet3': 'Cost vs revenue benchmarking',
+  'featureSpotlight.viability.image': 'viability',
+  'featureSpotlight.roadmap.title': 'Launch Roadmap',
+  'featureSpotlight.roadmap.subtitle': 'Ang iyong step-by-step master plan.',
+  'featureSpotlight.roadmap.description': 'Sinusuri ng Gemini AI ang iyong uri ng negosyo at probinsya upang makabuo ng highly specific, sequenced roadmap mula sa ideya hanggang opening day.',
+  'featureSpotlight.roadmap.bullet1': 'Sequenced tasks na may time estimates',
+  'featureSpotlight.roadmap.bullet2': 'Prioritization logic',
+  'featureSpotlight.roadmap.bullet3': 'Progress tracking',
+  'featureSpotlight.roadmap.image': 'roadmap',
+
+  // ═══════════════════════════════════════════════════════════════
   // LANDING PAGE - FOOTER
   // ═══════════════════════════════════════════════════════════════
   'footer.description': 'Ang iyong AI co-founder para magsimula ng negosyo sa Canada. I-validate ang iyong ideya, mag-navigate sa compliance, at buuin ang iyong storefront.',
@@ -240,7 +330,20 @@ export const tl: TranslationKeys = {
   'viability.title': 'Viability Scan',
   'viability.subtitle': 'Suriin ang potensyal ng iyong ideya sa negosyo sa Canadian market',
   'viability.runScan': 'Patakbuhin ang Viability Scan',
+  'viability.runScanButton': 'Patakbuhin ang Scan',
+  'viability.runScanDescription': 'Kumuha ng AI-powered assessment ng iyong ideya sa negosyo batay sa iyong profile, market conditions, at industry benchmarks.',
+  'viability.runAgain': 'Patakbuhin muli ang scan',
   'viability.scanning': 'Sinusuri ang iyong negosyo...',
+  'viability.loading.message1': 'Sinusuri ang mga Canadian market trends...',
+  'viability.loading.message2': 'Sinusuri ang kompetisyon sa industriya...',
+  'viability.loading.message3': 'Kinakalkula ang mga survival probabilities...',
+  'viability.loading.message4': 'Ginagawa ang AI startup strategy...',
+  'viability.loading.wait': 'Maaaring tumagal ito nang kaunti',
+  'viability.results': 'Mga Resulta ng Viability',
+  'viability.explainScore': 'Ipaliwanag ang aking score',
+  'viability.aiExplanation': 'AI explanation',
+  'viability.revenueBenchmarks': 'Mga Revenue Benchmark',
+  'viability.revenueBenchmarksDesc': 'Tinatayang average na revenue (CAD) para sa mga katulad na negosyo sa iyong rehiyon',
   'viability.score': 'Viability Score',
   'viability.verdict': 'Hatol',
   'viability.risks': 'Mga Pangunahing Panganib',
@@ -251,6 +354,14 @@ export const tl: TranslationKeys = {
   'viability.riskSeverity.high': 'Mataas',
   'viability.riskSeverity.medium': 'Katamtaman',
   'viability.riskSeverity.low': 'Mababa',
+  'viability.profileRequired': 'Kinakailangan ang profile',
+  'viability.completeOnboarding': 'Kumpletuhin ang onboarding para mapatakbo ang viability scan.',
+  'viability.loadingProfile': 'Nilo-load ang iyong profile...',
+  'viability.scanFailed': 'Nabigo ang scan',
+  'viability.retryScan': 'Subukang muli ang scan',
+  'viability.addBusinessInfo': 'Idagdag ang iyong uri ng negosyo, probinsya, at paglalarawan ng negosyo sa onboarding para mapatakbo ang scan.',
+  'viability.editProfile': 'I-edit ang profile',
+  'viability.completeOnboardingButton': 'Kumpletuhin ang onboarding',
 
   // ═══════════════════════════════════════════════════════════════
   // LAUNCH ROADMAP

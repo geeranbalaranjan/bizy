@@ -70,6 +70,95 @@ export const ur: TranslationKeys = {
   'cta.button.tryFree': 'Bizy مفت آزمائیں',
 
   // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - STORY SCROLL (Animated Text)
+  // ═══════════════════════════════════════════════════════════════
+  'storyScroll.line1': 'کیا ہو اگر کاروبار شروع کرنا اتنا آسان ہو جیسا کسی کو اپنا خیال بتانا؟',
+  'storyScroll.line2': 'کیا ہو اگر AI آپ کو بتا سکے کہ یہ کام کرے گا یا نہیں؟',
+  'storyScroll.line3': 'کیا ہو اگر آپ کے پاس ایک مرحلہ وار روڈ میپ ہو جس پر عمل کیا جا سکے؟',
+  'storyScroll.line4': 'Bizy سے ملیں۔',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - AI FEATURES
+  // ═══════════════════════════════════════════════════════════════
+  'aiFeatures.badge': 'Gemini 2.5 Flash سے چلتا ہے',
+  'aiFeatures.headline1': 'آپ کا AI سہ پائلٹ',
+  'aiFeatures.headline2': 'کینیڈین کاروبار کے لیے۔',
+  'aiFeatures.description': 'Bizy عام چیٹ کے ارد گرد کوئی غلاف نہیں۔ یہ ایک ذہین انجن ہے جو StatsCan، CRA ڈیٹا، اور صوبائی لائسنس رجسٹریز سے جڑا ہے۔',
+  'aiFeatures.contextAware.title': 'سیاق و سباق سے آگاہ مشورے',
+  'aiFeatures.contextAware.desc': 'آپ کے مخصوص صوبے، صنعت، اور بجٹ کی پابندیوں کو سمجھتا ہے۔',
+  'aiFeatures.realTimeData.title': 'ریئل ٹائم مارکیٹ ڈیٹا',
+  'aiFeatures.realTimeData.desc': 'آپ کے پوسٹل کوڈ کے علاقے کے لیے بقا کی شرحیں اور آمدنی کے معیار حاصل کرتا ہے۔',
+  'aiFeatures.automatedCompliance.title': 'خودکار تعمیل',
+  'aiFeatures.automatedCompliance.desc': 'عین CRA فارمز اور ٹیکس کی آخری تاریخیں تیار کرتا ہے جن پر عمل کرنا ضروری ہے۔',
+  'aiFeatures.chat.bizyAI': 'Bizy AI',
+  'aiFeatures.chat.online': 'آن لائن',
+  'aiFeatures.chat.message1': 'میں نے دیکھا کہ آپ ٹورنٹو میں کیفے کھولنا چاہتے ہیں۔ کیا آپ جانتے ہیں کہ وہاں 65% کیفے پہلے سال میں ناکام ہو جاتے ہیں؟ پہلے مقابلے کی کثافت جانچ لیں۔',
+  'aiFeatures.chat.message2': 'ہاں، مجھے نقشہ دکھائیں اور شروعاتی اخراجات کا حساب لگائیں۔',
+  'aiFeatures.chat.message3': 'قابلیت سکین لوڈ ہو رہا ہے... آپ کا خطرے کا سکور معتدل (42) ہے۔ میں نے 3 گرانٹس تلاش کی ہیں جن کے لیے آپ ابتدائی کرایے کی بھرپائی کے لیے درخواست دے سکتے ہیں۔',
+  'aiFeatures.chat.placeholder': 'کچھ بھی پوچھیں...',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - COMPARISON TABLE
+  // ═══════════════════════════════════════════════════════════════
+  'comparison.badge': 'موازنہ',
+  'comparison.headline': 'بانیوں کے اصل طریقے کے لیے بنایا گیا',
+  'comparison.subheadline': 'Bizy کوئی جامد کاروباری منصوبہ ٹیمپلیٹ نہیں۔ یہ جدید تعمیر کاروں کے لیے بنایا گیا ایک متحرک، رہنما ذہانت پلیٹ فارم ہے۔',
+  'comparison.keyFeatures': 'اہم خصوصیات',
+  'comparison.bizy': 'Bizy',
+  'comparison.consultants': 'مشیر',
+  'comparison.consultant': 'مشیر',
+  'comparison.manualPlanning': 'دستی منصوبہ بندی',
+  'comparison.manual': 'DIY دستی',
+  'comparison.feature1': 'AI مارکیٹ تجزیہ',
+  'comparison.feature2': 'مرحلہ وار لانچ روڈ میپ',
+  'comparison.feature3': 'فوری گرانٹ میچنگ',
+  'comparison.feature4': 'ریئل ٹائم ٹیکس کیلنڈر',
+  'comparison.feature5': 'تعمیل ٹریکنگ',
+  'comparison.feature6': 'شروع کرنے کی لاگت',
+  'comparison.feature7': 'لانچ کا وقت',
+  'comparison.bizyF6': '$29/ماہ',
+  'comparison.consultantF6': '$3,000+',
+  'comparison.manualF6': 'مفت + وقت',
+  'comparison.bizyF7': 'گھنٹے',
+  'comparison.consultantF7': 'ہفتے',
+  'comparison.manualF7': 'مہینے',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FOUR STEPS / TIMELINE
+  // ═══════════════════════════════════════════════════════════════
+  'timeline.headline': 'لانچ کے چار قدم۔',
+  'timeline.step1.title': 'اپنے کاروبار کی وضاحت کریں',
+  'timeline.step1.description': 'Bizy کو بتائیں کہ آپ کیا اور کہاں بنانا چاہتے ہیں۔',
+  'timeline.step2.title': 'Bizy قابلیت کا تجزیہ کرتا ہے',
+  'timeline.step2.description': 'AI بقا کی پیش گوئی کے لیے مارکیٹ ڈیٹا حاصل کرتا ہے۔',
+  'timeline.step3.title': 'لانچ روڈ میپ بنائیں',
+  'timeline.step3.description': 'مرحلہ وار تعمیل کارروائی منصوبہ حاصل کریں۔',
+  'timeline.step4.title': 'اپنا اسٹور فرنٹ شروع کریں',
+  'timeline.step4.description': 'ایک خوبصورت ویب سائٹ بنائیں اور فروخت شروع کریں۔',
+  'timeline.stepLabel': 'قدم',
+  'timeline.previewLabel': 'متحرک UI پیش نظارہ برائے:',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FEATURE DEEP DIVE
+  // ═══════════════════════════════════════════════════════════════
+  'featureSpotlight.badge': 'فیچر سپاٹ لائٹ',
+  'featureSpotlight.uiPreview': 'UI پیش نظارہ',
+  'featureSpotlight.viability.title': 'AI قابلیت تجزیہ',
+  'featureSpotlight.viability.subtitle': 'ایک پائی خرچ کرنے سے پہلے اپنے مواقع جانیں۔',
+  'featureSpotlight.viability.description': 'ہم مارکیٹ کی طلب، مقابلے کی کثافت، اور آپ کے بقا کے امکان کی پیش گوئی کے لیے کینیڈا بھر میں وسیع ڈیٹا سیٹس کا تجزیہ کرتے ہیں۔',
+  'featureSpotlight.viability.bullet1': 'ریئل ٹائم مارکیٹ کثافت سکیننگ',
+  'featureSpotlight.viability.bullet2': 'بقا کے امکان کی پیش گوئی',
+  'featureSpotlight.viability.bullet3': 'لاگت بنام آمدن بینچ مارکنگ',
+  'featureSpotlight.viability.image': 'viability',
+  'featureSpotlight.roadmap.title': 'لانچ روڈ میپ',
+  'featureSpotlight.roadmap.subtitle': 'آپ کا مرحلہ وار ماسٹر پلان۔',
+  'featureSpotlight.roadmap.description': 'Gemini AI آپ کے کاروبار کی قسم اور صوبے کا تجزیہ کرتا ہے تاکہ خیال سے افتتاحی دن تک ایک بہت مخصوص، ترتیب وار روڈ میپ بنایا جا سکے۔',
+  'featureSpotlight.roadmap.bullet1': 'وقت کے تخمینے کے ساتھ ترتیب وار کام',
+  'featureSpotlight.roadmap.bullet2': 'ترجیح کی منطق',
+  'featureSpotlight.roadmap.bullet3': 'پیش رفت ٹریکنگ',
+  'featureSpotlight.roadmap.image': 'roadmap',
+
+  // ═══════════════════════════════════════════════════════════════
   // LANDING PAGE - FOOTER
   // ═══════════════════════════════════════════════════════════════
   'footer.description': 'کینیڈا میں کاروبار شروع کرنے کے لیے آپ کا AI شریک بانی۔ اپنے خیال کی توثیق کریں، تعمیل کی تشریف لے جائیں، اور اپنا اسٹور فرنٹ بنائیں۔',
@@ -252,6 +341,22 @@ export const ur: TranslationKeys = {
   'viability.riskSeverity.high': 'زیادہ',
   'viability.riskSeverity.medium': 'درمیانہ',
   'viability.riskSeverity.low': 'کم',
+  'viability.runScanButton': 'سکین چلائیں',
+  'viability.runScanDescription': 'اپنے پروفائل، مارکیٹ کے حالات، اور صنعت کے معیارات کی بنیاد پر اپنے کاروباری خیال کا AI سے چلنے والا جائزہ حاصل کریں۔',
+  'viability.runAgain': 'دوبارہ سکین چلائیں',
+  'viability.loading.message1': 'کینیڈین مارکیٹ کے رجحانات کا تجزیہ ہو رہا ہے...',
+  'viability.loading.message2': 'صنعتی مقابلے کا جائزہ لیا جا رہا ہے...',
+  'viability.loading.message3': 'بقا کے امکانات کا حساب لگایا جا رہا ہے...',
+  'viability.loading.message4': 'AI سٹارٹ اپ حکمت عملی تیار ہو رہی ہے...',
+  'viability.loading.wait': 'اس میں کچھ وقت لگ سکتا ہے',
+  'viability.results': 'قابلیت کے نتائج',
+  'viability.explainScore': 'میرا سکور سمجھائیں',
+  'viability.aiExplanation': 'AI وضاحت',
+  'viability.revenueBenchmarks': 'آمدنی کے معیارات',
+  'viability.revenueBenchmarksDesc': 'آپ کے علاقے میں اسی طرح کے کاروباروں کی تخمینی اوسط آمدنی (CAD)',
+  'viability.profileRequired': 'پروفائل درکار ہے',
+  'viability.completeOnboarding': 'قابلیت سکین چلانے کے لیے آن بورڈنگ مکمل کریں۔',
+  'viability.loadingProfile': 'آپ کا پروفائل لوڈ ہو رہا ہے...',
 
   // ═══════════════════════════════════════════════════════════════
   // LAUNCH ROADMAP
@@ -463,4 +568,13 @@ export const ur: TranslationKeys = {
   'province.nt': 'شمال مغربی علاقے',
   'province.yt': 'یوکون',
   'province.nu': 'نناووت',
+
+  // ═══════════════════════════════════════════════════════════════
+  // VIABILITY PAGE (NEW KEYS)
+  // ═══════════════════════════════════════════════════════════════
+  'viability.scanFailed': 'سکین ناکام ہو گئی',
+  'viability.retryScan': 'سکین دوبارہ کریں',
+  'viability.addBusinessInfo': 'سکین چلانے کے لیے آن بورڈنگ میں اپنی کاروبار کی قسم، صوبہ، اور کاروبار کی تفصیل شامل کریں۔',
+  'viability.editProfile': 'پروفائل ترمیم کریں',
+  'viability.completeOnboardingButton': 'آن بورڈنگ مکمل کریں',
 }

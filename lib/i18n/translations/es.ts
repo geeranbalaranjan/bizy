@@ -69,6 +69,95 @@ export const es: TranslationKeys = {
   'cta.button.tryFree': 'Prueba Bizy gratis',
 
   // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - STORY SCROLL (Animated Text)
+  // ═══════════════════════════════════════════════════════════════
+  'storyScroll.line1': '¿Y si iniciar un negocio fuera tan simple como compartir tu idea?',
+  'storyScroll.line2': '¿Y si la IA pudiera decirte si funcionará?',
+  'storyScroll.line3': '¿Y si tuvieras una hoja de ruta paso a paso a seguir?',
+  'storyScroll.line4': 'Conoce a Bizy.',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - AI FEATURES
+  // ═══════════════════════════════════════════════════════════════
+  'aiFeatures.badge': 'Impulsado por Gemini 2.5 Flash',
+  'aiFeatures.headline1': 'Una IA entrenada en',
+  'aiFeatures.headline2': 'la realidad empresarial canadiense.',
+  'aiFeatures.description': 'Bizy no es un envoltorio alrededor de un chat genérico. Es un motor inteligente conectado a datos de StatsCan, CRA y registros de licencias provinciales.',
+  'aiFeatures.contextAware.title': 'Consejos conscientes del contexto',
+  'aiFeatures.contextAware.desc': 'Entiende tu provincia, industria y restricciones presupuestarias específicas.',
+  'aiFeatures.realTimeData.title': 'Datos de mercado en tiempo real',
+  'aiFeatures.realTimeData.desc': 'Obtiene tasas de supervivencia y referencias de ingresos para tu código postal exacto.',
+  'aiFeatures.automatedCompliance.title': 'Cumplimiento automatizado',
+  'aiFeatures.automatedCompliance.desc': 'Genera los formularios exactos de CRA y plazos fiscales que necesitas seguir.',
+  'aiFeatures.chat.bizyAI': 'Bizy AI',
+  'aiFeatures.chat.online': 'En línea',
+  'aiFeatures.chat.message1': 'Noté que quieres abrir un café en Toronto. ¿Sabías que el 65% de los cafés allí fracasan en el primer año? Revisemos primero la densidad de competencia.',
+  'aiFeatures.chat.message2': 'Sí, muéstrame el mapa y calculemos los costos de inicio.',
+  'aiFeatures.chat.message3': 'Cargando análisis de viabilidad... Tu puntuación de riesgo calculada es Moderada (42). He encontrado 3 subvenciones a las que puedes aplicar para compensar el alquiler inicial.',
+  'aiFeatures.chat.placeholder': 'Pregunta lo que sea...',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - COMPARISON TABLE
+  // ═══════════════════════════════════════════════════════════════
+  'comparison.badge': 'Comparación',
+  'comparison.headline': 'Diseñado para cómo los fundadores realmente quieren construir',
+  'comparison.subheadline': 'Bizy no es una plantilla de plan de negocios estática. Es una plataforma de inteligencia dinámica y guiada diseñada para constructores modernos.',
+  'comparison.keyFeatures': 'Características clave',
+  'comparison.bizy': 'Bizy',
+  'comparison.consultants': 'Consultores',
+  'comparison.consultant': 'Consultor',
+  'comparison.manualPlanning': 'Planificación manual',
+  'comparison.manual': 'Manual DIY',
+  'comparison.feature1': 'Análisis de mercado con IA',
+  'comparison.feature2': 'Hoja de ruta de lanzamiento paso a paso',
+  'comparison.feature3': 'Coincidencia instantánea de subvenciones',
+  'comparison.feature4': 'Calendario fiscal en tiempo real',
+  'comparison.feature5': 'Seguimiento de cumplimiento',
+  'comparison.feature6': 'Costo de inicio',
+  'comparison.feature7': 'Tiempo de lanzamiento',
+  'comparison.bizyF6': '$29/mes',
+  'comparison.consultantF6': '$3,000+',
+  'comparison.manualF6': 'Gratis + tiempo',
+  'comparison.bizyF7': 'Horas',
+  'comparison.consultantF7': 'Semanas',
+  'comparison.manualF7': 'Meses',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FOUR STEPS / TIMELINE
+  // ═══════════════════════════════════════════════════════════════
+  'timeline.headline': 'Cuatro pasos para el lanzamiento.',
+  'timeline.step1.title': 'Describe tu negocio',
+  'timeline.step1.description': 'Dile a Bizy qué quieres construir y dónde.',
+  'timeline.step2.title': 'Bizy analiza la viabilidad',
+  'timeline.step2.description': 'La IA extrae datos del mercado para predecir supervivencia.',
+  'timeline.step3.title': 'Genera una hoja de ruta de lanzamiento',
+  'timeline.step3.description': 'Obtén un plan de acción de cumplimiento paso a paso.',
+  'timeline.step4.title': 'Lanza tu tienda',
+  'timeline.step4.description': 'Genera un sitio web hermoso y comienza a vender.',
+  'timeline.stepLabel': 'Paso',
+  'timeline.previewLabel': 'Vista previa de UI animada para:',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FEATURE DEEP DIVE
+  // ═══════════════════════════════════════════════════════════════
+  'featureSpotlight.badge': 'Característica destacada',
+  'featureSpotlight.uiPreview': 'Vista previa de UI',
+  'featureSpotlight.viability.title': 'Análisis de viabilidad con IA',
+  'featureSpotlight.viability.subtitle': 'Conoce tus posibilidades antes de gastar un centavo.',
+  'featureSpotlight.viability.description': 'Analizamos enormes conjuntos de datos en todo Canadá para predecir la demanda del mercado, densidad competitiva y tu probabilidad de supervivencia.',
+  'featureSpotlight.viability.bullet1': 'Escaneo de densidad de mercado en tiempo real',
+  'featureSpotlight.viability.bullet2': 'Pronóstico de probabilidad de supervivencia',
+  'featureSpotlight.viability.bullet3': 'Comparación de costos vs ingresos',
+  'featureSpotlight.viability.image': 'viability',
+  'featureSpotlight.roadmap.title': 'Hoja de ruta de lanzamiento',
+  'featureSpotlight.roadmap.subtitle': 'Tu plan maestro paso a paso.',
+  'featureSpotlight.roadmap.description': 'Gemini AI analiza tu tipo de negocio y provincia para generar una hoja de ruta altamente específica y secuenciada, de la idea al día de apertura.',
+  'featureSpotlight.roadmap.bullet1': 'Tareas secuenciadas con estimaciones de tiempo',
+  'featureSpotlight.roadmap.bullet2': 'Lógica de priorización',
+  'featureSpotlight.roadmap.bullet3': 'Seguimiento de progreso',
+  'featureSpotlight.roadmap.image': 'roadmap',
+
+  // ═══════════════════════════════════════════════════════════════
   // LANDING PAGE - FOOTER
   // ═══════════════════════════════════════════════════════════════
   'footer.description': 'Tu cofundador IA para lanzar negocios en Canadá. Validando ideas, navegando cumplimiento y construyendo tiendas.',
@@ -251,6 +340,27 @@ export const es: TranslationKeys = {
   'viability.riskSeverity.high': 'Alto',
   'viability.riskSeverity.medium': 'Medio',
   'viability.riskSeverity.low': 'Bajo',
+  'viability.runScanButton': 'Ejecutar análisis',
+  'viability.runScanDescription': 'Obtén una evaluación impulsada por IA de tu idea de negocio basada en tu perfil, condiciones del mercado y puntos de referencia de la industria.',
+  'viability.runAgain': 'Ejecutar análisis nuevamente',
+  'viability.loading.message1': 'Analizando tendencias del mercado canadiense...',
+  'viability.loading.message2': 'Evaluando la competencia de la industria...',
+  'viability.loading.message3': 'Calculando probabilidades de supervivencia...',
+  'viability.loading.message4': 'Generando estrategia de startup con IA...',
+  'viability.loading.wait': 'Esto puede tomar un momento',
+  'viability.results': 'Resultados de viabilidad',
+  'viability.explainScore': 'Explicar mi puntuación',
+  'viability.aiExplanation': 'Explicación de IA',
+  'viability.revenueBenchmarks': 'Puntos de referencia de ingresos',
+  'viability.revenueBenchmarksDesc': 'Ingresos promedio estimados (CAD) para negocios similares en tu región',
+  'viability.profileRequired': 'Perfil requerido',
+  'viability.completeOnboarding': 'Completa el registro para ejecutar un análisis de viabilidad.',
+  'viability.loadingProfile': 'Cargando tu perfil...',
+  'viability.scanFailed': 'Análisis fallido',
+  'viability.retryScan': 'Reintentar análisis',
+  'viability.addBusinessInfo': 'Agrega tu tipo de negocio, provincia y descripción del negocio en el registro para ejecutar un análisis.',
+  'viability.editProfile': 'Editar perfil',
+  'viability.completeOnboardingButton': 'Completar registro',
 
   // ═══════════════════════════════════════════════════════════════
   // LAUNCH ROADMAP

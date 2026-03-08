@@ -70,6 +70,95 @@ export const en: TranslationKeys = {
   'cta.button.tryFree': 'Try Bizy Free',
 
   // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - STORY SCROLL (Animated Text)
+  // ═══════════════════════════════════════════════════════════════
+  'storyScroll.line1': 'Starting a business in Canada is confusing.',
+  'storyScroll.line2': 'Regulations, taxes, licenses, funding, compliance.',
+  'storyScroll.line3': "Most founders don't know where to start.",
+  'storyScroll.line4': 'Bizy changes that.',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - AI FEATURES
+  // ═══════════════════════════════════════════════════════════════
+  'aiFeatures.badge': 'Powered by Gemini 2.5 Flash',
+  'aiFeatures.headline1': 'An AI trained on',
+  'aiFeatures.headline2': 'Canadian Business Reality',
+  'aiFeatures.description': "Bizy isn't a wrapper around generic chat. It's an intelligent engine connected to StatsCan, CRA data, and provincial licensing registries.",
+  'aiFeatures.contextAware.title': 'Context-Aware Advice',
+  'aiFeatures.contextAware.desc': 'Understands your specific province, industry, and budget constraints.',
+  'aiFeatures.realTimeData.title': 'Real-Time Market Data',
+  'aiFeatures.realTimeData.desc': 'Sources survival rates and revenue benchmarks for your exact postal code area.',
+  'aiFeatures.automatedCompliance.title': 'Automated Compliance',
+  'aiFeatures.automatedCompliance.desc': 'Generates the exact CRA forms and tax deadlines you need to follow.',
+  'aiFeatures.chat.bizyAI': 'Bizy AI',
+  'aiFeatures.chat.online': 'Online',
+  'aiFeatures.chat.message1': "I noticed you want to open a cafe in Toronto. Did you know 65% of cafes there fail in year one? Let's check the competition density first.",
+  'aiFeatures.chat.message2': "Yes, show me the map and let's calculate the startup costs.",
+  'aiFeatures.chat.message3': "Loading viability scan... Your calculated risk score is Moderate (42). I've found 3 grants you can apply for to offset the initial rent.",
+  'aiFeatures.chat.placeholder': 'Ask anything...',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - COMPARISON TABLE
+  // ═══════════════════════════════════════════════════════════════
+  'comparison.badge': 'Comparison',
+  'comparison.headline': 'Built for how founders actually want to build',
+  'comparison.subheadline': "Bizy isn't a static business plan template. It's a dynamic, guided intelligence platform designed for modern builders.",
+  'comparison.keyFeatures': 'Key Features',
+  'comparison.bizy': 'Bizy',
+  'comparison.consultants': 'Consultants',
+  'comparison.consultant': 'Consultant',
+  'comparison.manualPlanning': 'Manual Planning',
+  'comparison.manual': 'DIY Manual',
+  'comparison.feature1': 'Has real, adaptive conversations',
+  'comparison.feature2': 'Automated viability & survival analysis',
+  'comparison.feature3': 'Available instantly, 24/7',
+  'comparison.feature4': 'Generates custom launch roadmap',
+  'comparison.feature5': 'Sales without headcount',
+  'comparison.feature6': 'No prohibitive startup costs',
+  'comparison.feature7': 'Live web storefront creation',
+  'comparison.bizyF6': '$29/mo',
+  'comparison.consultantF6': '$3,000+',
+  'comparison.manualF6': 'Free + time',
+  'comparison.bizyF7': 'Hours',
+  'comparison.consultantF7': 'Weeks',
+  'comparison.manualF7': 'Months',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FOUR STEPS / TIMELINE
+  // ═══════════════════════════════════════════════════════════════
+  'timeline.headline': 'Four steps to launched.',
+  'timeline.step1.title': 'Describe your business',
+  'timeline.step1.description': 'Tell Bizy what you want to build and where.',
+  'timeline.step2.title': 'Bizy analyzes viability',
+  'timeline.step2.description': 'AI pulls market data to predict survival.',
+  'timeline.step3.title': 'Generate launch roadmap',
+  'timeline.step3.description': 'Get a step-by-step compliant action plan.',
+  'timeline.step4.title': 'Launch your storefront',
+  'timeline.step4.description': 'Generate a beautiful website and start selling.',
+  'timeline.stepLabel': 'Step',
+  'timeline.previewLabel': 'Animated UI Preview for:',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FEATURE DEEP DIVE
+  // ═══════════════════════════════════════════════════════════════
+  'featureSpotlight.badge': 'Feature Spotlight',
+  'featureSpotlight.viability.title': 'AI Viability Analysis',
+  'featureSpotlight.viability.subtitle': 'Know your chances before you spend a dime.',
+  'featureSpotlight.viability.description': 'We analyze massive datasets across Canada to predict market demand, competition density, and your probability of survival.',
+  'featureSpotlight.viability.bullet1': 'Real-time market density scanning',
+  'featureSpotlight.viability.bullet2': 'Survival probability forecasting',
+  'featureSpotlight.viability.bullet3': 'Cost vs revenue benchmarking',
+  'featureSpotlight.viability.image': 'viability',
+  'featureSpotlight.roadmap.title': 'Launch Roadmap',
+  'featureSpotlight.roadmap.subtitle': 'Your step-by-step master plan.',
+  'featureSpotlight.roadmap.description': 'Gemini AI analyzes your business type and province to generate a highly specific, sequenced roadmap from idea to opening day.',
+  'featureSpotlight.roadmap.bullet1': 'Sequenced tasks with time estimates',
+  'featureSpotlight.roadmap.bullet2': 'Prioritization logic',
+  'featureSpotlight.roadmap.bullet3': 'Progress tracking',
+  'featureSpotlight.roadmap.image': 'roadmap',
+  'featureSpotlight.uiPreview': 'UI Preview:',
+
+  // ═══════════════════════════════════════════════════════════════
   // LANDING PAGE - FOOTER
   // ═══════════════════════════════════════════════════════════════
   'footer.description': 'Your AI co-founder for launching businesses in Canada. Validating ideas, navigating compliance, and building storefronts.',
@@ -249,7 +338,20 @@ export const en: TranslationKeys = {
   'viability.title': 'Viability Scan',
   'viability.subtitle': 'Analyze your business idea\'s potential in the Canadian market',
   'viability.runScan': 'Run Viability Scan',
+  'viability.runScanButton': 'Run Scan',
+  'viability.runScanDescription': 'Get an AI-powered assessment of your business idea based on your profile, market conditions, and industry benchmarks.',
+  'viability.runAgain': 'Run scan again',
   'viability.scanning': 'Analyzing your business...',
+  'viability.loading.message1': 'Analyzing Canadian market trends...',
+  'viability.loading.message2': 'Evaluating industry competition...',
+  'viability.loading.message3': 'Calculating survival probabilities...',
+  'viability.loading.message4': 'Generating AI startup strategy...',
+  'viability.loading.wait': 'This may take a moment',
+  'viability.results': 'Viability Results',
+  'viability.explainScore': 'Explain my score',
+  'viability.aiExplanation': 'AI explanation',
+  'viability.revenueBenchmarks': 'Revenue Benchmarks',
+  'viability.revenueBenchmarksDesc': 'Estimated average revenue (CAD) for similar businesses in your region',
   'viability.score': 'Viability Score',
   'viability.verdict': 'Verdict',
   'viability.risks': 'Top Risks',
@@ -260,6 +362,14 @@ export const en: TranslationKeys = {
   'viability.riskSeverity.high': 'High',
   'viability.riskSeverity.medium': 'Medium',
   'viability.riskSeverity.low': 'Low',
+  'viability.profileRequired': 'Profile required',
+  'viability.completeOnboarding': 'Complete onboarding to run a viability scan.',
+  'viability.loadingProfile': 'Loading your profile...',
+  'viability.scanFailed': 'Scan failed',
+  'viability.retryScan': 'Retry scan',
+  'viability.addBusinessInfo': 'Add your business type, province, and business description in onboarding to run a scan.',
+  'viability.editProfile': 'Edit profile',
+  'viability.completeOnboardingButton': 'Complete onboarding',
 
   // ═══════════════════════════════════════════════════════════════
   // LAUNCH ROADMAP

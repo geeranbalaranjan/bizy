@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { Loader2, RefreshCw, HelpCircle } from 'lucide-react'
 import type { ViabilityResult, BusinessProfile } from '@/types'
 import { Button } from '@/components/ui/button'
+import { useTranslation } from '@/context/TranslationContext'
 import { ViabilityScore } from './ViabilityScore'
 import { MarketInsights } from './MarketInsights'
 import { MarketChart } from './MarketChart'
@@ -12,13 +13,6 @@ import { RiskCards } from './RiskCards'
 import { Opportunities } from './Opportunities'
 import { AIRecommendations } from './AIRecommendations'
 import { NextSteps } from './NextSteps'
-
-const LOADING_MESSAGES = [
-  'Analyzing Canadian market trends...',
-  'Evaluating industry competition...',
-  'Calculating survival probabilities...',
-  'Generating AI startup strategy...',
-]
 
 interface ViabilityScanProps {
   viabilityResult: ViabilityResult | null
@@ -36,6 +30,14 @@ export function ViabilityScan({
   const [loadingMessageIndex, setLoadingMessageIndex] = useState(0)
   const [explainLoading, setExplainLoading] = useState(false)
   const [explainText, setExplainText] = useState<string | null>(null)
+  const { t } = useTranslation()
+
+  const LOADING_MESSAGES = [
+    t('viability.loading.message1'),
+    t('viability.loading.message2'),
+    t('viability.loading.message3'),
+    t('viability.loading.message4'),
+  ]
 
   useEffect(() => {
     if (!isLoading) return
@@ -43,7 +45,7 @@ export function ViabilityScan({
       setLoadingMessageIndex((i) => (i + 1) % LOADING_MESSAGES.length)
     }, 2500)
     return () => clearInterval(interval)
-  }, [isLoading])
+  }, [isLoading, LOADING_MESSAGES.length])
 
   async function handleExplainScore() {
     if (!viabilityResult || !businessProfile?.businessDescription) return
@@ -85,7 +87,7 @@ export function ViabilityScan({
         <p className="font-heading text-lg font-medium text-brand-primary">
           {LOADING_MESSAGES[loadingMessageIndex]}
         </p>
-        <p className="text-sm text-gray-500">This may take a moment</p>
+        <p className="text-sm text-gray-500">{t('viability.loading.wait')}</p>
       </div>
     )
   }
@@ -103,7 +105,7 @@ export function ViabilityScan({
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex-1">
               <h3 className="font-heading text-xl font-semibold text-brand-primary mb-2">
-                Viability Results
+                {t('viability.results')}
               </h3>
               <div className="rounded-lg bg-gray-50 p-4">
                 <p className="text-sm text-gray-700">{viabilityResult.verdictSummary}</p>
@@ -120,12 +122,12 @@ export function ViabilityScan({
                   ) : (
                     <HelpCircle className="h-4 w-4" />
                   )}
-                  <span className="ml-2">Explain my score</span>
+                  <span className="ml-2">{t('viability.explainScore')}</span>
                 </Button>
               </div>
               {explainText !== null && (
                 <div className="mt-4 rounded-lg border border-brand-primary/20 bg-brand-primary/5 p-4">
-                  <p className="text-sm font-medium text-brand-primary mb-1">AI explanation</p>
+                  <p className="text-sm font-medium text-brand-primary mb-1">{t('viability.aiExplanation')}</p>
                   <p className="text-sm text-gray-700 whitespace-pre-wrap">{explainText}</p>
                 </div>
               )}
@@ -142,11 +144,11 @@ export function ViabilityScan({
         {/* Revenue Benchmarks */}
         <div className="rounded-xl border border-gray-200 bg-white p-6">
           <h4 className="font-heading text-lg font-semibold text-brand-primary mb-4">
-            Revenue Benchmarks
+            {t('viability.revenueBenchmarks')}
           </h4>
           <MarketChart data={marketChartData} />
           <p className="mt-2 text-xs text-gray-500">
-            Estimated average revenue (CAD) for similar businesses in your region
+            {t('viability.revenueBenchmarksDesc')}
           </p>
         </div>
 
@@ -179,7 +181,7 @@ export function ViabilityScan({
         <div className="flex justify-end">
           <Button variant="outline" onClick={onRunScan}>
             <RefreshCw className="h-4 w-4 mr-2" />
-            Run scan again
+            {t('viability.runAgain')}
           </Button>
         </div>
       </div>
@@ -189,14 +191,13 @@ export function ViabilityScan({
   return (
     <div className="flex flex-col items-center justify-center gap-6 rounded-xl border border-gray-200 bg-white p-12">
       <h3 className="font-heading text-xl font-semibold text-brand-primary">
-        Run Viability Scan
+        {t('viability.runScan')}
       </h3>
       <p className="max-w-md text-center text-sm text-gray-600">
-        Get an AI-powered assessment of your business idea based on your profile,
-        market conditions, and industry benchmarks.
+        {t('viability.runScanDescription')}
       </p>
       <Button onClick={onRunScan} size="lg">
-        Run Scan
+        {t('viability.runScanButton')}
       </Button>
     </div>
   )

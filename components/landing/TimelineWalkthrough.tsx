@@ -3,29 +3,31 @@
 import { useState } from 'react'
 import { FileText, Search, Compass, Store } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { useTranslation } from '@/context/TranslationContext'
 
 export function TimelineWalkthrough() {
   const [activeStep, setActiveStep] = useState(0)
+  const { t } = useTranslation()
 
   const steps = [
     {
-      title: "Describe your business",
-      description: "Tell Bizy what you want to build and where.",
+      titleKey: 'timeline.step1.title',
+      descriptionKey: 'timeline.step1.description',
       icon: <FileText className="w-6 h-6" />
     },
     {
-      title: "Bizy analyzes viability",
-      description: "AI pulls market data to predict survival.",
+      titleKey: 'timeline.step2.title',
+      descriptionKey: 'timeline.step2.description',
       icon: <Search className="w-6 h-6" />
     },
     {
-      title: "Generate launch roadmap",
-      description: "Get a step-by-step compliant action plan.",
+      titleKey: 'timeline.step3.title',
+      descriptionKey: 'timeline.step3.description',
       icon: <Compass className="w-6 h-6" />
     },
     {
-      title: "Launch your storefront",
-      description: "Generate a beautiful website and start selling.",
+      titleKey: 'timeline.step4.title',
+      descriptionKey: 'timeline.step4.description',
       icon: <Store className="w-6 h-6" />
     }
   ]
@@ -35,7 +37,7 @@ export function TimelineWalkthrough() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-            Four steps to launched.
+            {t('timeline.headline')}
           </h2>
         </div>
 
@@ -72,13 +74,13 @@ export function TimelineWalkthrough() {
                       "font-heading text-lg font-bold transition-colors",
                       activeStep === idx ? "text-white" : "text-gray-400 group-hover:text-white"
                     )}>
-                      {step.title}
+                      {t(step.titleKey)}
                     </h4>
                     <p className={cn(
                       "text-sm mt-1 transition-colors",
                       activeStep === idx ? "text-gray-300" : "text-gray-600 group-hover:text-gray-400"
                     )}>
-                      {step.description}
+                      {t(step.descriptionKey)}
                     </p>
                   </div>
                 </div>
@@ -96,8 +98,8 @@ export function TimelineWalkthrough() {
                 />
                 
                 <div className="text-gray-500 font-mono text-center relative z-10 transition-all duration-500" key={activeStep}>
-                   <div className="text-sm uppercase tracking-widest text-brand-accent mb-2">Step {activeStep + 1}</div>
-                   [Animated UI Preview for: {steps[activeStep].title}]
+                   <div className="text-sm uppercase tracking-widest text-brand-accent mb-2">{t('timeline.stepLabel')} {activeStep + 1}</div>
+                   [{t('timeline.previewLabel')} {t(steps[activeStep].titleKey)}]
                 </div>
              </div>
           </div>

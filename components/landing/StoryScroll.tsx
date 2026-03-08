@@ -2,16 +2,18 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { cn } from '@/lib/utils'
+import { useTranslation } from '@/context/TranslationContext'
 
 export function StoryScroll() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [activeSection, setActiveSection] = useState(0)
+  const { t } = useTranslation()
 
   const stories = [
-    "Starting a business in Canada is confusing.",
-    "Regulations, taxes, licenses, funding, compliance.",
-    "Most founders don't know where to start.",
-    "Bizy changes that."
+    t('storyScroll.line1'),
+    t('storyScroll.line2'),
+    t('storyScroll.line3'),
+    t('storyScroll.line4')
   ]
 
   useEffect(() => {

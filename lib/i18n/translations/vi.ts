@@ -69,6 +69,95 @@ export const vi: TranslationKeys = {
   'cta.button.tryFree': 'Dùng thử Bizy miễn phí',
 
   // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - STORY SCROLL (Animated Text)
+  // ═══════════════════════════════════════════════════════════════
+  'storyScroll.line1': 'Nếu việc bắt đầu kinh doanh đơn giản như việc chia sẻ ý tưởng của bạn thì sao?',
+  'storyScroll.line2': 'Nếu AI có thể cho bạn biết liệu nó có thành công không thì sao?',
+  'storyScroll.line3': 'Nếu bạn có một lộ trình từng bước để theo dõi thì sao?',
+  'storyScroll.line4': 'Gặp Bizy.',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - AI FEATURES
+  // ═══════════════════════════════════════════════════════════════
+  'aiFeatures.badge': 'Hỗ trợ bởi Gemini 2.5 Flash',
+  'aiFeatures.headline1': 'Một AI được đào tạo về',
+  'aiFeatures.headline2': 'thực tế kinh doanh Canada.',
+  'aiFeatures.description': 'Bizy không phải là một lớp bọc quanh chat chung. Nó là một cỗ máy thông minh kết nối với dữ liệu StatsCan, CRA và các đăng ký giấy phép cấp tỉnh.',
+  'aiFeatures.contextAware.title': 'Lời khuyên nhận thức ngữ cảnh',
+  'aiFeatures.contextAware.desc': 'Hiểu tỉnh, ngành và các ràng buộc ngân sách cụ thể của bạn.',
+  'aiFeatures.realTimeData.title': 'Dữ liệu thị trường thời gian thực',
+  'aiFeatures.realTimeData.desc': 'Lấy tỷ lệ sống sót và chuẩn doanh thu cho vùng mã bưu chính chính xác của bạn.',
+  'aiFeatures.automatedCompliance.title': 'Tuân thủ tự động',
+  'aiFeatures.automatedCompliance.desc': 'Tạo các biểu mẫu CRA chính xác và thời hạn thuế bạn cần tuân theo.',
+  'aiFeatures.chat.bizyAI': 'Bizy AI',
+  'aiFeatures.chat.online': 'Trực tuyến',
+  'aiFeatures.chat.message1': 'Tôi nhận thấy bạn muốn mở quán cà phê ở Toronto. Bạn có biết 65% quán cà phê ở đó thất bại trong năm đầu tiên không? Hãy kiểm tra mật độ cạnh tranh trước.',
+  'aiFeatures.chat.message2': 'Vâng, cho tôi xem bản đồ và hãy tính chi phí khởi nghiệp.',
+  'aiFeatures.chat.message3': 'Đang tải quét khả thi... Điểm rủi ro được tính là Trung bình (42). Tôi đã tìm thấy 3 khoản tài trợ bạn có thể đăng ký để bù đắp tiền thuê ban đầu.',
+  'aiFeatures.chat.placeholder': 'Hỏi bất cứ điều gì...',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - COMPARISON TABLE
+  // ═══════════════════════════════════════════════════════════════
+  'comparison.badge': 'So sánh',
+  'comparison.headline': 'Được xây dựng cho cách các nhà sáng lập thực sự muốn xây dựng',
+  'comparison.subheadline': 'Bizy không phải là mẫu kế hoạch kinh doanh tĩnh. Nó là một nền tảng trí tuệ động và hướng dẫn được thiết kế cho những người xây dựng hiện đại.',
+  'comparison.keyFeatures': 'Tính năng chính',
+  'comparison.bizy': 'Bizy',
+  'comparison.consultants': 'Tư vấn viên',
+  'comparison.consultant': 'Tư vấn viên',
+  'comparison.manualPlanning': 'Lập kế hoạch thủ công',
+  'comparison.manual': 'Tự làm',
+  'comparison.feature1': 'Phân tích thị trường bằng AI',
+  'comparison.feature2': 'Lộ trình ra mắt từng bước',
+  'comparison.feature3': 'Đối sánh tài trợ tức thì',
+  'comparison.feature4': 'Lịch thuế thời gian thực',
+  'comparison.feature5': 'Theo dõi tuân thủ',
+  'comparison.feature6': 'Chi phí bắt đầu',
+  'comparison.feature7': 'Thời gian ra mắt',
+  'comparison.bizyF6': '$29/tháng',
+  'comparison.consultantF6': '$3,000+',
+  'comparison.manualF6': 'Miễn phí + thời gian',
+  'comparison.bizyF7': 'Giờ',
+  'comparison.consultantF7': 'Tuần',
+  'comparison.manualF7': 'Tháng',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FOUR STEPS / TIMELINE
+  // ═══════════════════════════════════════════════════════════════
+  'timeline.headline': 'Bốn bước để ra mắt.',
+  'timeline.step1.title': 'Mô tả doanh nghiệp của bạn',
+  'timeline.step1.description': 'Nói cho Bizy biết bạn muốn xây dựng gì và ở đâu.',
+  'timeline.step2.title': 'Bizy phân tích khả thi',
+  'timeline.step2.description': 'AI lấy dữ liệu thị trường để dự đoán khả năng sống sót.',
+  'timeline.step3.title': 'Tạo lộ trình ra mắt',
+  'timeline.step3.description': 'Nhận kế hoạch hành động tuân thủ từng bước.',
+  'timeline.step4.title': 'Ra mắt cửa hàng',
+  'timeline.step4.description': 'Tạo một trang web đẹp và bắt đầu bán hàng.',
+  'timeline.stepLabel': 'Bước',
+  'timeline.previewLabel': 'Xem trước UI hoạt hình cho:',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FEATURE DEEP DIVE
+  // ═══════════════════════════════════════════════════════════════
+  'featureSpotlight.badge': 'Tính năng nổi bật',
+  'featureSpotlight.uiPreview': 'Xem trước UI',
+  'featureSpotlight.viability.title': 'Phân tích khả thi bằng AI',
+  'featureSpotlight.viability.subtitle': 'Biết cơ hội của bạn trước khi chi một đồng.',
+  'featureSpotlight.viability.description': 'Chúng tôi phân tích các bộ dữ liệu khổng lồ trên khắp Canada để dự đoán nhu cầu thị trường, mật độ cạnh tranh và xác suất sống sót của bạn.',
+  'featureSpotlight.viability.bullet1': 'Quét mật độ thị trường thời gian thực',
+  'featureSpotlight.viability.bullet2': 'Dự báo xác suất sống sót',
+  'featureSpotlight.viability.bullet3': 'So sánh chi phí vs doanh thu',
+  'featureSpotlight.viability.image': 'viability',
+  'featureSpotlight.roadmap.title': 'Lộ trình ra mắt',
+  'featureSpotlight.roadmap.subtitle': 'Kế hoạch chủ đạo từng bước của bạn.',
+  'featureSpotlight.roadmap.description': 'Gemini AI phân tích loại hình kinh doanh và tỉnh của bạn để tạo ra lộ trình rất cụ thể và theo trình tự, từ ý tưởng đến ngày khai trương.',
+  'featureSpotlight.roadmap.bullet1': 'Các nhiệm vụ theo trình tự với ước tính thời gian',
+  'featureSpotlight.roadmap.bullet2': 'Logic ưu tiên',
+  'featureSpotlight.roadmap.bullet3': 'Theo dõi tiến độ',
+  'featureSpotlight.roadmap.image': 'roadmap',
+
+  // ═══════════════════════════════════════════════════════════════
   // LANDING PAGE - FOOTER
   // ═══════════════════════════════════════════════════════════════
   'footer.description': 'Đồng sáng lập AI của bạn để khởi nghiệp tại Canada. Xác nhận ý tưởng, điều hướng tuân thủ và xây dựng cửa hàng.',
@@ -251,6 +340,27 @@ export const vi: TranslationKeys = {
   'viability.riskSeverity.high': 'Cao',
   'viability.riskSeverity.medium': 'Trung bình',
   'viability.riskSeverity.low': 'Thấp',
+  'viability.runScanButton': 'Chạy quét',
+  'viability.runScanDescription': 'Nhận đánh giá được hỗ trợ bởi AI về ý tưởng kinh doanh của bạn dựa trên hồ sơ, điều kiện thị trường và tiêu chuẩn ngành.',
+  'viability.runAgain': 'Chạy quét lại',
+  'viability.loading.message1': 'Đang phân tích xu hướng thị trường Canada...',
+  'viability.loading.message2': 'Đang đánh giá cạnh tranh ngành...',
+  'viability.loading.message3': 'Đang tính toán xác suất tồn tại...',
+  'viability.loading.message4': 'Đang tạo chiến lược khởi nghiệp AI...',
+  'viability.loading.wait': 'Quá trình này có thể mất một chút thời gian',
+  'viability.results': 'Kết quả khả thi',
+  'viability.explainScore': 'Giải thích điểm của tôi',
+  'viability.aiExplanation': 'Giải thích AI',
+  'viability.revenueBenchmarks': 'Tiêu chuẩn doanh thu',
+  'viability.revenueBenchmarksDesc': 'Doanh thu trung bình ước tính (CAD) cho các doanh nghiệp tương tự trong khu vực của bạn',
+  'viability.profileRequired': 'Yêu cầu hồ sơ',
+  'viability.completeOnboarding': 'Hoàn thành hội nhập để chạy quét khả thi.',
+  'viability.loadingProfile': 'Đang tải hồ sơ của bạn...',
+  'viability.scanFailed': 'Quét thất bại',
+  'viability.retryScan': 'Thử lại quét',
+  'viability.addBusinessInfo': 'Thêm loại hình kinh doanh, tỉnh và mô tả doanh nghiệp trong hội nhập để chạy quét.',
+  'viability.editProfile': 'Chỉnh sửa hồ sơ',
+  'viability.completeOnboardingButton': 'Hoàn thành hội nhập',
 
   // ═══════════════════════════════════════════════════════════════
   // LAUNCH ROADMAP

@@ -70,6 +70,95 @@ export const ar: TranslationKeys = {
   'cta.button.tryFree': 'جرب Bizy مجاناً',
 
   // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - STORY SCROLL (Animated Text)
+  // ═══════════════════════════════════════════════════════════════
+  'storyScroll.line1': 'ماذا لو كان بدء عمل تجاري بسيطاً مثل مشاركة فكرتك؟',
+  'storyScroll.line2': 'ماذا لو استطاع الذكاء الاصطناعي إخبارك ما إذا كان سينجح؟',
+  'storyScroll.line3': 'ماذا لو كان لديك خارطة طريق خطوة بخطوة للاتباع؟',
+  'storyScroll.line4': 'تعرف على Bizy.',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - AI FEATURES
+  // ═══════════════════════════════════════════════════════════════
+  'aiFeatures.badge': 'مدعوم بـ Gemini 2.5 Flash',
+  'aiFeatures.headline1': 'مساعدك الطيار المدعوم بالذكاء الاصطناعي',
+  'aiFeatures.headline2': 'للأعمال الكندية.',
+  'aiFeatures.description': 'Bizy ليس غلافاً حول دردشة عامة. إنه محرك ذكي متصل ببيانات StatsCan وCRA وسجلات التراخيص الإقليمية.',
+  'aiFeatures.contextAware.title': 'نصائح مدركة للسياق',
+  'aiFeatures.contextAware.desc': 'يفهم مقاطعتك وصناعتك وقيود ميزانيتك المحددة.',
+  'aiFeatures.realTimeData.title': 'بيانات السوق الفورية',
+  'aiFeatures.realTimeData.desc': 'يستخرج معدلات البقاء ومعايير الإيرادات لمنطقة رمزك البريدي.',
+  'aiFeatures.automatedCompliance.title': 'الامتثال الآلي',
+  'aiFeatures.automatedCompliance.desc': 'ينشئ نماذج CRA الدقيقة والمواعيد الضريبية التي تحتاج إلى اتباعها.',
+  'aiFeatures.chat.bizyAI': 'Bizy AI',
+  'aiFeatures.chat.online': 'متصل',
+  'aiFeatures.chat.message1': 'لاحظت أنك تريد فتح مقهى في تورنتو. هل تعلم أن 65% من المقاهي هناك تفشل في السنة الأولى؟ دعنا نتحقق من كثافة المنافسة أولاً.',
+  'aiFeatures.chat.message2': 'نعم، أرني الخريطة ولنحسب تكاليف البدء.',
+  'aiFeatures.chat.message3': 'جاري تحميل فحص الجدوى... درجة المخاطر المحسوبة متوسطة (42). وجدت 3 منح يمكنك التقدم لها لتعويض الإيجار الأولي.',
+  'aiFeatures.chat.placeholder': 'اسأل أي شيء...',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - COMPARISON TABLE
+  // ═══════════════════════════════════════════════════════════════
+  'comparison.badge': 'المقارنة',
+  'comparison.headline': 'مصمم لطريقة بناء المؤسسين الحقيقية',
+  'comparison.subheadline': 'Bizy ليس قالب خطة عمل ثابت. إنه منصة استخبارات ديناميكية ومرشدة مصممة للبناة المعاصرين.',
+  'comparison.keyFeatures': 'الميزات الرئيسية',
+  'comparison.bizy': 'Bizy',
+  'comparison.consultants': 'المستشارون',
+  'comparison.consultant': 'مستشار',
+  'comparison.manualPlanning': 'التخطيط اليدوي',
+  'comparison.manual': 'يدوي DIY',
+  'comparison.feature1': 'تحليل السوق بالذكاء الاصطناعي',
+  'comparison.feature2': 'خارطة طريق الإطلاق خطوة بخطوة',
+  'comparison.feature3': 'مطابقة المنح الفورية',
+  'comparison.feature4': 'التقويم الضريبي الفوري',
+  'comparison.feature5': 'تتبع الامتثال',
+  'comparison.feature6': 'تكلفة البدء',
+  'comparison.feature7': 'وقت الإطلاق',
+  'comparison.bizyF6': '$29/شهرياً',
+  'comparison.consultantF6': '$3,000+',
+  'comparison.manualF6': 'مجاني + وقت',
+  'comparison.bizyF7': 'ساعات',
+  'comparison.consultantF7': 'أسابيع',
+  'comparison.manualF7': 'أشهر',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FOUR STEPS / TIMELINE
+  // ═══════════════════════════════════════════════════════════════
+  'timeline.headline': 'أربع خطوات للإطلاق.',
+  'timeline.step1.title': 'صف عملك',
+  'timeline.step1.description': 'أخبر Bizy ما تريد بناءه وأين.',
+  'timeline.step2.title': 'Bizy يحلل الجدوى',
+  'timeline.step2.description': 'يستخرج الذكاء الاصطناعي بيانات السوق للتنبؤ بالبقاء.',
+  'timeline.step3.title': 'أنشئ خارطة طريق الإطلاق',
+  'timeline.step3.description': 'احصل على خطة عمل متوافقة خطوة بخطوة.',
+  'timeline.step4.title': 'أطلق واجهة متجرك',
+  'timeline.step4.description': 'أنشئ موقعاً جميلاً وابدأ البيع.',
+  'timeline.stepLabel': 'خطوة',
+  'timeline.previewLabel': 'معاينة واجهة المستخدم المتحركة لـ:',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FEATURE DEEP DIVE
+  // ═══════════════════════════════════════════════════════════════
+  'featureSpotlight.badge': 'تسليط الضوء على الميزة',
+  'featureSpotlight.uiPreview': 'معاينة الواجهة',
+  'featureSpotlight.viability.title': 'تحليل الجدوى بالذكاء الاصطناعي',
+  'featureSpotlight.viability.subtitle': 'اعرف فرصك قبل إنفاق فلس واحد.',
+  'featureSpotlight.viability.description': 'نحلل مجموعات بيانات ضخمة عبر كندا للتنبؤ بطلب السوق وكثافة المنافسة واحتمالية بقائك.',
+  'featureSpotlight.viability.bullet1': 'مسح كثافة السوق الفوري',
+  'featureSpotlight.viability.bullet2': 'توقع احتمالية البقاء',
+  'featureSpotlight.viability.bullet3': 'مقارنة التكلفة مقابل الإيرادات',
+  'featureSpotlight.viability.image': 'viability',
+  'featureSpotlight.roadmap.title': 'خارطة طريق الإطلاق',
+  'featureSpotlight.roadmap.subtitle': 'خطتك الرئيسية خطوة بخطوة.',
+  'featureSpotlight.roadmap.description': 'يحلل Gemini AI نوع عملك ومقاطعتك لإنشاء خارطة طريق محددة للغاية ومتسلسلة من الفكرة إلى يوم الافتتاح.',
+  'featureSpotlight.roadmap.bullet1': 'مهام متسلسلة مع تقديرات الوقت',
+  'featureSpotlight.roadmap.bullet2': 'منطق الأولويات',
+  'featureSpotlight.roadmap.bullet3': 'تتبع التقدم',
+  'featureSpotlight.roadmap.image': 'roadmap',
+
+  // ═══════════════════════════════════════════════════════════════
   // LANDING PAGE - FOOTER
   // ═══════════════════════════════════════════════════════════════
   'footer.description': 'شريكك المؤسس بالذكاء الاصطناعي لإطلاق الأعمال في كندا. التحقق من الأفكار، والتنقل في الامتثال، وبناء واجهات المتاجر.',
@@ -252,6 +341,27 @@ export const ar: TranslationKeys = {
   'viability.riskSeverity.high': 'عالي',
   'viability.riskSeverity.medium': 'متوسط',
   'viability.riskSeverity.low': 'منخفض',
+  'viability.runScanButton': 'تشغيل الفحص',
+  'viability.runScanDescription': 'احصل على تقييم مدعوم بالذكاء الاصطناعي لفكرة عملك بناءً على ملفك الشخصي وظروف السوق ومعايير الصناعة.',
+  'viability.runAgain': 'إعادة الفحص',
+  'viability.loading.message1': 'تحليل اتجاهات السوق الكندي...',
+  'viability.loading.message2': 'تقييم المنافسة في الصناعة...',
+  'viability.loading.message3': 'حساب احتمالات البقاء...',
+  'viability.loading.message4': 'إنشاء استراتيجية الشركات الناشئة بالذكاء الاصطناعي...',
+  'viability.loading.wait': 'قد يستغرق هذا لحظة',
+  'viability.results': 'نتائج الجدوى',
+  'viability.explainScore': 'اشرح درجتي',
+  'viability.aiExplanation': 'شرح الذكاء الاصطناعي',
+  'viability.revenueBenchmarks': 'معايير الإيرادات',
+  'viability.revenueBenchmarksDesc': 'متوسط الإيرادات المقدرة (بالدولار الكندي) للشركات المماثلة في منطقتك',
+  'viability.profileRequired': 'الملف الشخصي مطلوب',
+  'viability.completeOnboarding': 'أكمل التسجيل لتشغيل فحص الجدوى.',
+  'viability.loadingProfile': 'جاري تحميل ملفك الشخصي...',
+  'viability.scanFailed': 'فشل الفحص',
+  'viability.retryScan': 'إعادة المحاولة',
+  'viability.addBusinessInfo': 'أضف نوع عملك والمقاطعة ووصف العمل في التسجيل لتشغيل الفحص.',
+  'viability.editProfile': 'تعديل الملف الشخصي',
+  'viability.completeOnboardingButton': 'إكمال التسجيل',
 
   // ═══════════════════════════════════════════════════════════════
   // LAUNCH ROADMAP

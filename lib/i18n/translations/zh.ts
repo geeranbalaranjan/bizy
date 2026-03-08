@@ -69,6 +69,96 @@ export const zh: TranslationKeys = {
   'cta.button.tryFree': '免费试用Bizy',
 
   // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - STORY SCROLL (Animated Text)
+  // ═══════════════════════════════════════════════════════════════
+  'storyScroll.line1': '如果创业像分享你的想法一样简单会怎样？',
+  'storyScroll.line2': '如果AI能告诉你它是否可行会怎样？',
+  'storyScroll.line3': '如果你有一份分步路线图可以遵循会怎样？',
+  'storyScroll.line4': '认识Bizy。',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - AI FEATURES
+  // ═══════════════════════════════════════════════════════════════
+  'aiFeatures.badge': '由Gemini 2.5 Flash驱动',
+  'aiFeatures.headline1': '您的AI驱动',
+  'aiFeatures.headline2': '加拿大商业副驾驶。',
+  'aiFeatures.description': 'Bizy不是通用聊天的外壳。它是一个连接到StatsCan、CRA数据和省级许可证注册处的智能引擎。',
+  'aiFeatures.contextAware.title': '上下文感知建议',
+  'aiFeatures.contextAware.desc': '理解您的特定省份、行业和预算限制。',
+  'aiFeatures.realTimeData.title': '实时市场数据',
+  'aiFeatures.realTimeData.desc': '获取您邮政编码区域的生存率和收入基准。',
+  'aiFeatures.automatedCompliance.title': '自动化合规',
+  'aiFeatures.automatedCompliance.desc': '生成您需要遵循的精确 CRA 表格和税务截止日期。',
+  'aiFeatures.chat.bizyAI': 'Bizy AI',
+  'aiFeatures.chat.online': '在线',
+  'aiFeatures.chat.message1': '我注意到您想在多伦多开一家咖啡馆。您知道那里65%的咖啡馆在第一年就失败了吗？让我们先检查竞争密度。',
+  'aiFeatures.chat.message2': '是的，给我看地图，让我们计算初始成本。',
+  'aiFeatures.chat.message3': '正在加载可行性扫描...您的计算风险分数为中等(42)。我已找到3项补助金，您可以申请以抵消初始租金。',
+  'aiFeatures.chat.placeholder': '问任何问题...',
+
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - COMPARISON TABLE
+  // ═══════════════════════════════════════════════════════════════
+  'comparison.badge': '我们的比较',
+  'comparison.headline': '您需要的一切。',
+  'comparison.subheadline': '将Bizy与聘请顾问或手动操作进行比较。',
+  'comparison.keyFeatures': '主要功能',
+  'comparison.bizy': 'Bizy',
+  'comparison.consultants': '顾问',
+  'comparison.consultant': '顾问',
+  'comparison.manualPlanning': '手动规划',
+  'comparison.manual': '手动DIY',
+  'comparison.feature1': 'AI驱动的市场分析',
+  'comparison.feature2': '分步启动路线图',
+  'comparison.feature3': '即时补助金匹配',
+  'comparison.feature4': '实时税务日历',
+  'comparison.feature5': '合规跟踪',
+  'comparison.feature6': '启动成本',
+  'comparison.feature7': '启动时间',
+  'comparison.bizyF6': '$29/月',
+  'comparison.consultantF6': '$3,000+',
+  'comparison.manualF6': '免费+时间',
+  'comparison.bizyF7': '小时',
+  'comparison.consultantF7': '周',
+  'comparison.manualF7': '月',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FOUR STEPS / TIMELINE
+  // ═══════════════════════════════════════════════════════════════
+  'timeline.headline': '四步启动。',
+  'timeline.step1.title': '描述您的业务',
+  'timeline.step1.description': '告诉Bizy您想建立什么以及在哪里。',
+  'timeline.step2.title': 'Bizy分析可行性',
+  'timeline.step2.description': 'AI提取市场数据来预测生存率。',
+  'timeline.step3.title': '生成启动路线图',
+  'timeline.step3.description': '获得分步合规行动计划。',
+  'timeline.step4.title': '启动您的店面',
+  'timeline.step4.description': '生成漂亮的网站并开始销售。',
+  'timeline.stepLabel': '步骤',
+  'timeline.previewLabel': '动画UI预览：',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FEATURE DEEP DIVE
+  // ═══════════════════════════════════════════════════════════════
+  'featureSpotlight.badge': '功能亮点',
+  'featureSpotlight.uiPreview': 'UI预览',
+  'featureSpotlight.viability.title': 'AI可行性分析',
+  'featureSpotlight.viability.subtitle': '在花一分钱之前了解您的机会。',
+  'featureSpotlight.viability.description': '我们分析加拿大各地的大量数据集，以预测市场需求、竞争密度和您的生存概率。',
+  'featureSpotlight.viability.bullet1': '实时市场密度扫描',
+  'featureSpotlight.viability.bullet2': '生存概率预测',
+  'featureSpotlight.viability.bullet3': '成本与收入对比',
+  'featureSpotlight.viability.image': 'viability',
+  'featureSpotlight.roadmap.title': '启动路线图',
+  'featureSpotlight.roadmap.subtitle': '您的分步总体计划。',
+  'featureSpotlight.roadmap.description': 'Gemini AI分析您的业务类型和省份，生成高度具体的、有序的路线图，从想法到开业日。',
+  'featureSpotlight.roadmap.bullet1': '带有时间估算的有序任务',
+  'featureSpotlight.roadmap.bullet2': '优先级逻辑',
+  'featureSpotlight.roadmap.bullet3': '进度跟踪',
+  'featureSpotlight.roadmap.image': 'roadmap',
+
+  // ═══════════════════════════════════════════════════════════════
   // LANDING PAGE - FOOTER
   // ═══════════════════════════════════════════════════════════════
   'footer.description': '您在加拿大创业的AI联合创始人。验证想法、导航合规、构建店面。',
@@ -240,7 +330,20 @@ export const zh: TranslationKeys = {
   'viability.title': '可行性扫描',
   'viability.subtitle': '分析您的商业想法在加拿大市场的潜力',
   'viability.runScan': '运行可行性扫描',
+  'viability.runScanButton': '运行扫描',
+  'viability.runScanDescription': '根据您的个人资料、市场条件和行业基准，获得AI驱动的商业想法评估。',
+  'viability.runAgain': '重新运行扫描',
   'viability.scanning': '正在分析您的业务...',
+  'viability.loading.message1': '分析加拿大市场趋势...',
+  'viability.loading.message2': '评估行业竞争...',
+  'viability.loading.message3': '计算生存概率...',
+  'viability.loading.message4': '生成AI创业策略...',
+  'viability.loading.wait': '这可能需要一点时间',
+  'viability.results': '可行性结果',
+  'viability.explainScore': '解释我的评分',
+  'viability.aiExplanation': 'AI解释',
+  'viability.revenueBenchmarks': '收入基准',
+  'viability.revenueBenchmarksDesc': '您所在地区类似企业的估计平均收入（加元）',
   'viability.score': '可行性评分',
   'viability.verdict': '结论',
   'viability.risks': '主要风险',
@@ -251,6 +354,14 @@ export const zh: TranslationKeys = {
   'viability.riskSeverity.high': '高',
   'viability.riskSeverity.medium': '中',
   'viability.riskSeverity.low': '低',
+  'viability.profileRequired': '需要个人资料',
+  'viability.completeOnboarding': '完成入职流程以运行可行性扫描。',
+  'viability.loadingProfile': '正在加载您的个人资料...',
+  'viability.scanFailed': '扫描失败',
+  'viability.retryScan': '重试扫描',
+  'viability.addBusinessInfo': '在入职流程中添加您的业务类型、省份和业务描述以运行扫描。',
+  'viability.editProfile': '编辑个人资料',
+  'viability.completeOnboardingButton': '完成入职',
 
   // ═══════════════════════════════════════════════════════════════
   // LAUNCH ROADMAP

@@ -71,6 +71,95 @@ export interface TranslationKeys {
   'cta.button.tryFree': string
 
   // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - STORY SCROLL (Animated Text)
+  // ═══════════════════════════════════════════════════════════════
+  'storyScroll.line1': string
+  'storyScroll.line2': string
+  'storyScroll.line3': string
+  'storyScroll.line4': string
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - AI FEATURES
+  // ═══════════════════════════════════════════════════════════════
+  'aiFeatures.badge': string
+  'aiFeatures.headline1': string
+  'aiFeatures.headline2': string
+  'aiFeatures.description': string
+  'aiFeatures.contextAware.title': string
+  'aiFeatures.contextAware.desc': string
+  'aiFeatures.realTimeData.title': string
+  'aiFeatures.realTimeData.desc': string
+  'aiFeatures.automatedCompliance.title': string
+  'aiFeatures.automatedCompliance.desc': string
+  'aiFeatures.chat.bizyAI': string
+  'aiFeatures.chat.online': string
+  'aiFeatures.chat.message1': string
+  'aiFeatures.chat.message2': string
+  'aiFeatures.chat.message3': string
+  'aiFeatures.chat.placeholder': string
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - COMPARISON TABLE
+  // ═══════════════════════════════════════════════════════════════
+  'comparison.badge': string
+  'comparison.headline': string
+  'comparison.subheadline': string
+  'comparison.keyFeatures': string
+  'comparison.bizy': string
+  'comparison.consultants': string
+  'comparison.consultant': string
+  'comparison.manualPlanning': string
+  'comparison.manual': string
+  'comparison.feature1': string
+  'comparison.feature2': string
+  'comparison.feature3': string
+  'comparison.feature4': string
+  'comparison.feature5': string
+  'comparison.feature6': string
+  'comparison.feature7': string
+  'comparison.bizyF6': string
+  'comparison.consultantF6': string
+  'comparison.manualF6': string
+  'comparison.bizyF7': string
+  'comparison.consultantF7': string
+  'comparison.manualF7': string
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FOUR STEPS / TIMELINE
+  // ═══════════════════════════════════════════════════════════════
+  'timeline.headline': string
+  'timeline.step1.title': string
+  'timeline.step1.description': string
+  'timeline.step2.title': string
+  'timeline.step2.description': string
+  'timeline.step3.title': string
+  'timeline.step3.description': string
+  'timeline.step4.title': string
+  'timeline.step4.description': string
+  'timeline.stepLabel': string
+  'timeline.previewLabel': string
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FEATURE DEEP DIVE
+  // ═══════════════════════════════════════════════════════════════
+  'featureSpotlight.badge': string
+  'featureSpotlight.viability.title': string
+  'featureSpotlight.viability.subtitle': string
+  'featureSpotlight.viability.description': string
+  'featureSpotlight.viability.bullet1': string
+  'featureSpotlight.viability.bullet2': string
+  'featureSpotlight.viability.bullet3': string
+  'featureSpotlight.roadmap.title': string
+  'featureSpotlight.roadmap.subtitle': string
+  'featureSpotlight.roadmap.description': string
+  'featureSpotlight.roadmap.bullet1': string
+  'featureSpotlight.roadmap.bullet2': string
+  'featureSpotlight.roadmap.bullet3': string
+  'featureSpotlight.roadmap.image': string
+  'featureSpotlight.viability.image': string
+  'featureSpotlight.uiPreview': string
+
+  // ═══════════════════════════════════════════════════════════════
   // LANDING PAGE - FOOTER
   // ═══════════════════════════════════════════════════════════════
   'footer.description': string
@@ -250,7 +339,20 @@ export interface TranslationKeys {
   'viability.title': string
   'viability.subtitle': string
   'viability.runScan': string
+  'viability.runScanButton': string
+  'viability.runScanDescription': string
+  'viability.runAgain': string
   'viability.scanning': string
+  'viability.loading.message1': string
+  'viability.loading.message2': string
+  'viability.loading.message3': string
+  'viability.loading.message4': string
+  'viability.loading.wait': string
+  'viability.results': string
+  'viability.explainScore': string
+  'viability.aiExplanation': string
+  'viability.revenueBenchmarks': string
+  'viability.revenueBenchmarksDesc': string
   'viability.score': string
   'viability.verdict': string
   'viability.risks': string
@@ -261,6 +363,14 @@ export interface TranslationKeys {
   'viability.riskSeverity.high': string
   'viability.riskSeverity.medium': string
   'viability.riskSeverity.low': string
+  'viability.profileRequired': string
+  'viability.completeOnboarding': string
+  'viability.loadingProfile': string
+  'viability.scanFailed': string
+  'viability.retryScan': string
+  'viability.addBusinessInfo': string
+  'viability.editProfile': string
+  'viability.completeOnboardingButton': string
 
   // ═══════════════════════════════════════════════════════════════
   // LAUNCH ROADMAP

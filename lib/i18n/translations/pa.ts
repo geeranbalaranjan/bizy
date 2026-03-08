@@ -68,8 +68,96 @@ export const pa: TranslationKeys = {
   'cta.button.dashboard': 'ਡੈਸ਼ਬੋਰਡ \'ਤੇ ਜਾਓ',
   'cta.button.tryFree': 'Bizy ਮੁਫ਼ਤ ਅਜ਼ਮਾਓ',
 
+  // ═══════════════════════════════════════════════════════════════  // LANDING PAGE - STORY SCROLL (Animated Text)
   // ═══════════════════════════════════════════════════════════════
-  // LANDING PAGE - FOOTER
+  'storyScroll.line1': 'ਕੀ ਹੋਵੇ ਜੇ ਕਾਰੋਬਾਰ ਸ਼ੁਰੂ ਕਰਨਾ ਓਨਾ ਹੀ ਆਸਾਨ ਹੋਵੇ ਜਿਵੇਂ ਕਿਸੇ ਨੂੰ ਅਪਣਾ ਵਿਚਾਰ ਦੱਸਣਾ?',
+  'storyScroll.line2': 'ਕੀ ਹੋਵੇ ਜੇ AI ਤੁਹਾਨੂੰ ਦੱਸ ਸਕੇ ਕਿ ਇਹ ਕੰਮ ਕਰੇਗਾ ਜਾਂ ਨਹੀਂ?',
+  'storyScroll.line3': 'ਕੀ ਹੋਵੇ ਜੇ ਤੁਹਾਡੇ ਕੋਲ ਪਾਲਣਾ ਕਰਨ ਲਈ ਕਦਮ-ਦਰ-ਕਦਮ ਰੋਡਮੈਪ ਹੋਵੇ?',
+  'storyScroll.line4': 'Bizy ਨਾਲ ਮਿਲੋ।',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - AI FEATURES
+  // ═══════════════════════════════════════════════════════════════
+  'aiFeatures.badge': 'Gemini 2.5 Flash ਦੁਆਰਾ ਸੰਚਾਲਿਤ',
+  'aiFeatures.headline1': 'ਤੁਹਾਡਾ AI-ਸੰਚਾਲਿਤ',
+  'aiFeatures.headline2': 'ਕੈਨੇਡੀਅਨ ਕਾਰੋਬਾਰ ਲਈ ਸਹਿ-ਪਾਇਲਟ।',
+  'aiFeatures.description': 'Bizy ਆਮ ਚੈਟ ਦੇ ਆਲੇ-ਦੁਆਲੇ ਦਾ ਘੇਰਾ ਨਹੀਂ। ਇਹ StatsCan, CRA ਡੇਟਾ, ਅਤੇ ਸੂਬਾਈ ਲਾਇਸੈਂਸਿੰਗ ਰਜਿਸਟਰੀਆਂ ਨਾਲ ਜੁੜਿਆ ਇੱਕ ਸਮਝਦਾਰ ਇੰਜਣ ਹੈ।',
+  'aiFeatures.contextAware.title': 'ਸੰਦਰਭ-ਜਾਗਰੂਕ ਸਲਾਹ',
+  'aiFeatures.contextAware.desc': 'ਤੁਹਾਡੇ ਖਾਸ ਸੂਬੇ, ਉਦਯੋਗ ਅਤੇ ਬਜਟ ਸੀਮਾਵਾਂ ਨੂੰ ਸਮਝਦਾ ਹੈ।',
+  'aiFeatures.realTimeData.title': 'ਰੀਅਲ-ਟਾਈਮ ਮਾਰਕੀਟ ਡੇਟਾ',
+  'aiFeatures.realTimeData.desc': 'ਤੁਹਾਡੇ ਸਹੀ ਪੋਸਟਲ ਕੋਡ ਖੇਤਰ ਲਈ ਬਚਾਅ ਦਰਾਂ ਅਤੇ ਆਮਦਨ ਬੈਂਚਮਾਰਕ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ।',
+  'aiFeatures.automatedCompliance.title': 'ਸਵੈਚਾਲਿਤ ਪਾਲਣਾ',
+  'aiFeatures.automatedCompliance.desc': 'ਤੁਹਾਨੂੰ ਜਿਨ੍ਹਾਂ ਸਹੀ CRA ਫਾਰਮਾਂ ਅਤੇ ਟੈਕਸ ਡੈਡਲਾਈਨਾਂ ਦਾ ਪਾਲਣ ਕਰਨਾ ਹੈ ਉਹ ਬਣਾਉਂਦਾ ਹੈ।',
+  'aiFeatures.chat.bizyAI': 'Bizy AI',
+  'aiFeatures.chat.online': 'ਔਨਲਾਈਨ',
+  'aiFeatures.chat.message1': 'ਮੈਂ ਦੇਖਿਆ ਕਿ ਤੁਸੀਂ ਟੋਰਾਂਟੋ ਵਿੱਚ ਕੈਫੇ ਖੋਲ੍ਹਣਾ ਚਾਹੁੰਦੇ ਹੋ। ਕੀ ਤੁਸੀਂ ਜਾਣਦੇ ਹੋ ਕਿ ਉੱਥੇ 65% ਕੈਫੇ ਪਹਿਲੇ ਸਾਲ ਵਿੱਚ ਅਸਫਲ ਹੋ ਜਾਂਦੇ ਹਨ? ਪਹਿਲਾਂ ਮੁਕਾਬਲੇ ਦੀ ਘਣਤਾ ਜਾਂਚ ਲੈਂਦੇ ਹਾਂ।',
+  'aiFeatures.chat.message2': 'ਹਾਂ, ਮੈਨੂੰ ਨਕਸ਼ਾ ਦਿਖਾਓ ਅਤੇ ਸ਼ੁਰੂਆਤੀ ਲਾਗਤਾਂ ਦਾ ਹਿਸਾਬ ਲਗਾਈਏ।',
+  'aiFeatures.chat.message3': 'ਸੰਭਾਵਨਾ ਸਕੈਨ ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ... ਤੁਹਾਡਾ ਗਣਨਾ ਕੀਤਾ ਜੋਖਮ ਸਕੋਰ ਦਰਮਿਆਨਾ (42) ਹੈ। ਮੈਂ 3 ਗ੍ਰਾਂਟਾਂ ਲੱਭੀਆਂ ਹਨ ਜਿਨ੍ਹਾਂ ਲਈ ਤੁਸੀਂ ਸ਼ੁਰੂਆਤੀ ਕਿਰਾਏ ਦੀ ਭਰਪਾਈ ਲਈ ਅਰਜ਼ੀ ਦੇ ਸਕਦੇ ਹੋ।',
+  'aiFeatures.chat.placeholder': 'ਕੁਝ ਵੀ ਪੁੱਛੋ...',
+
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - COMPARISON TABLE
+  // ═══════════════════════════════════════════════════════════════
+  'comparison.badge': 'ਅਸੀਂ ਕਿਵੇਂ ਤੁਲਨਾ ਕਰਦੇ ਹਾਂ',
+  'comparison.headline': 'ਤੁਹਾਨੂੰ ਜੋ ਚਾਹੀਦਾ ਹੈ ਉਹ ਸਭ ਕੁਝ।',
+  'comparison.subheadline': 'Bizy ਦੀ ਤੁਲਨਾ ਕਿਸੇ ਸਲਾਹਕਾਰ ਨੂੰ ਨੌਕਰੀ ਦੇਣ ਜਾਂ ਮੈਨੁਅਲ ਕਰਨ ਨਾਲ ਕਰੋ।',
+  'comparison.keyFeatures': 'ਮੁੱਖ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ',
+  'comparison.bizy': 'Bizy',
+  'comparison.consultants': 'ਸਲਾਹਕਾਰ',
+  'comparison.consultant': 'ਸਲਾਹਕਾਰ',
+  'comparison.manualPlanning': 'ਮੈਨੁਅਲ ਯੋਜਨਾ',
+  'comparison.manual': 'DIY ਮੈਨੁਅਲ',
+  'comparison.feature1': 'AI-ਸੰਚਾਲਿਤ ਮਾਰਕੀਟ ਵਿਸ਼ਲੇਸ਼ਣ',
+  'comparison.feature2': 'ਕਦਮ-ਦਰ-ਕਦਮ ਲਾਂਚ ਰੋਡਮੈਪ',
+  'comparison.feature3': 'ਤੁਰੰਤ ਗ੍ਰਾਂਟ ਮਿਲਾਨ',
+  'comparison.feature4': 'ਰੀਅਲ-ਟਾਇਮ ਟੈਕਸ ਕੈਲੰਡਰ',
+  'comparison.feature5': 'ਪਾਲਣਾ ਟਰੈਕਿੰਗ',
+  'comparison.feature6': 'ਸ਼ੁਰੂ ਕਰਨ ਦੀ ਲਾਗਤ',
+  'comparison.feature7': 'ਲਾਂਚ ਦਾ ਸਮਾਂ',
+  'comparison.bizyF6': '$29/ਮਹੀਨਾ',
+  'comparison.consultantF6': '$3,000+',
+  'comparison.manualF6': 'ਮੁਫ਼ਤ + ਸਮਾਂ',
+  'comparison.bizyF7': 'ਘੰਟੇ',
+  'comparison.consultantF7': 'ਹਫ਼ਤੇ',
+  'comparison.manualF7': 'ਮਹੀਨੇ',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FOUR STEPS / TIMELINE
+  // ═══════════════════════════════════════════════════════════════
+  'timeline.headline': 'ਲਾਂਚ ਦੇ ਚਾਰ ਕਦਮ।',
+  'timeline.step1.title': 'ਅਪਣੇ ਕਾਰੋਬਾਰ ਦਾ ਵਰਣਨ ਕਰੋ',
+  'timeline.step1.description': 'Bizy ਨੂੰ ਦੱਸੋ ਕਿ ਤੁਸੀਂ ਕੀ ਅਤੇ ਕਿੱਥੇ ਬਣਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ।',
+  'timeline.step2.title': 'Bizy ਸੰਭਾਵਨਾ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰਦਾ ਹੈ',
+  'timeline.step2.description': 'AI ਮਾਰਕੀਟ ਡੇਟਾ ਖਿੱਚਦਾ ਹੈ ਬਚਾਅ ਦੀ ਭਵਿੱਖਬਾਣੀ ਲਈ।',
+  'timeline.step3.title': 'ਲਾਂਚ ਰੋਡਮੈਪ ਬਣਾਓ',
+  'timeline.step3.description': 'ਕਦਮ-ਦਰ-ਕਦਮ ਪਾਲਣਾ ਕਾਰਜ ਯੋਜਨਾ ਪ੍ਰਾਪਤ ਕਰੋ।',
+  'timeline.step4.title': 'ਅਪਣਾ ਸਟੋਰਫ੍ਰੰਟ ਲਾਂਚ ਕਰੋ',
+  'timeline.step4.description': 'ਇੱਕ ਸੁੰਦਰ ਵੈਬਸਾਇਟ ਬਣਾਓ ਅਤੇ ਵੇਚਣਾ ਸ਼ੁਰੂ ਕਰੋ।',
+  'timeline.stepLabel': 'ਕਦਮ',
+  'timeline.previewLabel': 'ਐਨੀਮੇਟਿਡ UI ਪ੍ਰੀਵਿਊ:',
+
+  // ═══════════════════════════════════════════════════════════════
+  // LANDING PAGE - FEATURE DEEP DIVE
+  // ═══════════════════════════════════════════════════════════════
+  'featureSpotlight.badge': 'ਫ਼ੀਚਰ ਸਪਾਟਲਾਇਟ',
+  'featureSpotlight.uiPreview': 'UI ਪ੍ਰੀਵਿਊ',
+  'featureSpotlight.viability.title': 'AI ਸੰਭਾਵਨਾ ਵਿਸ਼ਲੇਸ਼ਣ',
+  'featureSpotlight.viability.subtitle': 'ਇੱਕ ਪੈਸਾ ਖਰਚਣ ਤੋਂ ਪਹਿਲਾਂ ਅਪਣੇ ਮੌਕੇ ਜਾਣੋ।',
+  'featureSpotlight.viability.description': 'ਅਸੀਂ ਮਾਰਕੀਟ ਦੀ ਮੰਗ, ਮੁਕਾਬਲੇ ਦੀ ਘਣਤਾ ਅਤੇ ਤੁਹਾਡੇ ਬਚਾਅ ਦੀ ਸੰਭਾਵਨਾ ਦੀ ਭਵਿੱਖਬਾਣੀ ਕਰਨ ਲਈ ਕੈਨੇਡਾ ਭਰ ਵਿੱਚ ਵਿਸ਼ਾਲ ਡੇਟਾਸੈਟਸ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰਦੇ ਹਾਂ।',
+  'featureSpotlight.viability.bullet1': 'ਰੀਅਲ-ਟਾਇਮ ਮਾਰਕੀਟ ਘਣਤਾ ਸਕੈਨਿੰਗ',
+  'featureSpotlight.viability.bullet2': 'ਬਚਾਅ ਸੰਭਾਵਨਾ ਪੂਰਵਾਨੁਮਾਨ',
+  'featureSpotlight.viability.bullet3': 'ਲਾਗਤ ਬਨਾਮ ਆਮਦਨ ਬੈਂਚਮਾਰਕਿੰਗ',
+  'featureSpotlight.viability.image': 'viability',
+  'featureSpotlight.roadmap.title': 'ਲਾਂਚ ਰੋਡਮੈਪ',
+  'featureSpotlight.roadmap.subtitle': 'ਤੁਹਾਡੀ ਕਦਮ-ਦਰ-ਕਦਮ ਮਾਸਟਰ ਪਲਾਨ।',
+  'featureSpotlight.roadmap.description': 'Gemini AI ਤੁਹਾਡੇ ਕਾਰੋਬਾਰ ਦੀ ਕਿਸਮ ਅਤੇ ਸੂਬੇ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰਕੇ ਇੱਕ ਬਹੁਤ ਹੀ ਖਾਸ, ਕ੍ਰਮਬੱਧ ਰੋਡਮੈਪ ਬਣਾਉਂਦਾ ਹੈ ਵਿਚਾਰ ਤੋਂ ਉਦਘਾਟਨ ਦਿਨ ਤੱਕ।',
+  'featureSpotlight.roadmap.bullet1': 'ਸਮੇਂ ਦੇ ਅਨੁਮਾਨਾਂ ਨਾਲ ਕ੍ਰਮਬੱਧ ਕਾਰਜ',
+  'featureSpotlight.roadmap.bullet2': 'ਪ੍ਰਾਥਮਿਕਤਾ ਤਰਕ',
+  'featureSpotlight.roadmap.bullet3': 'ਪ੍ਰਗਤੀ ਟਰੈਕਿੰਗ',
+  'featureSpotlight.roadmap.image': 'roadmap',
+
+  // ═══════════════════════════════════════════════════════════════  // LANDING PAGE - FOOTER
   // ═══════════════════════════════════════════════════════════════
   'footer.description': 'ਕੈਨੇਡਾ ਵਿੱਚ ਕਾਰੋਬਾਰ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਤੁਹਾਡਾ AI ਸਹਿ-ਸੰਸਥਾਪਕ। ਆਪਣੇ ਵਿਚਾਰ ਨੂੰ ਪ੍ਰਮਾਣਿਤ ਕਰੋ, ਪਾਲਣਾ ਨੈਵੀਗੇਟ ਕਰੋ, ਅਤੇ ਆਪਣਾ ਸਟੋਰਫ੍ਰੰਟ ਬਣਾਓ।',
   'footer.product': 'ਉਤਪਾਦ',
@@ -240,7 +328,20 @@ export const pa: TranslationKeys = {
   'viability.title': 'ਸੰਭਾਵਨਾ ਸਕੈਨ',
   'viability.subtitle': 'ਕੈਨੇਡੀਅਨ ਮਾਰਕੀਟ ਵਿੱਚ ਆਪਣੇ ਕਾਰੋਬਾਰੀ ਵਿਚਾਰ ਦੀ ਸੰਭਾਵਨਾ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ',
   'viability.runScan': 'ਸੰਭਾਵਨਾ ਸਕੈਨ ਚਲਾਓ',
+  'viability.runScanButton': 'ਸਕੈਨ ਚਲਾਓ',
+  'viability.runScanDescription': 'ਆਪਣੀ ਪ੍ਰੋਫਾਈਲ, ਮਾਰਕੀਟ ਸਥਿਤੀਆਂ ਅਤੇ ਉਦਯੋਗ ਬੈਂਚਮਾਰਕ ਦੇ ਆਧਾਰ ਤੇ ਆਪਣੇ ਕਾਰੋਬਾਰੀ ਵਿਚਾਰ ਦਾ AI-ਸੰਚਾਲਿਤ ਮੁਲਾਂਕਣ ਪ੍ਰਾਪਤ ਕਰੋ।',
+  'viability.runAgain': 'ਦੁਬਾਰਾ ਸਕੈਨ ਚਲਾਓ',
   'viability.scanning': 'ਤੁਹਾਡੇ ਕਾਰੋਬਾਰ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...',
+  'viability.loading.message1': 'ਕੈਨੇਡੀਅਨ ਮਾਰਕੀਟ ਰੁਝਾਨਾਂ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...',
+  'viability.loading.message2': 'ਉਦਯੋਗ ਮੁਕਾਬਲੇ ਦਾ ਮੁਲਾਂਕਣ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...',
+  'viability.loading.message3': 'ਬਚਾਅ ਸੰਭਾਵਨਾਵਾਂ ਦੀ ਗਣਨਾ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...',
+  'viability.loading.message4': 'AI ਸਟਾਰਟਅੱਪ ਰਣਨੀਤੀ ਤਿਆਰ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...',
+  'viability.loading.wait': 'ਇਸ ਵਿੱਚ ਕੁਝ ਸਮਾਂ ਲੱਗ ਸਕਦਾ ਹੈ',
+  'viability.results': 'ਸੰਭਾਵਨਾ ਨਤੀਜੇ',
+  'viability.explainScore': 'ਮੇਰਾ ਸਕੋਰ ਸਮਝਾਓ',
+  'viability.aiExplanation': 'AI ਵਿਆਖਿਆ',
+  'viability.revenueBenchmarks': 'ਆਮਦਨ ਬੈਂਚਮਾਰਕ',
+  'viability.revenueBenchmarksDesc': 'ਤੁਹਾਡੇ ਖੇਤਰ ਵਿੱਚ ਸਮਾਨ ਕਾਰੋਬਾਰਾਂ ਲਈ ਅਨੁਮਾਨਿਤ ਔਸਤ ਆਮਦਨ (CAD)',
   'viability.score': 'ਸੰਭਾਵਨਾ ਸਕੋਰ',
   'viability.verdict': 'ਫੈਸਲਾ',
   'viability.risks': 'ਮੁੱਖ ਜੋਖਮ',
@@ -251,6 +352,14 @@ export const pa: TranslationKeys = {
   'viability.riskSeverity.high': 'ਉੱਚ',
   'viability.riskSeverity.medium': 'ਮੱਧਮ',
   'viability.riskSeverity.low': 'ਘੱਟ',
+  'viability.profileRequired': 'ਪ੍ਰੋਫਾਈਲ ਲੋੜੀਂਦੀ ਹੈ',
+  'viability.completeOnboarding': 'ਸੰਭਾਵਨਾ ਸਕੈਨ ਚਲਾਉਣ ਲਈ ਆਨਬੋਰਡਿੰਗ ਪੂਰੀ ਕਰੋ।',
+  'viability.loadingProfile': 'ਤੁਹਾਡੀ ਪ੍ਰੋਫਾਈਲ ਲੋਡ ਹੋ ਰਹੀ ਹੈ...',
+  'viability.scanFailed': 'ਸਕੈਨ ਅਸਫ਼ਲ',
+  'viability.retryScan': 'ਸਕੈਨ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ',
+  'viability.addBusinessInfo': 'ਸਕੈਨ ਚਲਾਉਣ ਲਈ ਆਨਬੋਰਡਿੰਗ ਵਿੱਚ ਆਪਣਾ ਕਾਰੋਬਾਰ ਦੀ ਕਿਸਮ, ਸੂਬਾ ਅਤੇ ਕਾਰੋਬਾਰ ਦਾ ਵੇਰਵਾ ਸ਼ਾਮਲ ਕਰੋ।',
+  'viability.editProfile': 'ਪ੍ਰੋਫਾਈਲ ਸੰਪਾਦਿਤ ਕਰੋ',
+  'viability.completeOnboardingButton': 'ਆਨਬੋਰਡਿੰਗ ਪੂਰੀ ਕਰੋ',
 
   // ═══════════════════════════════════════════════════════════════
   // LAUNCH ROADMAP

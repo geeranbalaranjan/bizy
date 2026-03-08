@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useBusinessProfile } from '@/hooks/useBusinessProfile'
 import { useViabilityScore } from '@/hooks/useViabilityScore'
 import { useAppContext } from '@/context/AppContext'
+import { useTranslation } from '@/context/TranslationContext'
 import { ViabilityScan } from '@/components/viability/ViabilityScan'
 import { Button } from '@/components/ui/button'
 import { AlertCircle, RefreshCw } from 'lucide-react'
@@ -21,6 +22,7 @@ export default function ViabilityPage() {
   const { businessProfile, loading: profileLoading } = useBusinessProfile()
   const { state, setViabilityResult } = useAppContext()
   const { result, loading, error, runScan } = useViabilityScore(state.viabilityResult)
+  const { t } = useTranslation()
 
   async function handleRunScan() {
     if (!canRunScan(businessProfile)) return
@@ -36,9 +38,9 @@ export default function ViabilityPage() {
     return (
       <div className="p-6">
         <h1 className="text-3xl font-heading font-bold text-brand-primary mb-6">
-          Viability Scan
+          {t('viability.title')}
         </h1>
-        <p className="text-gray-500">Loading your profile...</p>
+        <p className="text-gray-500">{t('viability.loadingProfile')}</p>
       </div>
     )
   }
@@ -47,15 +49,15 @@ export default function ViabilityPage() {
     return (
       <div className="p-6">
         <h1 className="text-3xl font-heading font-bold text-brand-primary mb-6">
-          Viability Scan
+          {t('viability.title')}
         </h1>
         <div className="rounded-xl border border-amber-200 bg-amber-50 p-6">
-          <p className="font-medium text-amber-800 mb-2">Profile required</p>
+          <p className="font-medium text-amber-800 mb-2">{t('viability.profileRequired')}</p>
           <p className="text-sm text-amber-700 mb-4">
-            Complete onboarding to run a viability scan.
+            {t('viability.completeOnboarding')}
           </p>
           <Button asChild>
-            <Link href="/onboarding">Complete onboarding</Link>
+            <Link href="/onboarding">{t('viability.completeOnboardingButton')}</Link>
           </Button>
         </div>
       </div>
@@ -65,7 +67,7 @@ export default function ViabilityPage() {
   return (
     <div className="p-6">
       <h1 className="text-3xl font-heading font-bold text-brand-primary mb-6">
-        Viability Scan
+        {t('viability.title')}
       </h1>
 
       {error && (
@@ -73,7 +75,7 @@ export default function ViabilityPage() {
           <div className="flex items-start gap-2">
             <AlertCircle className="h-5 w-5 shrink-0 text-red-600 mt-0.5" />
             <div>
-              <p className="font-medium text-red-800">Scan failed</p>
+              <p className="font-medium text-red-800">{t('viability.scanFailed')}</p>
               <p className="text-sm text-red-700">{error}</p>
             </div>
           </div>
@@ -84,7 +86,7 @@ export default function ViabilityPage() {
             disabled={!canRunScan(businessProfile)}
           >
             <RefreshCw className="h-4 w-4 mr-2" />
-            Retry scan
+            {t('viability.retryScan')}
           </Button>
         </div>
       )}
@@ -99,10 +101,10 @@ export default function ViabilityPage() {
       {!result && !loading && canRunScan(businessProfile) === false && (
         <div className="mt-4 rounded-lg border border-gray-200 bg-gray-50 p-4">
           <p className="text-sm text-gray-600">
-            Add your business type, province, and business description in onboarding to run a scan.
+            {t('viability.addBusinessInfo')}
           </p>
           <Button asChild variant="outline" size="sm" className="mt-2">
-            <Link href="/onboarding">Edit profile</Link>
+            <Link href="/onboarding">{t('viability.editProfile')}</Link>
           </Button>
         </div>
       )}

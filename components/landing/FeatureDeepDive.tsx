@@ -2,31 +2,34 @@
 
 import { CheckCircle2 } from 'lucide-react'
 import Image from 'next/image'
+import { useTranslation } from '@/context/TranslationContext'
 
 export function FeatureDeepDive() {
+  const { t } = useTranslation()
+
   const features = [
     {
-      title: "AI Viability Analysis",
-      subtitle: "Know your chances before you spend a dime.",
-      description: "We analyze massive datasets across Canada to predict market demand, competition density, and your probability of survival.",
-      bullets: [
-        "Real-time market density scanning",
-        "Survival probability forecasting",
-        "Cost vs revenue benchmarking"
+      titleKey: 'featureSpotlight.viability.title',
+      subtitleKey: 'featureSpotlight.viability.subtitle',
+      descriptionKey: 'featureSpotlight.viability.description',
+      bulletKeys: [
+        'featureSpotlight.viability.bullet1',
+        'featureSpotlight.viability.bullet2',
+        'featureSpotlight.viability.bullet3'
       ],
-      image: "viability", // placeholder for UI mock
+      imageKey: 'featureSpotlight.viability.image',
       reversed: false
     },
     {
-      title: "Launch Roadmap",
-      subtitle: "Your step-by-step master plan.",
-      description: "Gemini AI analyzes your business type and province to generate a highly specific, sequenced roadmap from idea to opening day.",
-      bullets: [
-        "Sequenced tasks with time estimates",
-        "Prioritization logic",
-        "Progress tracking"
+      titleKey: 'featureSpotlight.roadmap.title',
+      subtitleKey: 'featureSpotlight.roadmap.subtitle',
+      descriptionKey: 'featureSpotlight.roadmap.description',
+      bulletKeys: [
+        'featureSpotlight.roadmap.bullet1',
+        'featureSpotlight.roadmap.bullet2',
+        'featureSpotlight.roadmap.bullet3'
       ],
-      image: "roadmap", // placeholder for UI mock
+      imageKey: 'featureSpotlight.roadmap.image',
       reversed: true
     }
   ]
@@ -43,22 +46,22 @@ export function FeatureDeepDive() {
               {/* Text Side */}
               <div className="flex-1 space-y-6">
                 <div className="inline-block px-3 py-1 rounded-full bg-brand-accent/20 border border-brand-accent/30 text-brand-accent text-sm font-semibold mb-2">
-                  Feature Spotlight
+                  {t('featureSpotlight.badge')}
                 </div>
                 <h2 className="text-4xl lg:text-5xl font-heading font-bold text-white leading-tight">
-                  {feature.title}
+                  {t(feature.titleKey)}
                 </h2>
                 <h3 className="text-2xl text-white/80 font-medium">
-                  {feature.subtitle}
+                  {t(feature.subtitleKey)}
                 </h3>
                 <p className="text-xl text-gray-400 leading-relaxed pb-4">
-                  {feature.description}
+                  {t(feature.descriptionKey)}
                 </p>
                 <ul className="space-y-4">
-                  {feature.bullets.map((bullet, i) => (
+                  {feature.bulletKeys.map((bulletKey, i) => (
                     <li key={i} className="flex items-start text-gray-300">
                       <CheckCircle2 className="w-6 h-6 text-brand-accent shrink-0 mr-3" />
-                      <span className="text-lg">{bullet}</span>
+                      <span className="text-lg">{t(bulletKey)}</span>
                     </li>
                   ))}
                 </ul>
@@ -78,7 +81,7 @@ export function FeatureDeepDive() {
                     </div>
                     <div className="flex-1 p-6 flex items-center justify-center font-mono text-white/20 text-2xl">
                        {/* This would be an actual next/image of the UI in production */}
-                       [UI Preview: {feature.image}]
+                       [{t('featureSpotlight.uiPreview')}: {t(feature.imageKey)}]
                     </div>
                   </div>
                 </div>
