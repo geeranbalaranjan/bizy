@@ -8,9 +8,8 @@ AI-powered platform for Canadian small business owners. Viability scan, launch r
 
 - Next.js 14 (App Router) + TypeScript
 - Tailwind CSS
-- Firebase (Auth, Firestore, Storage)
 - Google Gemini AI
-- Reactiv App Clip API
+- Auth0
 
 ## Getting Started
 
