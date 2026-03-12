@@ -48,11 +48,11 @@ export function StoryScroll() {
     <section 
       ref={containerRef} 
       className="bg-black relative"
-      // Height is huge so we can scroll through it, creating the sticky effect
-      style={{ height: `${stories.length * 100}vh` }}
+      // Shorter height = less scroll to move between segments (was 100vh per segment)
+      style={{ height: `${stories.length * 55}vh` }}
     >
       <div className="sticky top-0 h-screen flex flex-col justify-center max-w-5xl mx-auto px-6">
-        <div className="space-y-12 md:space-y-20 py-20">
+        <div className="space-y-8 md:space-y-12 py-12">
           {stories.map((text, index) => (
             <h2 
               key={index}
